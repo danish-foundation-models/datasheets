@@ -56,7 +56,7 @@ An entry in the dataset consists of the following fields:
 - `hash`(`str`):
 - `wayback_date`(`str`):
 - `status_code`(`str`):
-- `content_language`(`str`):
+- `content_language`(`str`): Determined using [langid-java](https://github.com/carrotsearch/langid-java).
 - `domain`(`str`):
 - `url`(`str`):
 - `content_type_full`(`str`):
