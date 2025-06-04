@@ -3,11 +3,10 @@ from pathlib import Path
 import tomlkit
 from packaging.version import Version
 
-c_file = Path(__file__)
-pyproject = c_file.parent.parent / "pyproject.toml"
+from dynaword.paths import pyproject_path, readme_path
 
 
-def get_version(pyproject_path: Path = pyproject) -> str:
+def get_version(pyproject_path: Path = pyproject_path) -> str:
     with pyproject_path.open("r") as f:
         data = tomlkit.load(f)
         return data["project"]["version"]  # type: ignore
@@ -36,7 +35,7 @@ def update_readme(version: str, readme_path: Path) -> None:
             in_table = True
         if in_table:
             if "**Version**" in line:
-                lines[i] = f"| **Version** | {version} |\n"
+                lines[i] = f"| **Version** | {version} ([Changelog](/CHANGELOG.md)) |\n"
                 break
         if end in line:
             raise ValueError("**Version** not found in README table.")
@@ -54,7 +53,4 @@ def main(pyproject_path: Path, readme_path: Path) -> None:
 
 
 if __name__ == "__main__":
-    c_file = Path(__file__)
-    pyproject_path = c_file.parent.parent / "pyproject.toml"
-    readme_path = c_file.parent.parent / "README.md"
     main(pyproject_path, readme_path)

@@ -1,11 +1,17 @@
 [project]
-name = "danish-dynaword"
-version = "0.0.1"
+name = "dynaword"
+version = "0.0.2"
 description = "project code for the dfm datasheets."
 readme = "README.md"
 requires-python = ">=3.12,<3.13" # 3.13 have issues with spacy and pytorch
 dependencies = [
+    "pydantic>=2.11.5",
+    "pyyaml>=6.0.2",
     "tomlkit>=0.13.2", # reading toml
+]
+
+[dependency-groups]
+dev = [
     # development
     "ipykernel>=6.29.5",
     "pip>=25.0.1",
@@ -13,5 +19,8 @@ dependencies = [
     "pytest>=8.3.4",
     # formatting
     "ruff>=0.8.3",
-    # new
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
