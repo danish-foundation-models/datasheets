@@ -30,35 +30,25 @@ language_bcp47:
 - da-synnejyl
 ---
 
-<!-- 
-readme structure is inspired by:
-https://github.com/huggingface/datasets/blob/main/templates/README_guide.md 
--->
 
+# DFM Datasheets
 
-# 🧨 DFM Datasheets
+This repository contains the datasheets for DFM. This repostory documents.
 
-
-<!-- START README TABLE -->
-|              |                                                                                                                                          |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Version**  | 0.0.1                                                                                                                                    |
-| **Language** | dan, dansk, Danish                                                                                                                       |
-| **License**  | Non publicly available                                                                                                                   |
-| **Models**   | Currently not model is publicly available that is trained on the data                                                                    |
-| **Contact**  | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
-<!-- END README TABLE -->
+|             |                                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Version** | 0.0.1                                                                                                                                    |
+| **License** | Non publicly available                                                                                                                   |
+| **Models**  | Currently not model is publicly available that is trained on the data                                                                    |
+| **Contact** | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
 
 ## Table of Contents
-- [🧨 DFM Datasheets](#-dfm-datasheets)
+- [DFM Datasheets](#dfm-datasheets)
   - [Table of Contents](#table-of-contents)
   - [Dataset Description](#dataset-description)
     - [Summary](#summary)
-    - [Languages:](#languages)
-  - [Dataset Creation](#dataset-creation)
     - [Curation Rationale](#curation-rationale)
-    - [Annotations](#annotations)
-    - [Source Data](#source-data)
+    - [Dataset Overview](#dataset-overview)
   - [Additional Information](#additional-information)
     - [Citation Information](#citation-information)
     - [Disclaimer](#disclaimer)
@@ -66,48 +56,38 @@ https://github.com/huggingface/datasets/blob/main/templates/README_guide.md
 
 ## Dataset Description
 
-<!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Number of samples**: 588.92K
-- **Number of tokens (Llama 3)**: 1.85B
-- **Average document length (characters)**: 9245.09
-<!-- END-DESC-STATS -->
-
-
 ### Summary
 
-The DFM Datasheets is a collection of datasheets for the subsection of data used for [Danish Foundation Models](https://www.foundationmodels.dk) that can't be shared publicly under open-licenses. This repository ensure documentation to data along with FAIR
-data practices.
-
-
-### Languages:
-This dataset includes the following languages:
-
-- dan-Latn
-- dan-Latn-bornholm
-- dan-Latn-synnejyl
-
-Language is denoted using [BCP-47](https://en.wikipedia.org/wiki/IETF_language_tag), using the langauge code ISO 639-3 and the script code ISO 15924. The last element denote the region variant.
-
-
-## Dataset Creation
+The DFM Datasheets is a collection of datasheets for datasets used for [Danish Foundation Models](https://www.foundationmodels.dk). This repository ensure documentation to data along with FAIR data practices.
 
 ### Curation Rationale
 
 These datasets were collected and curated with the intention of developing language models for Danish.
 
-### Annotations
 
-This data generally contains no annotation besides the metadata attached to each sample such as what domain it belongs to. 
+### Dataset Overview
 
-### Source Data
+We generally split the dataset into two categories: Public release sources and research sources. 
+
+**Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).
+
+
+| Source            | Description                                                                                 | N. Tokens | License                            |
+| :---------------- | :------------------------------------------------------------------------------------------ | :-------- | :--------------------------------- |
+| [Common Corpus]   | Common Corpus is a large multilingual collection of open and permissible licensed text data | 1,998B    | Various open licenses (see source) |
+| [Danish Dynaword] | Danish Dynaword, is the large openly licensed collection of Danish text data                | 4.26B     | Various open licenses (see source) |
+
+[Danish Dynaword]: https://huggingface.co/datasets/danish-foundation-models/danish-dynaword
+[Common Corpus]: https://huggingface.co/datasets/PleIAs/common_corpus
+
+
+**Research sources**: 
 
 Below follows a brief overview of the sources in the corpus along with their individual license.
 
-| Source               | Description                                                               | N. Tokens | License |
-| :------------------- | :------------------------------------------------------------------------ | :-------- | :------ |
-| [AI4WELFARE KB Data] | The Danish Web Archive (Netarkivet) collected by The Royal Danish Library |
-| 1,200B               | For internal use                                                          |
+| Source               | Description                                                               | N. Tokens | License          |
+| :------------------- | :------------------------------------------------------------------------ | :-------- | :--------------- |
+| [AI4WELFARE KB Data] | The Danish Web Archive (Netarkivet) collected by The Royal Danish Library | 1,200B    | For internal use |
 
 [AI4WELFARE KB Data]: data/ai4welfare-kb-data/ai4welfare-kb-data.md
 

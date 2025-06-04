@@ -4,12 +4,14 @@ language:
   - da
   - en
 license: other
-license_name: danish
+license_name: Non-public
 task_categories:
   - text-generation
   - fill-mask
 task_ids:
   - language-modeling
+domains:
+- Web
 ---
 
 # Dataset Card for AI4WELFARE KB Data
@@ -47,7 +49,7 @@ The data is distributed over 173 gzip files of CSV data, where each file is betw
 An example from the dataset looks as follows.
 
 ```
-"sha1:2222AWKN4MZTM5NQX2GTS5F74ADBL77M","20241127055747","200","da","visesangere.dk","https://visesangere.dk/baand.php?order=12&bid=49","application/xhtml+xml; charset=UTF-8; version=1.0","1179","Sønderjyder synger Hop forbi menuen Forside Viser   :: :: Viser Sangere   :: :: Sangere Temaer Indsamlinger Søg Baggrund Bånd 49 Hele båndet som lydfil:Højkvalitet lydfilHøjkvalitet lydfil (128kbit). Download evt. med højreklik og 'Gem destination som' Hvis du ikke har læst ""NB om lydfiler"" bør du gøre det først! (5.9mb ).   Lavkvalitet lydfilLavkvalitet lydfil (32kbit). Download evt. med højreklik og 'Gem destination som' Hvis du ikke har læst ""NB om lydfiler"" bør du gøre det først! (1.5mb ).   NB! om lydfilerne her !Vigtig information om lydfiler Sorter efter:  Sanger Optagelsessted Titel Lydfil Position Længde Optagelsestype Optagelsesdato Sanger Optagelsessted Titel Lydfil Position Længde Optagelsestype Optagelsesdato Nielsen, Ebbe Egebjerg Den sjæl som Gud i sandhed kender 2:10 Sang 11-8-1966 Nielsen, Ebbe Egebjerg Har du ej lyst til i himmelen at komme 1:45 Sang 11-8-1966 Denne sides indhold er opdateret 16. maj 2015. Publikationen her er tilknyttet Sanghistorisk Arkiv på Institut for Æstetiske Fag - Afdeling for Musikvidenskab ved Aarhus Universitet. Udskrevet fra Sønderjyder Synger, http://visesangere.dk/baand.php%3Forder%3D12%26bid%3D49 den 27/11/2024."
+"sha1:2222AWKN4MZTM5NQX2GTS5F74ADBL77M","20241127055747","200","da","visesangere.dk","https://visesangere.dk/baand.php?order=12&bid=49","application/xhtml+xml; charset=UTF-8; version=1.0","1179","Sønderjyder synger Hop forbi menuen Forside Viser   :: :: Viser Sangere   :: :: Sangere Temaer Indsamlinger Søg [...]"
 ```
 
 ### Data Fields
@@ -64,12 +66,10 @@ An entry in the dataset consists of the following fields:
 - `content`(`str`):
 
 
-## Usage restrictions
-This dataset can be used for research by <a href="https://www.foundationmodels.dk">DFM</a> under an agreement with The Royal Danish Library that covers May 2024 until December 2030. 
+# Additional Information
 
-
-## Additional Information
-
+## License Information
+This dataset can be used for research by <a href="https://www.foundationmodels.dk">DFM</a> under an agreement with The Royal Danish Library that covers May 2024 until December 2030. As it stands this dataset is not intended for training publicly released models.
 
 ### Citation Information
 
