@@ -18,4 +18,4 @@ lint-check:
 
 bump-version:
 	@echo "--- 🚀 Bumping patch version ---"
-	uv run src/bump_version.py
+	uv run src/dynaword/bump_version.py
