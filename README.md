@@ -28,10 +28,10 @@ language_bcp47:
 
 This repository contains the datasheets for DFM. This repostory documents.
 
-<!-- START README TABLE -->"
+<!-- START README TABLE -->
 |             |                                                                                                                                          |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Version** | 0.0.2 ([Changelog](/CHANGELOG.md))                                                                                                       |
+| **Version** | 0.0.3 ([Changelog](/CHANGELOG.md)) |
 | **License** | Non publicly available                                                                                                                   |
 | **Models**  | Currently not model is publicly available that is trained on the data                                                                    |
 | **Contact** | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
