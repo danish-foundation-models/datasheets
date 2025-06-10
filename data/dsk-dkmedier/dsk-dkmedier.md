@@ -1,14 +1,14 @@
 ---
 pretty_name: DSK - DK Medier
 language:
-  - da
+- da
 license: other
-license_name: Non-public
+license_name: DSK-1
 task_categories:
-  - text-generation
-  - fill-mask
+- text-generation
+- fill-mask
 task_ids:
-  - language-modeling
+- language-modeling
 domains:
 - News
 ---
@@ -23,30 +23,14 @@ This is the data contributed by DK Medier through the [Dansk Sprogmodel Konsorti
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Readaloud, Spoken
-- **Number of samples**: 446
-- **Number of tokens (Llama 3)**: 7.30M
-- **Average document length (characters)**: 38949.78
+- **Domains**: News
+- **Number of samples**: 105.11K
+- **Number of tokens (Llama 3)**: 65.44M
+- **Average document length (characters)**: 1866.20
 <!-- END-DESC-STATS -->
 
 
 ## Dataset Structure
-An example from the dataset looks as follows.
-
-<!-- START-SAMPLE -->
-```py
-{
-  "id": "INSL20160004",
-  "text": "Inspiration nr. 4, 2016\nBiblioteksbetjening \nTelefon: 39 13 46 00\nEmail: biblioteket@nota.dk\nInspira[...]",
-  "source": "nota",
-  "added": "2025-02-03",
-  "created": "2016-01-01, 2016-12-31",
-  "token_count": 69977
-}
-```
-
-### Data Fields
-
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -55,7 +39,6 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
-<!-- END-SAMPLE -->
 
 
 ### Additional Processing
@@ -70,8 +53,11 @@ An entry in the dataset consists of the following fields:
 <!-- END-DATASET PLOTS -->
 
 
-## Additional Information
+# Additional Information
 
+## License Information
+This data is licensed under the data sharing agreement made between the contributor and the Dansk Sprogmodel Konsortium (DSK). 
+It allows DFM to use the data for training and releasing models, but prohibits DFM from releasing any of the data, except metadata describing the data. 
 
 ### Citation Information
 
