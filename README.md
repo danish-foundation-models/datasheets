@@ -1,3 +1,29 @@
+---
+license: other
+configs:
+- config_name: default
+- config_name: dsk-dkmedier
+annotations_creators:
+- no-annotation
+language_creators:
+- crowdsourced
+language:
+- da
+multilinguality:
+- monolingual
+source_datasets:
+- original
+task_categories:
+- text-generation
+task_ids:
+- language-modeling
+pretty_name: DFM Datasheets
+language_bcp47:
+- da
+- da-bornholm
+- da-synnejyl
+---
+
 # DFM Datasheets
 
 This repository contains the datasheets for DFM. This repostory documents.
@@ -42,7 +68,7 @@ We generally split the dataset into two categories: Public release sources and r
 
 
 | Source            | Description                                                                                 | N. Tokens | License                            | Version                                                                                                     |
-| :---------------- | :------------------------------------------------------------------------------------------ | :-------- | :--------------------------------- |
+| :---------------- | :------------------------------------------------------------------------------------------ | :-------- | :--------------------------------- | :--------------------------------- |
 | [Common Corpus]   | Common Corpus is a large multilingual collection of open and permissible licensed text data | 1,998B    | Various open licenses (see source) | [1.0.0](https://huggingface.co/datasets/PleIAs/common_corpus/tree/4fa82b3b7f2aed19b5b2bf7750015a9c46c1f13d) |
 | [Danish Dynaword] | Danish Dynaword, is the large openly licensed collection of Danish text data                | 4.26B     | Various open licenses (see source) | 1.1.0                                                                                                       |
 
