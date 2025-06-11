@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from dynaword.datasheet import DataSheet, human_readable_large_int
-from dynaword.paths import repo_path
+from datasheets.datasheet import DataSheet, human_readable_large_int
+from datasheets.paths import repo_path
 
 main_sheet = DataSheet.load_from_path(repo_path / "README.md")
 _datasets = [

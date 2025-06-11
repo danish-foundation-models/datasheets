@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from dynaword.datasheet import DataSheet
+from datasheets.datasheet import DataSheet
 
 root_path = Path(__file__).parent.parent.parent
 main_readme = root_path / "README.md"

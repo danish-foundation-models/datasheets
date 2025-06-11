@@ -8,9 +8,9 @@ import yaml
 from datasets import Dataset, load_dataset
 from pydantic import BaseModel, field_validator
 
-from dynaword.descriptive_stats import DescriptiveStatsOverview
-from dynaword.plots import create_descriptive_statistics_plots
-from dynaword.typings import DOMAIN, LICENSE, LICENSE_NAMES_MAPPING
+from datasheets.descriptive_stats import DescriptiveStatsOverview
+from datasheets.plots import create_descriptive_statistics_plots
+from datasheets.typings import DOMAIN, LICENSE, LICENSE_NAMES_MAPPING
 
 logger = logging.getLogger(__name__)
 
@@ -254,7 +254,7 @@ class DataSheet(BaseModel):
 
 
 if __name__ == "__main__":
-    from dynaword.paths import repo_path
+    from datasheets.paths import repo_path
 
     sheet = DataSheet.load_from_path(repo_path / "data" / "dannet" / "dannet.md")
     ds = sheet.get_dataset()

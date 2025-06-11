@@ -18,14 +18,14 @@ from packaging.version import Version, InvalidVersion
 import plotly.express as px
 from datasets import Dataset, load_dataset
 
-from dynaword.datasheet import DataSheet
-from dynaword.descriptive_stats import DescriptiveStatsOverview
-from dynaword.git_utilities import (
+from datasheets.datasheet import DataSheet
+from datasheets.descriptive_stats import DescriptiveStatsOverview
+from datasheets.git_utilities import (
     check_is_ancestor,
     get_latest_revision,
 )
-from dynaword.paths import repo_path
-from dynaword.tables import create_overview_table, create_overview_table_str
+from datasheets.paths import repo_path
+from datasheets.tables import create_overview_table, create_overview_table_str
 
 logger = logging.getLogger(__name__)
 

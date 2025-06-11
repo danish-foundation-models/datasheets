@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.5] - 2025-06-11
+
+### Added
+
+- Added third DSK dataset - Salling Group
+
+### Changed
+
+- Changed the name of this pryproject.toml package name from `dynaword` to `datasheets`. Should cause less confusion now. 
+
 ## [v0.0.4] - 2025-06-11
 
 ### Added
@@ -12,7 +22,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - Added small helper script to convert JSONL files to parquet, while adding a token_count column.
 - Added second DSK dataset - Vejle Kommune
 
-### Fixed
+### Changed
 
 - Fixed small error in `src/dynaword/update_descriptive_statistics.py` relating to loading the data
 

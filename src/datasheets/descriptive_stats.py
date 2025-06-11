@@ -8,9 +8,9 @@ from functools import partial
 from datasets import Dataset
 from transformers import AutoTokenizer
 
-from dynaword.dataset_structure import ColumnNames
+from datasheets.dataset_structure import ColumnNames
 
-from dynaword.git_utilities import (
+from datasheets.git_utilities import (
     get_current_revision,
 )
 
