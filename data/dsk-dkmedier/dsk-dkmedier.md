@@ -16,8 +16,11 @@ domains:
 # Dataset Card for DSK - DK Medier
 
 <!-- START-SHORT DESCRIPTION -->
-This is the data contributed by DK Medier through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
+A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024. 
 <!-- END-SHORT DESCRIPTION -->
+
+This data has been contributed by DK Medier through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). 
+
 
 ## Dataset Description
 
