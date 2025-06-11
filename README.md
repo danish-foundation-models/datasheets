@@ -71,10 +71,10 @@ We generally split the dataset into two categories: Public release sources and r
 | :---------------- | :------------------------------------------------------------------------------------------ | :-------- | :--------------------------------- | :--------------------------------- |
 | [Common Corpus]   | Common Corpus is a large multilingual collection of open and permissible licensed text data | 1,998B    | Various open licenses (see source) | [1.0.0](https://huggingface.co/datasets/PleIAs/common_corpus/tree/4fa82b3b7f2aed19b5b2bf7750015a9c46c1f13d) |
 | [Danish Dynaword] | Danish Dynaword, is the large openly licensed collection of Danish text data                | 4.26B     | Various open licenses (see source) | 1.1.0                                                                                                       |
+| DK Medier | DK Medier, is a set of ~100K news articles written and published in the period 2000-2024                | 65.44M    | DSK-1 | 1.0.0                                                                                                       |
 
 [Danish Dynaword]: https://huggingface.co/datasets/danish-foundation-models/danish-dynaword
 [Common Corpus]: https://huggingface.co/datasets/PleIAs/common_corpus
-
 
 **Research sources**: 
 
