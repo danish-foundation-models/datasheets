@@ -1,11 +1,15 @@
 import logging
 from enum import Enum
 from pathlib import Path
-from typing import Any, Self
+from textwrap import dedent
+from typing import Any, Literal, Self, cast
 
 import yaml
+from datasets import Dataset, load_dataset
 from pydantic import BaseModel, field_validator
 
+from dynaword.descriptive_stats import DescriptiveStatsOverview
+from dynaword.plots import create_descriptive_statistics_plots
 from dynaword.typings import DOMAIN, LICENSE, LICENSE_NAMES_MAPPING
 
 logger = logging.getLogger(__name__)
@@ -15,15 +19,37 @@ LICENSE_HEADER = "## License Information"
 
 
 class DEFAULT_SECTION_TAGS(Enum):
+    desc_stats = "DESC-STATS"
+    dataset_plots = "DATASET PLOTS"
     short_description = "SHORT DESCRIPTION"
+
+
+DATASET_PLOTS_template = """
+<p align="center">
+<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+</p>
+"""
+
+
+def human_readable_large_int(value: int) -> str:
+    thresholds = [
+        (1_000_000_000, "B"),
+        (1_000_000, "M"),
+        (1_000, "K"),
+    ]
+    for threshold, label in thresholds:
+        if value > threshold:
+            return f"{value / threshold:.2f}{label}"
+
+    return str(value)
 
 
 class DataSheet(BaseModel):
     pretty_name: str
     license: LICENSE
     license_name: str | None
-    language: list[str]
-    domains: list[DOMAIN] | None
+    language: list[Literal["da"]]
+    domains: list[DOMAIN] | None  # None for main readme # TODO: make literal
     path: Path
     frontmatter: dict[str, Any]
     body: str
@@ -55,6 +81,16 @@ class DataSheet(BaseModel):
 
     def to_str(self) -> str:
         return f"---\n{self.frontmatter_as_str.strip()}\n---\n\n{self.body.strip()}\n"
+
+    def get_dataset(self, **kwargs) -> Dataset:
+        ds_path = self.path.parent
+        ds = load_dataset(ds_path.as_posix(), split="train", **kwargs)
+        ds = cast(Dataset, ds)
+        return ds
+
+    def get_descritive_stats(self) -> DescriptiveStatsOverview:
+        path = self.path.parent / "descriptive_stats.json"
+        return DescriptiveStatsOverview.from_disk(path)
 
     def get_section_indices_by_header(self, header: str) -> tuple[int, int]:
         level = header.split(" ")[0].count("#")
@@ -112,6 +148,50 @@ class DataSheet(BaseModel):
         s, e = self.get_tag_idx(tag=tag)
         tag_start = f"<!-- START-{tag} -->"
         return self.body[s + len(tag_start) : e].strip()
+
+    def add_descriptive_stats(
+        self, descriptive_stats: DescriptiveStatsOverview | None = None
+    ) -> str:
+        if descriptive_stats is None:
+            d_stats = DescriptiveStatsOverview.from_dataset(self.get_dataset())
+        else:
+            d_stats = descriptive_stats
+
+        if len(self.language) != 1 and self.language[0] != "da":
+            raise NotImplementedError(
+                "This script only handles the language codes 'da'"
+            )
+        languages = "dan, dansk, Danish"
+
+        package = dedent(f"""
+        - **Language**: {languages}\n""")
+
+        if self.domains:
+            domains = ", ".join(self.domains)
+            package += f"- **Domains**: {domains}\n"
+
+        package += (
+            dedent(f"""
+        - **Number of samples**: {human_readable_large_int(d_stats.number_of_samples)}
+        - **Number of tokens (Llama 3)**: {human_readable_large_int(d_stats.number_of_tokens)}
+        - **Average document length (characters)**: {d_stats.average_document_length:.2f}
+        """).strip()
+            + "\n"
+        )
+
+        return self.replace_tag(
+            package=package,
+            tag=DEFAULT_SECTION_TAGS.desc_stats,
+        )
+
+    def add_dataset_plots(self, dataset: Dataset, create_plot: bool = True) -> str:
+        if create_plot:
+            create_descriptive_statistics_plots(
+                dataset=dataset, save_dir=self.path.parent
+            )
+        return self.replace_tag(
+            package=DATASET_PLOTS_template, tag=DEFAULT_SECTION_TAGS.dataset_plots
+        )
 
     def replace_tag(self, package: str, tag: str | DEFAULT_SECTION_TAGS) -> str:
         """Add replace a tag in the datasheet body.

@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.3] - 2025-06-10
+
+### Added
+
+- Added scripts for building descriptive stats
+- Added first DSK dataset - DKMedier
+
 ## [v0.0.2] - 2025-06-04
 
 ### Added
