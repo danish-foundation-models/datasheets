@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.4] - 2025-06-11
+
+### Added
+
+- Added small helper script to convert JSONL files to parquet, while adding a token_count column.
+- Added second DSK dataset - Vejle Kommune
+
+### Fixed
+
+- Fixed small error in `src/dynaword/update_descriptive_statistics.py` relating to loading the data
+
 ## [v0.0.3] - 2025-06-10
 
 ### Added
