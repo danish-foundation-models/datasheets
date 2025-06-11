@@ -73,6 +73,7 @@ We generally split the dataset into two categories: Public release sources and r
 | [Danish Dynaword] | Danish Dynaword, is the large openly licensed collection of Danish text data                | 4.26B     | Various open licenses (see source) | 1.1.0                                                                                                       |
 | DK Medier | DK Medier, is a set of ~100K news articles written and published in the period 2000-2024                | 65.44M    | DSK-1 | 1.0.0                                                                                                       |
 | Vejle Kommune | Vejle Kommune, is a set of ~20.5K webpages and web content published by Vejle Kommune on their website                | 33.52M    | DSK-1 | 1.0.0                                                                                                       |
+| Salling Group | Salling Group is a set of ~24K webpages from websites and webshops managed by Salling Group                | 10.75M   | DSK-1 | 1.0.0                                                                                                       |
 
 [Danish Dynaword]: https://huggingface.co/datasets/danish-foundation-models/danish-dynaword
 [Common Corpus]: https://huggingface.co/datasets/PleIAs/common_corpus
