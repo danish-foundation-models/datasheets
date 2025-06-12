@@ -2,9 +2,18 @@
 license: other
 configs:
 - config_name: default
+- config_name: dsk-alexandra
+- config_name: dsk-atp
+- config_name: dsk-cbrain
+- config_name: dsk-danskerhverv
 - config_name: dsk-dkmedier
+- config_name: dsk-hofor
+- config_name: dsk-ida
+- config_name: dsk-odense
+- config_name: dsk-plesner
 - config_name: dsk-salling
 - config_name: dsk-vejle
+- config_name: dsk-vitec
 annotations_creators:
 - no-annotation
 language_creators:
@@ -32,8 +41,8 @@ This repository contains the datasheets for DFM. This repostory documents.
 
 <!-- START README TABLE -->
 |             |                                                                                                                                          |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Version** | 0.0.5 ([Changelog](/CHANGELOG.md)) |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| **Version** | 0.0.5 ([Changelog](/CHANGELOG.md))                                                                                                       |
 | **License** | Non publicly available                                                                                                                   |
 | **Models**  | Currently not model is publicly available that is trained on the data                                                                    |
 | **Contact** | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
@@ -69,13 +78,13 @@ We generally split the dataset into two categories: Public release sources and r
 **Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).
 
 
-| Source            | Description                                                                                 | N. Tokens | License                            | Version                                                                                                     |
-| :---------------- | :------------------------------------------------------------------------------------------ | :-------- | :--------------------------------- | :--------------------------------- |
-| [Common Corpus]   | Common Corpus is a large multilingual collection of open and permissible licensed text data | 1,998B    | Various open licenses (see source) | [1.0.0](https://huggingface.co/datasets/PleIAs/common_corpus/tree/4fa82b3b7f2aed19b5b2bf7750015a9c46c1f13d) |
-| [Danish Dynaword] | Danish Dynaword, is the large openly licensed collection of Danish text data                | 4.26B     | Various open licenses (see source) | 1.1.0                                                                                                       |
-| DK Medier | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024.               | 65.44M    | DSK-1 | 1.0.0                                                                                                       |
-| Vejle Kommune | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area.                | 33.52M    | DSK-1 | 1.0.0                                                                                                       |
-| Salling Group | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages.                | 10.75M   | DSK-1 | 1.0.0                                                                                                       |
+| Source            | Description                                                                                                                                                                                              | N. Tokens | License                            | Version                                                                                                     |
+|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------|:-----------------------------------|:------------------------------------------------------------------------------------------------------------|
+| [Common Corpus]   | Common Corpus is a large multilingual collection of open and permissible licensed text data                                                                                                              | 1,998B    | Various open licenses (see source) | [1.0.0](https://huggingface.co/datasets/PleIAs/common_corpus/tree/4fa82b3b7f2aed19b5b2bf7750015a9c46c1f13d) |
+| [Danish Dynaword] | Danish Dynaword, is the large openly licensed collection of Danish text data                                                                                                                             | 4.26B     | Various open licenses (see source) | 1.1.0                                                                                                       |
+| DK Medier         | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024.                                                                                              | 65.44M    | DSK-1                              | 1.0.0                                                                                                       |
+| Vejle Kommune     | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area.            | 33.52M    | DSK-1                              | 1.0.0                                                                                                       |
+| Salling Group     | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages. | 10.75M    | DSK-1                              | 1.0.0                                                                                                       |
 
 [Danish Dynaword]: https://huggingface.co/datasets/danish-foundation-models/danish-dynaword
 [Common Corpus]: https://huggingface.co/datasets/PleIAs/common_corpus
@@ -85,7 +94,7 @@ We generally split the dataset into two categories: Public release sources and r
 Below follows a brief overview of the sources in the corpus along with their individual license.
 
 | Source               | Description                                                               | N. Tokens | License          |
-| :------------------- | :------------------------------------------------------------------------ | :-------- | :--------------- |
+|:---------------------|:--------------------------------------------------------------------------|:----------|:-----------------|
 | [AI4WELFARE KB Data] | The Danish Web Archive (Netarkivet) collected by The Royal Danish Library | 1,200B    | For internal use |
 
 [AI4WELFARE KB Data]: data/ai4welfare-kb-data/ai4welfare-kb-data.md
