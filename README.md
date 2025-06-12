@@ -3,6 +3,8 @@ license: other
 configs:
 - config_name: default
 - config_name: dsk-dkmedier
+- config_name: dsk-salling
+- config_name: dsk-vejle
 annotations_creators:
 - no-annotation
 language_creators:
