@@ -18,14 +18,14 @@ from packaging.version import Version, InvalidVersion
 import plotly.express as px
 from datasets import Dataset, load_dataset
 
-from dynaword.datasheet import DataSheet
-from dynaword.descriptive_stats import DescriptiveStatsOverview
-from dynaword.git_utilities import (
+from datasheets.datasheet import DataSheet
+from datasheets.descriptive_stats import DescriptiveStatsOverview
+from datasheets.git_utilities import (
     check_is_ancestor,
     get_latest_revision,
 )
-from dynaword.paths import repo_path
-from dynaword.tables import create_overview_table, create_overview_table_str
+from datasheets.paths import repo_path
+from datasheets.tables import create_overview_table, create_overview_table_str
 
 logger = logging.getLogger(__name__)
 
@@ -156,7 +156,7 @@ def update_dataset(
     logger.info(
         f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
     )
-    ds = load_dataset(str(latest_version_dataset_path))
+    ds = load_dataset(str(latest_version_dataset_path), split="train")
     ds = cast(Dataset, ds)
     desc_stats = DescriptiveStatsOverview.from_dataset(ds)
     desc_stats.to_disk(desc_stats_path)

@@ -1,7 +1,7 @@
 import pytest
 
-from dynaword.datasheet import DEFAULT_SECTION_TAGS, DataSheet
-from dynaword.paths import repo_path
+from datasheets.datasheet import DEFAULT_SECTION_TAGS, DataSheet
+from datasheets.paths import repo_path
 
 from .conftest import DATASET_NAMES
 

@@ -3,7 +3,7 @@ from pathlib import Path
 import tomlkit
 from packaging.version import Version
 
-from dynaword.paths import pyproject_path, readme_path
+from datasheets.paths import pyproject_path, readme_path
 
 
 def get_version(pyproject_path: Path = pyproject_path) -> str:
