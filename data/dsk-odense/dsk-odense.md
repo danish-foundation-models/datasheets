@@ -1,25 +1,25 @@
 ---
-pretty_name: REPLACE
+pretty_name: DSK - Odense Kommune
 language:
 - da
 license: other
-license_name: REPLACE
+license_name: DSK - 1 
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
-- Other
+- News
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for DSK - Odense Kommune
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+A set of newsletters stories, covering events in Odense Municipality. Have been published on their website.
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+This data has been contributed by Odense Kommune through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
 
 
 ## Dataset Description

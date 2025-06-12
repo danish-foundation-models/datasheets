@@ -1,25 +1,26 @@
 ---
-pretty_name: REPLACE
+pretty_name: DSK - IDA
 language:
 - da
 license: other
-license_name: REPLACE
+license_name: DSK-1
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
+- News
 - Other
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for DSK - IDA
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+A collection of newsletters, articles and other texts produced by IDA.
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+This data has been contributed by IDA through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
 
 
 ## Dataset Description

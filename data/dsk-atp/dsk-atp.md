@@ -1,25 +1,30 @@
 ---
-pretty_name: REPLACE
+pretty_name: DSK - ATP
 language:
 - da
 license: other
-license_name: REPLACE
+license_name: DSK-1
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
-- Other
+- Web
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for DSK - ATP
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+A collection of crawled webpages that is managed by ATP.
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+The crawled pages comes from two full domains, and one partial:
+- [atp.dk](https://atp.dk) (Full)
+- [aes.dk](https://aes.dk) (Full)
+- [borger.dk](https://borger.dk) (Partial)
+
+This data has been contributed by ATP through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
 
 
 ## Dataset Description

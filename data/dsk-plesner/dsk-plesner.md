@@ -1,9 +1,9 @@
 ---
-pretty_name: REPLACE
+pretty_name: DSK - Plesner
 language:
 - da
 license: other
-license_name: REPLACE
+license_name: DSK - 1
 task_categories:
 - text-generation
 - fill-mask
@@ -11,15 +11,16 @@ task_ids:
 - language-modeling
 domains:
 - Other
+- Web
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for DSK - Plesner
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+A combination of crawled webpages from Plesners own website, and a series of internal documents outlining procedures.
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+This data has been contributed by Plesner through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
 
 
 ## Dataset Description

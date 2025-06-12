@@ -1,25 +1,25 @@
 ---
-pretty_name: REPLACE
+pretty_name: DSK - Dansk Erhverv
 language:
 - da
 license: other
-license_name: REPLACE
+license_name: DSK - 1 
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
-- Other
+- News
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for DSK - Dansk Erhverv
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide.  
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+This data has been contributed by Dansk Erhverv through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
 
 
 ## Dataset Description

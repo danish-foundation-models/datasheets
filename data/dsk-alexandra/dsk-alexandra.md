@@ -1,25 +1,25 @@
 ---
-pretty_name: REPLACE
+pretty_name: DSK - Alexandra Institutet
 language:
 - da
 license: other
-license_name: REPLACE
+license_name: DSK-1
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
-- Other
+- Web
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for DSK - Alexandra Institutet
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+A collection of crawled webpages that is managed by Alexandra Institutet.
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+This data has been contributed by Alexandra Institutet through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
 
 
 ## Dataset Description

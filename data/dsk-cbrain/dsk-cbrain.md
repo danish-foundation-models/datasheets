@@ -1,9 +1,9 @@
 ---
-pretty_name: REPLACE
+pretty_name: DSK - cBrain
 language:
 - da
 license: other
-license_name: REPLACE
+license_name: DSK-1
 task_categories:
 - text-generation
 - fill-mask
@@ -13,13 +13,13 @@ domains:
 - Other
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for DSK - cBrain
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+A collection of Marketing material, product guides, and datasheets produced by cBrain for their products.
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+This data has been contributed by cBrain through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk).
 
 
 ## Dataset Description
