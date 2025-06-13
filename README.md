@@ -42,7 +42,7 @@ This repository contains the datasheets for DFM. This repostory documents.
 <!-- START README TABLE -->
 |             |                                                                                                                                          |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| **Version** | 0.0.5 ([Changelog](/CHANGELOG.md))                                                                                                       |
+| **Version** | 0.0.6 ([Changelog](/CHANGELOG.md)) |
 | **License** | Non publicly available                                                                                                                   |
 | **Models**  | Currently not model is publicly available that is trained on the data                                                                    |
 | **Contact** | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
@@ -130,7 +130,7 @@ We generally split the dataset into two categories: Public release sources and r
 [DSK-1]: ./data/dsk-vitec/dsk-vitec.md#license-information
 <!-- END-MAIN TABLE -->
 
-**Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).
+<!-- **Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).
 
 
 | Source            | Description                                                                                                                                                                                              | N. Tokens | License                            | Version                                                                                                     |
@@ -152,7 +152,7 @@ Below follows a brief overview of the sources in the corpus along with their ind
 |:---------------------|:--------------------------------------------------------------------------|:----------|:-----------------|
 | [AI4WELFARE KB Data] | The Danish Web Archive (Netarkivet) collected by The Royal Danish Library | 1,200B    | For internal use |
 
-[AI4WELFARE KB Data]: data/ai4welfare-kb-data/ai4welfare-kb-data.md
+[AI4WELFARE KB Data]: data/ai4welfare-kb-data/ai4welfare-kb-data.md --> 
 
 
 ### Dataset Statistics
