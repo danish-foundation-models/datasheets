@@ -3,7 +3,7 @@ pretty_name: DSK - Odense Kommune
 language:
 - da
 license: other
-license_name: DSK - 1 
+license_name: DSK-1 
 task_categories:
 - text-generation
 - fill-mask
