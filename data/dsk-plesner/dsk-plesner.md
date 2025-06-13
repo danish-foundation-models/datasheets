@@ -27,7 +27,7 @@ This data has been contributed by Plesner through the [Dansk Sprogmodel Konsorti
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Other
+- **Domains**: Other, Web
 - **Number of samples**: 1.81K
 - **Number of tokens (Llama 3)**: 970.32K
 - **Average document length (characters)**: 2466.90
