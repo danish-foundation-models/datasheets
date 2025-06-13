@@ -2,6 +2,26 @@
 license: other
 configs:
 - config_name: default
+- config_name: dagw-adl
+- config_name: dagw-botxt
+- config_name: dagw-dannet
+- config_name: dagw-depbank
+- config_name: dagw-ep
+- config_name: dagw-ft
+- config_name: dagw-gutenberg
+- config_name: dagw-hest
+- config_name: dagw-jvj
+- config_name: dagw-naat
+- config_name: dagw-relig
+- config_name: dagw-retsinformationdk
+- config_name: dagw-retspraksis
+- config_name: dagw-skat
+- config_name: dagw-spont
+- config_name: dagw-synne
+- config_name: dagw-tv2r
+- config_name: dagw-wiki
+- config_name: dagw-wikibooks
+- config_name: dagw-wikisource
 - config_name: dsk-alexandra
 - config_name: dsk-atp
 - config_name: dsk-cbrain
@@ -64,9 +84,9 @@ This repository contains the datasheets for DFM. This repostory documents.
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Number of samples**: 159.39K
-- **Number of tokens (Llama 3)**: 124.90M
-- **Average document length (characters)**: 2544.52
+- **Number of samples**: 630.94K
+- **Number of tokens (Llama 3)**: 1.65B
+- **Average document length (characters)**: 7791.64
 <!-- END-DESC-STATS -->
 
 ### Summary
@@ -83,22 +103,62 @@ These datasets were collected and curated with the intention of developing langu
 We generally split the dataset into two categories: Public release sources and research sources. 
 
 <!-- START-MAIN TABLE -->
-| Source             | Description                                                                                                                                                                                             | Domain   | N. Tokens   | License   |
-|:-------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|:------------|:----------|
-| [dsk-dkmedier]     | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024                                                                                              | News     | 65.44M      | [DSK-1]   |
-| [dsk-vejle]        | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area            | Web      | 33.52M      | [DSK-1]   |
-| [dsk-salling]      | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages | Web      | 10.75M      | [DSK-1]   |
-| [dsk-atp]          | A collection of crawled webpages that is managed by ATP                                                                                                                                                 | Web      | 6.10M       | [DSK-1]   |
-| [dsk-cbrain]       | A collection of Marketing material, product guides, and datasheets produced by cBrain for their products                                                                                                | Other    | 4.19M       | [DSK-1]   |
-| [dsk-odense]       | A set of newsletters stories, covering events in Odense Municipality. Have been published on their website                                                                                              | News     | 1.19M       | [DSK-1]   |
-| [dsk-danskerhverv] | A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide                                                                                                | News     | 1.12M       | [DSK-1]   |
-| [dsk-plesner]      | A combination of crawled webpages from Plesners own website, and a series of internal documents outlining procedures                                                                                    | Other    | 970.32K     | [DSK-1]   |
-| [dsk-alexandra]    | A collection of crawled webpages that is managed by Alexandra Institutet                                                                                                                                | Web      | 602.39K     | [DSK-1]   |
-| [dsk-vitec]        | A collection of documents covering product descriptions, to newsletters, to internal documentation                                                                                                      | Other    | 540.80K     | [DSK-1]   |
-| [dsk-ida]          | A collection of newsletters, articles and other texts produced by IDA                                                                                                                                   | News     | 438.44K     | [DSK-1]   |
-| [dsk-hofor]        | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other    | 143.49K     | [DSK-1]   |
-| **Total**          |                                                                                                                                                                                                         |          | 125.00M     |           |
+| Source                   | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                |
+|:-------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:-----------------------|
+| [dagw-retsinformationdk] | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 516.47M     | [Danish Copyright Law] |
+| [dagw-hest]              | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                | Social Media | 389.31M     | [CC-0]                 |
+| [dagw-skat]              | Skat is the Danish tax authority. This dataset contains content from its website skat.dk                                                                                                                | Legal        | 122.11M     | [CC-0]                 |
+| [dagw-wiki]              | The Danish subsection of [wikipedia](https://en.wikipedia.org/wiki/Main_Page)                                                                                                                           | Encyclopedic | 121.74M     | [CC-0]                 |
+| [dagw-ft]                | Records from all meetings of The Danish parliament (Folketinget) in the parliament hall                                                                                                                 | Conversation | 114.09M     | [CC-0]                 |
+| [dagw-ep]                | The Danish subsection of [Europarl](https://aclanthology.org/2005.mtsummit-papers.11/)                                                                                                                  | Conversation | 100.88M     | [CC-0]                 |
+| [dsk-dkmedier]           | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024                                                                                              | News         | 65.44M      | [DSK-1]                |
+| [dagw-adl]               | Danish literature from 1700-2023 from the [Archive for Danish Literature](https://tekster.kb.dk/text?editorial=no&f%5Bsubcollection_ssi%5D%5B%5D=adl&match=one&search_field=Alt) (ADL)                  | Books        | 58.49M      | [CC-0]                 |
+| [dagw-retspraksis]       | Case law or judical practice in Denmark derived from [Retspraksis](https://da.wikipedia.org/wiki/Retspraksis)                                                                                           | Legal        | 57.08M      | [CC-0]                 |
+| [dsk-vejle]              | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area            | Web          | 33.52M      | [DSK-1]                |
+| [dagw-tv2r]              | Contemporary Danish newswire articles published between 2010 and 2019                                                                                                                                   | News         | 21.62M      | [CC-BY-SA 4.0]         |
+| [dsk-salling]            | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages | Web          | 10.75M      | [DSK-1]                |
+| [dagw-gutenberg]         | The Danish subsection from Project [Gutenberg](https://www.gutenberg.org)                                                                                                                               | Books        | 6.76M       | [Gutenberg]            |
+| [dagw-wikibooks]         | The Danish Subsection of [Wikibooks](https://www.wikibooks.org)                                                                                                                                         | Books        | 6.24M       | [CC-0]                 |
+| [dsk-atp]                | A collection of crawled webpages that is managed by ATP                                                                                                                                                 | Web          | 6.10M       | [DSK-1]                |
+| [dagw-wikisource]        | The Danish subsection of [Wikisource](https://en.wikisource.org/wiki/Main_Page)                                                                                                                         | Encyclopedic | 5.34M       | [CC-0]                 |
+| [dsk-cbrain]             | A collection of Marketing material, product guides, and datasheets produced by cBrain for their products                                                                                                | Other        | 4.19M       | [DSK-1]                |
+| [dagw-jvj]               | The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikipedia.org/wiki/Johannes_V._Jensen)                                                                                         | Books        | 3.55M       | [CC-BY-SA 4.0]         |
+| [dagw-spont]             | Conversational samples collected as a part of research projects at Aarhus University                                                                                                                    | Conversation | 1.56M       | [CC-0]                 |
+| [dagw-dannet]            | [DanNet](https://cst.ku.dk/projekter/dannet) is a Danish WordNet                                                                                                                                        | Other        | 1.47M       | [DanNet 1.0]           |
+| [dagw-relig]             | Danish religious text from the 1700-2022                                                                                                                                                                | Books        | 1.24M       | [CC-0]                 |
+| [dsk-odense]             | A set of newsletters stories, covering events in Odense Municipality. Have been published on their website                                                                                              | News         | 1.19M       | [DSK-1]                |
+| [dsk-danskerhverv]       | A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide                                                                                                | News         | 1.12M       | [DSK-1]                |
+| [dsk-plesner]            | A combination of crawled webpages from Plesners own website, and a series of internal documents outlining procedures                                                                                    | Other        | 970.32K     | [DSK-1]                |
+| [dagw-botxt]             | The Bornholmsk Ordbog Dictionary Project                                                                                                                                                                | Dialect      | 847.87K     | [CC-0]                 |
+| [dsk-alexandra]          | A collection of crawled webpages that is managed by Alexandra Institutet                                                                                                                                | Web          | 602.39K     | [DSK-1]                |
+| [dsk-vitec]              | A collection of documents covering product descriptions, to newsletters, to internal documentation                                                                                                      | Other        | 540.80K     | [DSK-1]                |
+| [dsk-ida]                | A collection of newsletters, articles and other texts produced by IDA                                                                                                                                   | News         | 438.44K     | [DSK-1]                |
+| [dagw-naat]              | Danish speeches from 1930-2022                                                                                                                                                                          | Conversation | 286.55K     | [CC-0]                 |
+| [dagw-depbank]           | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                  | Other        | 184.92K     | [CC-BY-SA 4.0]         |
+| [dsk-hofor]              | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other        | 143.49K     | [DSK-1]                |
+| [dagw-synne]             | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                 | Other        | 52.33K      | [CC-0]                 |
+| **Total**                |                                                                                                                                                                                                         |              | 1.65B       |                        |
 
+[dagw-adl]: data/dagw-adl/dagw-adl.md
+[dagw-botxt]: data/dagw-botxt/dagw-botxt.md
+[dagw-dannet]: data/dagw-dannet/dagw-dannet.md
+[dagw-depbank]: data/dagw-depbank/dagw-depbank.md
+[dagw-ep]: data/dagw-ep/dagw-ep.md
+[dagw-ft]: data/dagw-ft/dagw-ft.md
+[dagw-gutenberg]: data/dagw-gutenberg/dagw-gutenberg.md
+[dagw-hest]: data/dagw-hest/dagw-hest.md
+[dagw-jvj]: data/dagw-jvj/dagw-jvj.md
+[dagw-naat]: data/dagw-naat/dagw-naat.md
+[dagw-relig]: data/dagw-relig/dagw-relig.md
+[dagw-retsinformationdk]: data/dagw-retsinformationdk/dagw-retsinformationdk.md
+[dagw-retspraksis]: data/dagw-retspraksis/dagw-retspraksis.md
+[dagw-skat]: data/dagw-skat/dagw-skat.md
+[dagw-spont]: data/dagw-spont/dagw-spont.md
+[dagw-synne]: data/dagw-synne/dagw-synne.md
+[dagw-tv2r]: data/dagw-tv2r/dagw-tv2r.md
+[dagw-wiki]: data/dagw-wiki/dagw-wiki.md
+[dagw-wikibooks]: data/dagw-wikibooks/dagw-wikibooks.md
+[dagw-wikisource]: data/dagw-wikisource/dagw-wikisource.md
 [dsk-alexandra]: data/dsk-alexandra/dsk-alexandra.md
 [dsk-atp]: data/dsk-atp/dsk-atp.md
 [dsk-cbrain]: data/dsk-cbrain/dsk-cbrain.md
@@ -116,6 +176,9 @@ We generally split the dataset into two categories: Public release sources and r
 [CC-0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
 [CC-BY-SA 4.0]: https://creativecommons.org/licenses/by-sa/4.0/deed.en
 [Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0
+[DanNet 1.0]: ./data/dagw-dannet/dagw-dannet.md#license-information
+[Gutenberg]: ./data/dagw-gutenberg/dagw-gutenberg.md#license-information
+[Danish Copyright Law]: ./data/dagw-retsinformationdk/dagw-retsinformationdk.md#license-information
 [DSK-1]: ./data/dsk-alexandra/dsk-alexandra.md#license-information
 [DSK-1]: ./data/dsk-atp/dsk-atp.md#license-information
 [DSK-1]: ./data/dsk-cbrain/dsk-cbrain.md#license-information

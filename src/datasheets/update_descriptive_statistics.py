@@ -177,7 +177,7 @@ def update_dataset(
     logger.info(
         f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
     )
-    ds = load_dataset(**load_kwargs)
+    ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])
     ds = cast(Dataset, ds)
     desc_stats = DescriptiveStatsOverview.from_dataset(ds)
     desc_stats.to_disk(desc_stats_path)
