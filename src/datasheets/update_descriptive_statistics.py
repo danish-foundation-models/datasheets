@@ -172,7 +172,7 @@ def update_dataset(
 
         latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
 
-        load_kwargs["path"] = latest_version_dataset_path
+        load_kwargs["path"] = str(latest_version_dataset_path)
 
     logger.info(
         f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
