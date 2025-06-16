@@ -19,3 +19,7 @@ lint-check:
 bump-version:
 	@echo "--- 🚀 Bumping patch version ---"
 	uv run src/datasheets/bump_version.py
+
+generate-sheet:
+	@echo "--- 📊 Generating datasheet ---"
+	uv run src/datasheets/generate_sheet.py

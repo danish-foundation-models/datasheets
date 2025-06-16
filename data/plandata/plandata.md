@@ -1,27 +1,29 @@
 ---
-pretty_name: PRETTY_NAME
+pretty_name: Plandata
 language:
-- LANGUAGES
-license: LICENCE_ID
-license_name: LICENSE_NAME
+- da
+license: other
+license_name: Unknown
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
-- DOMAINS
+- Legal
 ---
 
-# Dataset Card for PRETTY_NAME
+
+# Dataset Card for Plandata
 
 <!-- START-SHORT DESCRIPTION -->
-SHORT_DESCRIPTION
+A collection of documents pertaining to the planning of municipalities (Lokalplaner), regions, etc. in Denmark.
 <!-- END-SHORT DESCRIPTION -->
 
-LONG_DESCRIPTION
+This dataset consists of current and historical planning documents that outlines the rules for areas in Denmark. 
+They are created by various administrative regions such as municipalities.
 
-<!-- CONTRIBUTION-PLACEHOLDER -->
+
 
 
 ## Dataset Description
@@ -61,8 +63,8 @@ An entry in the dataset consists of the following fields:
 # Additional Information
 
 ## License Information
-LICENSE_INFORMATION
+The license for this dataset is unknown. We have a written agreement with "Plan- og Landdistriktsstyrelsen" that we can use the data for training.
 
 ### Citation Information
 
-CITATION_INFORMATION
+No citation available.
