@@ -156,7 +156,7 @@ Below follows a brief overview of the sources in the corpus along with their ind
 
 
 ### Dataset Statistics
-The following plot show the domains distribution of the following within the dynaword:
+The following plot show the domains distribution of the datasets:
 
 <p align="center">
 <img src="./images/domain_distribution.png" width="400" style="margin-right: 10px;" />
