@@ -149,14 +149,34 @@ def update_dataset(
             )
             return
 
-    dataset_data_path = repo_path.parent / "datasets" / dataset_name / "original"
+    # Load the dataset using `data_files` when dataset_name = "default"
 
-    latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
+    load_kwargs = {"path": "parquet", "split": "train"}
+
+    if dataset_name == "default":
+        dataset_paths = []
+
+        for dataset in _datasets:
+            dataset_data_path = repo_path.parent / "datasets" / dataset / "original"
+            latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
+            if not latest_version_dataset_path:
+                logger.warning(f"Something went wrong with {dataset}")
+                continue
+
+            files = [str(p) for p in latest_version_dataset_path.glob("*.parquet")]
+            dataset_paths.extend(files)
+        load_kwargs["data_files"] = dataset_paths
+    else:
+        dataset_data_path = repo_path.parent / "datasets" / dataset_name / "original"
+
+        latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
+
+        load_kwargs["path"] = str(latest_version_dataset_path)
 
     logger.info(
         f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
     )
-    ds = load_dataset(str(latest_version_dataset_path), split="train")
+    ds = load_dataset(**load_kwargs)
     ds = cast(Dataset, ds)
     desc_stats = DescriptiveStatsOverview.from_dataset(ds)
     desc_stats.to_disk(desc_stats_path)

@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.6] - 2025-06-13
+
+### Added
+
+- Added the rest of the DSK datasets
+  - Alexandra Instittutet
+  - ATP
+  - cBrain
+  - Dansk Erhverv
+  - HOFOR
+  - IDA
+  - Odense Kommune
+  - Plesner
+  - Vitec
+- Domain distribution plot to main datasheet
+- Document length distribution plot to main datasheet
+- Full dataset descriptive stats in main datasheet
+- A minimal template + helper script used to more easily add datasets
+
+### Changed
+
+- Changed the logic of `src/datasheets/update_descriptive_statistics.py` to handle 
+  - loading all datasets and calculating descriptive statistics
+  - loading all dataset datasheets and adding main table to main datasheet
+
 ## [v0.0.5] - 2025-06-11
 
 ### Added
