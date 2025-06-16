@@ -36,6 +36,15 @@ configs:
 - config_name: dsk-vitec
 - config_name: plandata
 - config_name: ai-aktindsigt
+- config_name: danske-taler
+- config_name: fm-udgivelser
+- config_name: eur-lex-sum-da
+- config_name: memo
+- config_name: miljoeportalen
+- config_name: nordjyllandnews
+- config_name: nota
+- config_name: opensubtitles
+- config_name: cellar
 annotations_creators:
 - no-annotation
 language_creators:
@@ -86,9 +95,9 @@ This repository contains the datasheets for DFM. This repostory documents.
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Number of samples**: 946.13K
-- **Number of tokens (Llama 3)**: 3.63B
-- **Average document length (characters)**: 12579.34
+- **Number of samples**: 1.12M
+- **Number of tokens (Llama 3)**: 5.43B
+- **Average document length (characters)**: 15882.16
 <!-- END-DESC-STATS -->
 
 ### Summary
@@ -108,19 +117,28 @@ We generally split the dataset into two categories: Public release sources and r
 | Source                   | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                |
 |:-------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:-----------------------|
 | [plandata]               | A collection of documents pertaining to the planning of municipalities (Lokalplaner), regions, etc. in Denmark                                                                                          | Legal        | 1.84B       | [Unknown]              |
+| [cellar]                 | The official digital repository for European Union legal documents and open data                                                                                                                        | Legal        | 1.15B       | [CC BY-SA 4.0]         |
 | [dagw-retsinformationdk] | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 516.47M     | [Danish Copyright Law] |
 | [dagw-hest]              | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                | Social Media | 389.31M     | [CC-0]                 |
+| [opensubtitles]          | Danish subsection of [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles/corpus/version/OpenSubtitles)                                                                                                   | Conversation | 271.60M     | [CC0]                  |
 | [ai-aktindsigt]          | Multiple web scrapes from municipality websites collected as a part of the [AI-aktindsigt](https://ai-aktindsigt.dk) project                                                                            | Web          | 139.03M     | [Apache 2.0]           |
+| [miljoeportalen]         | Data from [Danmarks Miljøportalen](https://www.miljoeportal.dk/om-danmarks-miljoeportal/) (Denmark's Environment Portal)                                                                                | Legal        | 128.47M     | [CC0]                  |
 | [dagw-skat]              | Skat is the Danish tax authority. This dataset contains content from its website skat.dk                                                                                                                | Legal        | 122.11M     | [CC-0]                 |
 | [dagw-wiki]              | The Danish subsection of [wikipedia](https://en.wikipedia.org/wiki/Main_Page)                                                                                                                           | Encyclopedic | 121.74M     | [CC-0]                 |
 | [dagw-ft]                | Records from all meetings of The Danish parliament (Folketinget) in the parliament hall                                                                                                                 | Conversation | 114.09M     | [CC-0]                 |
+| [memo]                   | The MeMo corpus comprising almost all Danish novels from the period 1870-1899, known as the Modern Breakthrough                                                                                         | Books        | 110.23M     | [CC BY-SA 4.0]         |
 | [dagw-ep]                | The Danish subsection of [Europarl](https://aclanthology.org/2005.mtsummit-papers.11/)                                                                                                                  | Conversation | 100.88M     | [CC-0]                 |
 | [dsk-dkmedier]           | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024                                                                                              | News         | 65.44M      | [DSK-1]                |
 | [dagw-adl]               | Danish literature from 1700-2023 from the [Archive for Danish Literature](https://tekster.kb.dk/text?editorial=no&f%5Bsubcollection_ssi%5D%5B%5D=adl&match=one&search_field=Alt) (ADL)                  | Books        | 58.49M      | [CC-0]                 |
 | [dagw-retspraksis]       | Case law or judical practice in Denmark derived from [Retspraksis](https://da.wikipedia.org/wiki/Retspraksis)                                                                                           | Legal        | 57.08M      | [CC-0]                 |
+| [fm-udgivelser]          | The official publication series of the Danish Ministry of Finance containing economic analyses, budget proposals, and fiscal policy documents                                                           | Legal        | 50.33M      | [CC BY-SA 4.0]         |
+| [nordjyllandnews]        | Articles from the Danish Newspaper [TV2 Nord](https://www.tv2nord.dk)                                                                                                                                   | News         | 37.90M      | [CC0]                  |
 | [dsk-vejle]              | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area            | Web          | 33.52M      | [DSK-1]                |
+| [eur-lex-sum-da]         | The Danish subsection of EUR-lex SUM consisting of EU legislation paired with professionally written summaries                                                                                          | Legal        | 31.37M      | [CC BY-SA 4.0]         |
 | [dagw-tv2r]              | Contemporary Danish newswire articles published between 2010 and 2019                                                                                                                                   | News         | 21.62M      | [CC-BY-SA 4.0]         |
 | [dsk-salling]            | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages | Web          | 10.75M      | [DSK-1]                |
+| [danske-taler]           | Danish Speeches from [dansketaler.dk](https://www.dansketaler.dk)                                                                                                                                       | Conversation | 8.23M       | [CC0]                  |
+| [nota]                   | The text only part of the [Nota lyd- og tekstdata](https://sprogteknologi.dk/dataset/nota-lyd-og-tekstdata) dataset                                                                                     | Readaloud    | 7.30M       | [CC0]                  |
 | [dagw-gutenberg]         | The Danish subsection from Project [Gutenberg](https://www.gutenberg.org)                                                                                                                               | Books        | 6.76M       | [Gutenberg]            |
 | [dagw-wikibooks]         | The Danish Subsection of [Wikibooks](https://www.wikibooks.org)                                                                                                                                         | Books        | 6.24M       | [CC-0]                 |
 | [dsk-atp]                | A collection of crawled webpages that is managed by ATP                                                                                                                                                 | Web          | 6.10M       | [DSK-1]                |
@@ -141,7 +159,7 @@ We generally split the dataset into two categories: Public release sources and r
 | [dagw-depbank]           | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                  | Other        | 184.92K     | [CC-BY-SA 4.0]         |
 | [dsk-hofor]              | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other        | 143.49K     | [DSK-1]                |
 | [dagw-synne]             | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                 | Other        | 52.33K      | [CC-0]                 |
-| **Total**                |                                                                                                                                                                                                         |              | 3.63B       |                        |
+| **Total**                |                                                                                                                                                                                                         |              | 5.43B       |                        |
 
 [dagw-adl]: data/dagw-adl/dagw-adl.md
 [dagw-botxt]: data/dagw-botxt/dagw-botxt.md
@@ -177,6 +195,15 @@ We generally split the dataset into two categories: Public release sources and r
 [dsk-vitec]: data/dsk-vitec/dsk-vitec.md
 [plandata]: data/plandata/plandata.md
 [ai-aktindsigt]: data/ai-aktindsigt/ai-aktindsigt.md
+[danske-taler]: data/danske-taler/danske-taler.md
+[fm-udgivelser]: data/fm-udgivelser/fm-udgivelser.md
+[eur-lex-sum-da]: data/eur-lex-sum-da/eur-lex-sum-da.md
+[memo]: data/memo/memo.md
+[miljoeportalen]: data/miljoeportalen/miljoeportalen.md
+[nordjyllandnews]: data/nordjyllandnews/nordjyllandnews.md
+[nota]: data/nota/nota.md
+[opensubtitles]: data/opensubtitles/opensubtitles.md
+[cellar]: data/cellar/cellar.md
 
 
 [CC-0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
