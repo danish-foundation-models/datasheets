@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.8] - 2025-06-16
+
+### Added 
+
+- Added a script for simple datasheet generation
+  - `src/datasheets/generate_sheet.py`
+
+### Changed 
+
+- Refactored the convert script (`src/datasheets/convert.py`), to improve speed, and readability.
+
+### Removed
+
+- Deleted the `convert.sh` script
+
 ## [v0.0.7] - 2025-06-16
 
 ### Added

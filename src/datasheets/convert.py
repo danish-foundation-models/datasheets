@@ -22,6 +22,7 @@ _worker_tokenizer: Optional[PreTrainedTokenizerFast] = None
 
 # --- Multiprocessing Functions ---
 
+
 def initialize_worker_tokenizer() -> None:
     """
     Initializes the tokenizer for a single worker process.
@@ -50,6 +51,7 @@ def count_tokens_in_worker(text: str) -> int:
 
 
 # --- Core Logic Functions ---
+
 
 def process_batch(batch_of_texts: List[str]) -> List[int]:
     """
@@ -160,8 +162,7 @@ def combine_chunks_and_cleanup(
     print(f"Combining {len(chunk_files)} chunk files...")
     # Lazily scan and collect to be more memory efficient for many files
     final_df = pl.concat(
-        [pl.scan_parquet(p) for p in chunk_files],
-        how="vertical"
+        [pl.scan_parquet(p) for p in chunk_files], how="vertical"
     ).collect()
 
     final_output_path = os.path.join(output_dir, final_filename)
@@ -178,6 +179,7 @@ def combine_chunks_and_cleanup(
 
 
 # --- Main Execution ---
+
 
 def parse_arguments() -> argparse.Namespace:
     """Parses command-line arguments."""
