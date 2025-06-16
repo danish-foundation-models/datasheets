@@ -149,7 +149,6 @@ def update_dataset(
             )
             return
 
-    # TODO: Fix this!
     # Load the dataset using `data_files` when dataset_name = "default"
 
     load_kwargs = {"path": "parquet", "split": "train"}
