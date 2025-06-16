@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.7] - 2025-06-16
+
+### Added
+
+- Added all of the Danish Gigaword datasets
+  - dagw-adl
+  - dagw-botxt
+  - dagw-dannet
+  - dagw-depbank
+  - dagw-ep
+  - dagw-ft
+  - dagw-gutenberg
+  - dagw-hest
+  - dagw-jvj
+  - dagw-naat
+  - dagw-relig
+  - dagw-retsinformationdk
+  - dagw-retspraksis
+  - dagw-skat
+  - dagw-spont
+  - dagw-synne
+  - dagw-tv2r
+  - dagw-wiki
+  - dagw-wikibooks
+  - dagw-wikisource
+
 ## [v0.0.6] - 2025-06-13
 
 ### Added

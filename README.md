@@ -62,7 +62,7 @@ This repository contains the datasheets for DFM. This repostory documents.
 <!-- START README TABLE -->
 |             |                                                                                                                                          |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| **Version** | 0.0.6 ([Changelog](/CHANGELOG.md)) |
+| **Version** | 0.0.7 ([Changelog](/CHANGELOG.md)) |
 | **License** | Non publicly available                                                                                                                   |
 | **Models**  | Currently not model is publicly available that is trained on the data                                                                    |
 | **Contact** | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
@@ -219,7 +219,7 @@ Below follows a brief overview of the sources in the corpus along with their ind
 
 
 ### Dataset Statistics
-The following plot show the domains distribution of the following within the dynaword:
+The following plot show the domains distribution of the datasets:
 
 <p align="center">
 <img src="./images/domain_distribution.png" width="400" style="margin-right: 10px;" />
