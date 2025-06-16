@@ -1,5 +1,5 @@
 ---
-pretty_name: Plandata
+pretty_name: Plan- og Landdistriktsstyrelsen - Plandata.dk
 language:
 - da
 license: other
@@ -13,8 +13,7 @@ domains:
 - Legal
 ---
 
-
-# Dataset Card for Plandata
+# Dataset Card for Plan- og Landdistriktsstyrelsen - Plandata.dk
 
 <!-- START-SHORT DESCRIPTION -->
 A collection of documents pertaining to the planning of municipalities (Lokalplaner), regions, etc. in Denmark.
@@ -30,10 +29,10 @@ They are created by various administrative regions such as municipalities.
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Domains**: Legal
+- **Number of samples**: 114.28K
+- **Number of tokens (Llama 3)**: 1.84B
+- **Average document length (characters)**: 57558.79
 <!-- END-DESC-STATS -->
 
 
@@ -63,7 +62,7 @@ An entry in the dataset consists of the following fields:
 # Additional Information
 
 ## License Information
-The license for this dataset is unknown. We have a written agreement with "Plan- og Landdistriktsstyrelsen" that we can use the data for training.
+The license for this is we have a written agreement with "Plan- og Landdistriktsstyrelsen" that we can use the data for training.
 
 ### Citation Information
 

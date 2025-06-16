@@ -135,7 +135,7 @@ def update_dataset(
     desc_stats_path = metadata_base_path / desc_stats_filename
     markdown_path = metadata_base_path / readme_name
 
-    rev = get_latest_revision(repo_path)
+    rev = get_latest_revision(metadata_base_path)
 
     if desc_stats_path.exists() and force is False:
         with desc_stats_path.open("r") as f:

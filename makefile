@@ -23,3 +23,12 @@ bump-version:
 generate-sheet:
 	@echo "--- 📊 Generating datasheet ---"
 	uv run src/datasheets/generate_sheet.py
+
+update-stats:
+	@echo "--- 🚀 Recomputing Descriptive statistics ---"
+	uv run src/datasheets/update_descriptive_statistics.py
+
+add-datasheet:
+	@echo "--- 💾 Adding a new datasheet ---"
+	@$(MAKE) generate-sheet
+	@$(MAKE) update-stats

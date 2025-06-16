@@ -3,6 +3,9 @@ import yaml
 import re
 from pathlib import Path
 
+from datasheets.datasheet import DataSheet
+from datasheets.paths import repo_path
+
 # --- Configuration ---
 
 # Pre-defined choices for prompts
@@ -164,6 +167,18 @@ def main():
     
     # Write the file
     output_path.write_text(final_content, encoding="utf-8")
+
+    # Update main readme
+    main_sheet = DataSheet.load_from_path(repo_path / "README.md")
+    _datasets = [
+        cfg["config_name"]  # type: ignore
+        for cfg in main_sheet.frontmatter["configs"]  # type: ignore
+        if cfg["config_name"] != "default"  # type: ignore
+    ]
+
+    if user_data['dataset_id'] not in _datasets:
+        main_sheet.frontmatter['configs'].append({"config_name": user_data['dataset_id']})
+        main_sheet.write_to_path(repo_path / "README.md")
     
     print(f"\n✅ Successfully created dataset card at: {output_path}")
 

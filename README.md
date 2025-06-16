@@ -34,6 +34,8 @@ configs:
 - config_name: dsk-salling
 - config_name: dsk-vejle
 - config_name: dsk-vitec
+- config_name: plandata
+- config_name: ai-aktindsigt
 annotations_creators:
 - no-annotation
 language_creators:
@@ -84,9 +86,9 @@ This repository contains the datasheets for DFM. This repostory documents.
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Number of samples**: 630.94K
-- **Number of tokens (Llama 3)**: 1.65B
-- **Average document length (characters)**: 7791.64
+- **Number of samples**: 946.13K
+- **Number of tokens (Llama 3)**: 3.63B
+- **Average document length (characters)**: 12579.34
 <!-- END-DESC-STATS -->
 
 ### Summary
@@ -105,8 +107,10 @@ We generally split the dataset into two categories: Public release sources and r
 <!-- START-MAIN TABLE -->
 | Source                   | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                |
 |:-------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:-----------------------|
+| [plandata]               | A collection of documents pertaining to the planning of municipalities (Lokalplaner), regions, etc. in Denmark                                                                                          | Legal        | 1.84B       | [Unknown]              |
 | [dagw-retsinformationdk] | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 516.47M     | [Danish Copyright Law] |
 | [dagw-hest]              | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                | Social Media | 389.31M     | [CC-0]                 |
+| [ai-aktindsigt]          | Multiple web scrapes from municipality websites collected as a part of the [AI-aktindsigt](https://ai-aktindsigt.dk) project                                                                            | Web          | 139.03M     | [Apache 2.0]           |
 | [dagw-skat]              | Skat is the Danish tax authority. This dataset contains content from its website skat.dk                                                                                                                | Legal        | 122.11M     | [CC-0]                 |
 | [dagw-wiki]              | The Danish subsection of [wikipedia](https://en.wikipedia.org/wiki/Main_Page)                                                                                                                           | Encyclopedic | 121.74M     | [CC-0]                 |
 | [dagw-ft]                | Records from all meetings of The Danish parliament (Folketinget) in the parliament hall                                                                                                                 | Conversation | 114.09M     | [CC-0]                 |
@@ -137,7 +141,7 @@ We generally split the dataset into two categories: Public release sources and r
 | [dagw-depbank]           | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                  | Other        | 184.92K     | [CC-BY-SA 4.0]         |
 | [dsk-hofor]              | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other        | 143.49K     | [DSK-1]                |
 | [dagw-synne]             | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                 | Other        | 52.33K      | [CC-0]                 |
-| **Total**                |                                                                                                                                                                                                         |              | 1.65B       |                        |
+| **Total**                |                                                                                                                                                                                                         |              | 3.63B       |                        |
 
 [dagw-adl]: data/dagw-adl/dagw-adl.md
 [dagw-botxt]: data/dagw-botxt/dagw-botxt.md
@@ -171,6 +175,8 @@ We generally split the dataset into two categories: Public release sources and r
 [dsk-salling]: data/dsk-salling/dsk-salling.md
 [dsk-vejle]: data/dsk-vejle/dsk-vejle.md
 [dsk-vitec]: data/dsk-vitec/dsk-vitec.md
+[plandata]: data/plandata/plandata.md
+[ai-aktindsigt]: data/ai-aktindsigt/ai-aktindsigt.md
 
 
 [CC-0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
@@ -191,6 +197,7 @@ We generally split the dataset into two categories: Public release sources and r
 [DSK-1]: ./data/dsk-salling/dsk-salling.md#license-information
 [DSK-1]: ./data/dsk-vejle/dsk-vejle.md#license-information
 [DSK-1]: ./data/dsk-vitec/dsk-vitec.md#license-information
+[Unknown]: ./data/plandata/plandata.md#license-information
 <!-- END-MAIN TABLE -->
 
 <!-- **Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).
