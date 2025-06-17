@@ -3,7 +3,7 @@ pretty_name: OpenSubtitles
 language:
 - da
 license: cc0-1.0
-license_name: CC0
+license_name: CC-0
 task_categories:
 - text-generation
 - fill-mask
