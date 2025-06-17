@@ -5,12 +5,40 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.9] - 2025-06-17
+
+### Added
+
+- Added the rest of the dynaword datasets:
+  - cellar
+  - danske-taler
+  - eur-lex-sum-da
+  - fm-udgivelser
+  - memo
+  - miljoeportalen
+  - ncc_books
+  - ncc_maalfrid
+  - ncc_newspaper
+  - ncc_parliament
+  - nordjyllandnews
+  - nota
+  - opensubtitles
+
+### Changed
+
+- Fixed error in `src/datasheets/generate_sheet.py`. 
+  - Wrote CC0 instead of CC-0
+
+
 ## [v0.0.8] - 2025-06-16
 
 ### Added 
 
 - Added a script for simple datasheet generation
   - `src/datasheets/generate_sheet.py`
+- Added two datasets
+  - ai-aktindsigt
+  - plandata
 
 ### Changed 
 
@@ -25,26 +53,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ### Added
 
 - Added all of the Danish Gigaword datasets
-  - dagw-adl
-  - dagw-botxt
-  - dagw-dannet
-  - dagw-depbank
-  - dagw-ep
-  - dagw-ft
-  - dagw-gutenberg
-  - dagw-hest
-  - dagw-jvj
-  - dagw-naat
-  - dagw-relig
-  - dagw-retsinformationdk
-  - dagw-retspraksis
-  - dagw-skat
-  - dagw-spont
-  - dagw-synne
-  - dagw-tv2r
-  - dagw-wiki
-  - dagw-wikibooks
-  - dagw-wikisource
+  - adl
+  - botxt
+  - dannet
+  - depbank
+  - ep
+  - ft
+  - gutenberg
+  - hest
+  - jvj
+  - naat
+  - relig
+  - retsinformationdk
+  - retspraksis
+  - skat
+  - spont
+  - synne
+  - tv2r
+  - wiki
+  - wikibooks
+  - wikisource
 
 ## [v0.0.6] - 2025-06-13
 
