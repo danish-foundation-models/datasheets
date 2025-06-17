@@ -32,7 +32,7 @@ The dataset consists of multiple scrapes of municipal websites compiled in conne
 - **Language**: dan, dansk, Danish
 - **Domains**: Web
 - **Number of samples**: 200.91K
-- **Number of tokens (Llama 3)**: 139.03M
+- **Number of tokens (Llama 3)**: 139.23M
 - **Average document length (characters)**: 2030.75
 <!-- END-DESC-STATS -->
 

@@ -30,9 +30,9 @@ The Danish Subsection of [Wikibooks](https://www.wikibooks.org).
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
 - **Domains**: Books
-- **Number of samples**: 1.32K
+- **Number of samples**: 1.27K
 - **Number of tokens (Llama 3)**: 6.24M
-- **Average document length (characters)**: 13291.03
+- **Average document length (characters)**: 13821.60
 <!-- END-DESC-STATS -->
 
 

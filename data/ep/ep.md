@@ -34,9 +34,9 @@ The europarl is a corpus of parallel text in 11 languages from the proceedings o
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
 - **Domains**: Conversation, Spoken
-- **Number of samples**: 4.21K
-- **Number of tokens (Llama 3)**: 100.88M
-- **Average document length (characters)**: 74063.40
+- **Number of samples**: 3.93K
+- **Number of tokens (Llama 3)**: 100.84M
+- **Average document length (characters)**: 79360.12
 <!-- END-DESC-STATS -->
 
 

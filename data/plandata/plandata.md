@@ -30,9 +30,9 @@ They are created by various administrative regions such as municipalities.
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
 - **Domains**: Legal
-- **Number of samples**: 114.28K
-- **Number of tokens (Llama 3)**: 1.84B
-- **Average document length (characters)**: 57558.79
+- **Number of samples**: 101.19K
+- **Number of tokens (Llama 3)**: 1.03B
+- **Average document length (characters)**: 34778.50
 <!-- END-DESC-STATS -->
 
 

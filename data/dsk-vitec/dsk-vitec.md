@@ -27,10 +27,10 @@ This data has been contributed by Vitec through the [Dansk Sprogmodel Konsortium
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Other
-- **Number of samples**: 177
-- **Number of tokens (Llama 3)**: 540.80K
-- **Average document length (characters)**: 11761.64
+- **Domains**: Other, News
+- **Number of samples**: 175
+- **Number of tokens (Llama 3)**: 537.07K
+- **Average document length (characters)**: 11822.01
 <!-- END-DESC-STATS -->
 
 

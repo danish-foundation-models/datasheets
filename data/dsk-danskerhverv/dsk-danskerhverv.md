@@ -3,7 +3,7 @@ pretty_name: DSK - Dansk Erhverv
 language:
 - da
 license: other
-license_name: DSK-1 
+license_name: DSK-1
 task_categories:
 - text-generation
 - fill-mask
@@ -26,7 +26,7 @@ This data has been contributed by Dansk Erhverv through the [Dansk Sprogmodel Ko
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Other
+- **Domains**: News
 - **Number of samples**: 1.19K
 - **Number of tokens (Llama 3)**: 1.12M
 - **Average document length (characters)**: 2772.19

@@ -33,9 +33,9 @@ It encompasses the body of legal decisions made by Danish courts, which play a s
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
 - **Domains**: Legal
-- **Number of samples**: 4.41K
-- **Number of tokens (Llama 3)**: 57.08M
-- **Average document length (characters)**: 46323.67
+- **Number of samples**: 4.36K
+- **Number of tokens (Llama 3)**: 56.26M
+- **Average document length (characters)**: 46287.94
 <!-- END-DESC-STATS -->
 
 
