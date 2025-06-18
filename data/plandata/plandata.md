@@ -16,11 +16,12 @@ domains:
 # Dataset Card for Plan- og Landdistriktsstyrelsen - Plandata.dk
 
 <!-- START-SHORT DESCRIPTION -->
-A collection of documents pertaining to the planning of municipalities (Lokalplaner), regions, etc. in Denmark.
+A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types.
 <!-- END-SHORT DESCRIPTION -->
 
-This dataset consists of current and historical planning documents that outlines the rules for areas in Denmark. 
-They are created by various administrative regions such as municipalities.
+This dataset contains approximately 114,000 documents related to physical and strategic planning in Danish municipalities. The documents include local development plans (lokalplaner), municipal master plans (kommuneplaner), municipal planning strategies (kommuneplanstrategier), and other related planning documents that define the framework for land use, urban development, infrastructure, nature conservation, business, and residential areas.
+
+The documents are authored and adopted by municipal authorities and often carry legal weight, making them relevant in legal, administrative, and urban planning contexts.
 
 
 
@@ -48,6 +49,12 @@ An entry in the dataset consists of the following fields:
 
 
 ### Additional Processing
+
+The data have been pulled from [https://kort.plandata.dk](https://kort.plandata.dk/searchlist/#/). 
+
+Each document have been extracted from different file types (docx, pdf, etc.) but primarily PDF.
+
+For text extraction of PDF we have used the [marker](https://github.com/datalab-to/marker) tool. 
 
 
 ### Dataset Statistics
