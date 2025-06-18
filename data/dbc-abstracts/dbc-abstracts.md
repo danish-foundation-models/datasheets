@@ -16,7 +16,6 @@ domains:
 - Books
 ---
 
-
 # Dataset Card for DBC D1G1TAL - Abstracts 
 
 <!-- START-SHORT DESCRIPTION -->
@@ -34,10 +33,10 @@ The dataset includes abstracts created between 1991 and 2024.
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Domains**: Books
+- **Number of samples**: 9.89M
+- **Number of tokens (Llama 3)**: 694.42M
+- **Average document length (characters)**: 329.68
 <!-- END-DESC-STATS -->
 
 

@@ -17,7 +17,6 @@ domains:
 - Other
 ---
 
-
 # Dataset Card for DBC D1G1TAL - Reviews
 
 <!-- START-SHORT DESCRIPTION -->
@@ -33,10 +32,10 @@ The dataset contains thousands of reviews in Danish lamnugage, which are supplem
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Domains**: Books, Other
+- **Number of samples**: 213.93K
+- **Number of tokens (Llama 3)**: 53.96M
+- **Average document length (characters)**: 770.31
 <!-- END-DESC-STATS -->
 
 

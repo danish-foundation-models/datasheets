@@ -13,7 +13,6 @@ domains:
 - Books
 ---
 
-
 # Dataset Card for Danish Public Domain
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,10 +28,10 @@ The collection contains 3113 individual titles making up 322,141,347 words recov
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Domains**: Books
+- **Number of samples**: 33.28K
+- **Number of tokens (Llama 3)**: 532.43M
+- **Average document length (characters)**: 43746.79
 <!-- END-DESC-STATS -->
 
 

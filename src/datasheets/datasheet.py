@@ -158,9 +158,10 @@ class DataSheet(BaseModel):
             d_stats = descriptive_stats
 
         if len(self.language) != 1 and self.language[0] != "da":
-            raise NotImplementedError(
+            e = NotImplementedError(  # raise NotImplementedError(
                 "This script only handles the language codes 'da'"
             )
+            logger.warning(e)
         languages = "dan, dansk, Danish"
 
         package = dedent(f"""

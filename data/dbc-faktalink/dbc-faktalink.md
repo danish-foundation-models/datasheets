@@ -14,7 +14,6 @@ domains:
 - Encyclopedic
 ---
 
-
 # Dataset Card for DBC D1G1TAL - Faktalink
 
 <!-- START-SHORT DESCRIPTION -->
@@ -31,10 +30,10 @@ The dataset includes articles created between 1991 and 2024.
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Domains**: Books, Encyclopedic
+- **Number of samples**: 523
+- **Number of tokens (Llama 3)**: 1.99M
+- **Average document length (characters)**: 11717.05
 <!-- END-DESC-STATS -->
 
 

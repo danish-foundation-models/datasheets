@@ -13,7 +13,6 @@ domains:
 - Encyclopedic
 ---
 
-
 # Dataset Card for Scrape fra dokumentsamling på Vip Region Hovedstaden
 
 <!-- START-SHORT DESCRIPTION -->
@@ -37,10 +36,10 @@ Der gøres opmærksom på, at korpusset er udviklet med henblik på udvikling af
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Domains**: Encyclopedic
+- **Number of samples**: 24.00K
+- **Number of tokens (Llama 3)**: 27.04M
+- **Average document length (characters)**: 3328.91
 <!-- END-DESC-STATS -->
 
 
