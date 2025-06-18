@@ -29,7 +29,9 @@ def initialize_worker_tokenizer() -> None:
     This function is called once per process in the multiprocessing pool.
     """
     global _worker_tokenizer
-    _worker_tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=True)
+    _worker_tokenizer = AutoTokenizer.from_pretrained(
+        MODEL_NAME, use_fast=True, local_files_only=True
+    )
 
 
 def count_tokens_in_worker(text: str) -> int:

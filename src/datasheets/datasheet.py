@@ -48,7 +48,7 @@ class DataSheet(BaseModel):
     pretty_name: str
     license: LICENSE
     license_name: str | None
-    language: list[Literal["da"]]
+    language: list[Literal["da", "en", "se", "no"]]
     domains: list[DOMAIN] | None  # None for main readme # TODO: make literal
     path: Path
     frontmatter: dict[str, Any]
