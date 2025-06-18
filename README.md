@@ -49,14 +49,24 @@ configs:
 - config_name: ncc_maalfrid
 - config_name: ncc_newspaper
 - config_name: ncc_parliament
+- config_name: dbc-abstracts
+- config_name: dbc-faktalink
+- config_name: dbc-forfatterweb
+- config_name: dbc-reviews
+- config_name: scrape_hovedstaden
+- config_name: danish-pd
+- config_name: domsdatabasen
 annotations_creators:
 - no-annotation
 language_creators:
 - crowdsourced
 language:
 - da
+- en
+- 'no'
+- se
 multilinguality:
-- monolingual
+- multilingual
 source_datasets:
 - original
 task_categories:
