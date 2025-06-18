@@ -3,7 +3,7 @@ pretty_name: Plan- og Landdistriktsstyrelsen - Plandata.dk
 language:
 - da
 license: other
-license_name: Unknown
+license_name: Written agreement (public models, private data)
 task_categories:
 - text-generation
 - fill-mask
@@ -62,7 +62,11 @@ An entry in the dataset consists of the following fields:
 # Additional Information
 
 ## License Information
-The license for this is we have a written agreement with "Plan- og Landdistriktsstyrelsen" that we can use the data for training.
+The license for this is a written agreement with "Plan- og Landdistriktsstyrelsen" that we can use the data for training.
+
+> Plan- og Landdistriktsstyrelsen driver Plandata.dk mens det er kommunerne som planlægningsmyndighed, der udarbejder planerne.
+>
+> Planerne er offentligt tilgængelige, så dem henter I bare.
 
 ### Citation Information
 
