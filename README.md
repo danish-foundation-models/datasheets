@@ -55,7 +55,6 @@ configs:
 - config_name: dbc-reviews
 - config_name: scrape_hovedstaden
 - config_name: danish-pd
-- config_name: domsdatabasen
 annotations_creators:
 - no-annotation
 language_creators:
