@@ -27,7 +27,7 @@ DOMAINS_CHOICES = [
 LICENSE_ID_CHOICES = ["cc0-1.0", "cc-by-sa-4.0", "apache-2.0", "other"]
 LICENSE_NAMES_MAPPING = {
     "cc0-1.0": "CC-0",
-    "cc-by-sa-4.0": "CC BY-SA 4.0",
+    "cc-by-sa-4.0": "CC-BY-SA 4.0",
     "apache-2.0": "Apache 2.0",
 }
 

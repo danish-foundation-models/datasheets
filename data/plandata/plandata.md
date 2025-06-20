@@ -3,33 +3,36 @@ pretty_name: Plan- og Landdistriktsstyrelsen - Plandata.dk
 language:
 - da
 license: other
-license_name: Unknown
+license_name: Written agreement (public models, private data)
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
-- Legal
+- Governmental
 ---
 
 # Dataset Card for Plan- og Landdistriktsstyrelsen - Plandata.dk
 
 <!-- START-SHORT DESCRIPTION -->
-A collection of documents pertaining to the planning of municipalities (Lokalplaner), regions, etc. in Denmark.
+A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types.
 <!-- END-SHORT DESCRIPTION -->
 
-This dataset consists of current and historical planning documents that outlines the rules for areas in Denmark. 
-They are created by various administrative regions such as municipalities.
+This dataset provides access to approximately 114,000 documents pertaining to physical and strategic planning within Danish municipalities. All documents were retrieved from [https://kort.plandata.dk](https://kort.plandata.dk/searchlist/#/search/0165/20/V). The collection includes key planning instruments such as local development plans (lokalplaner), municipal master plans (kommuneplaner), municipal planning strategies (kommuneplanstrategier), and other related documents. Collectively, these define the regulatory framework for land use, urban development, infrastructure, nature conservation, and the allocation of business and residential areas.
 
+Authored and officially adopted by municipal authorities, these documents often possess significant legal weight, making them invaluable for legal, administrative, and urban planning analyses.
 
+**Kommuneplaner (municipal plans)** serve as comprehensive, long-term strategic blueprints for an entire municipality. Spanning multiple years, they establish overarching goals for land use, infrastructure, housing, economic development, and environmental protection, ensuring alignment with both national and regional policies while addressing specific local priorities.
+
+**Lokalplaner (local plans)** offer a more granular perspective, focusing on specific neighborhoods, districts, or individual development projects within a municipality. These plans typically detail zoning regulations, building standards, traffic management solutions, and precise land use specifications for smaller geographical areas.
 
 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Legal
+- **Domains**: Governmental
 - **Number of samples**: 101.19K
 - **Number of tokens (Llama 3)**: 1.03B
 - **Average document length (characters)**: 34778.50
@@ -49,6 +52,12 @@ An entry in the dataset consists of the following fields:
 
 ### Additional Processing
 
+The data have been pulled from [https://kort.plandata.dk](https://kort.plandata.dk/searchlist/#/). 
+
+Each document have been extracted from different file types (docx, pdf, etc.) but primarily PDF.
+
+For text extraction of PDF we have used the [marker](https://github.com/datalab-to/marker) tool. 
+
 
 ### Dataset Statistics
 
@@ -62,7 +71,11 @@ An entry in the dataset consists of the following fields:
 # Additional Information
 
 ## License Information
-The license for this is we have a written agreement with "Plan- og Landdistriktsstyrelsen" that we can use the data for training.
+The license for this is a written agreement with "Plan- og Landdistriktsstyrelsen" that we can use the data for training.
+
+> Plan- og Landdistriktsstyrelsen driver Plandata.dk mens det er kommunerne som planlægningsmyndighed, der udarbejder planerne.
+>
+> Planerne er offentligt tilgængelige, så dem henter I bare.
 
 ### Citation Information
 

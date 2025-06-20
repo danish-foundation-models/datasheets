@@ -257,7 +257,7 @@ We generally split the dataset into two categories: Public release sources and r
 [DSK-1]: ./data/dsk-salling/dsk-salling.md#license-information
 [DSK-1]: ./data/dsk-vejle/dsk-vejle.md#license-information
 [DSK-1]: ./data/dsk-vitec/dsk-vitec.md#license-information
-[Unknown]: ./data/plandata/plandata.md#license-information
+[Written agreement (public models, private data)]: ./data/plandata/plandata.md#license-information
 [NLOD 2.0]: ./data/ncc_maalfrid/ncc_maalfrid.md#license-information
 [NLOD 2.0]: ./data/ncc_parliament/ncc_parliament.md#license-information
 [Written agreement (public models, private data)]: ./data/dbc-abstracts/dbc-abstracts.md#license-information

@@ -3,7 +3,7 @@ pretty_name: Cellar
 language:
 - da
 license: cc-by-sa-4.0
-license_name: CC BY-SA 4.0
+license_name: CC-BY-SA 4.0
 task_categories:
 - text-generation
 - fill-mask
