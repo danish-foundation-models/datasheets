@@ -10,7 +10,7 @@ task_categories:
 task_ids:
 - language-modeling
 domains:
-- Legal
+- Governmental
 ---
 
 # Dataset Card for Plan- og Landdistriktsstyrelsen - Plandata.dk
@@ -19,21 +19,23 @@ domains:
 A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types.
 <!-- END-SHORT DESCRIPTION -->
 
-This dataset contains approximately 114,000 documents related to physical and strategic planning in Danish municipalities. The documents include local development plans (lokalplaner), municipal master plans (kommuneplaner), municipal planning strategies (kommuneplanstrategier), and other related planning documents that define the framework for land use, urban development, infrastructure, nature conservation, business, and residential areas.
+This dataset provides access to approximately 114,000 documents pertaining to physical and strategic planning within Danish municipalities. All documents were retrieved from [https://kort.plandata.dk](https://kort.plandata.dk/searchlist/#/search/0165/20/V). The collection includes key planning instruments such as local development plans (lokalplaner), municipal master plans (kommuneplaner), municipal planning strategies (kommuneplanstrategier), and other related documents. Collectively, these define the regulatory framework for land use, urban development, infrastructure, nature conservation, and the allocation of business and residential areas.
 
-The documents are authored and adopted by municipal authorities and often carry legal weight, making them relevant in legal, administrative, and urban planning contexts.
+Authored and officially adopted by municipal authorities, these documents often possess significant legal weight, making them invaluable for legal, administrative, and urban planning analyses.
 
+**Kommuneplaner (municipal plans)** serve as comprehensive, long-term strategic blueprints for an entire municipality. Spanning multiple years, they establish overarching goals for land use, infrastructure, housing, economic development, and environmental protection, ensuring alignment with both national and regional policies while addressing specific local priorities.
 
+**Lokalplaner (local plans)** offer a more granular perspective, focusing on specific neighborhoods, districts, or individual development projects within a municipality. These plans typically detail zoning regulations, building standards, traffic management solutions, and precise land use specifications for smaller geographical areas.
 
 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Legal
-- **Number of samples**: 114.28K
-- **Number of tokens (Llama 3)**: 1.84B
-- **Average document length (characters)**: 57558.79
+- **Domains**: Governmental
+- **Number of samples**: 101.19K
+- **Number of tokens (Llama 3)**: 1.03B
+- **Average document length (characters)**: 34778.50
 <!-- END-DESC-STATS -->
 
 

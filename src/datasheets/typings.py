@@ -5,6 +5,7 @@ DOMAIN = Literal[
     "Conversation",
     "Dialect",
     "Encyclopedic",
+    "Governmental",
     "Legal",
     "News",
     "Other",
