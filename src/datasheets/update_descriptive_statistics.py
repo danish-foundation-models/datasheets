@@ -135,7 +135,7 @@ def update_dataset(
     desc_stats_path = metadata_base_path / desc_stats_filename
     markdown_path = metadata_base_path / readme_name
 
-    rev = get_latest_revision(repo_path)
+    rev = get_latest_revision(metadata_base_path)
 
     if desc_stats_path.exists() and force is False:
         with desc_stats_path.open("r") as f:
@@ -176,7 +176,7 @@ def update_dataset(
     logger.info(
         f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
     )
-    ds = load_dataset(**load_kwargs)
+    ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])
     ds = cast(Dataset, ds)
     desc_stats = DescriptiveStatsOverview.from_dataset(ds)
     desc_stats.to_disk(desc_stats_path)

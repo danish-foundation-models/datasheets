@@ -19,3 +19,16 @@ lint-check:
 bump-version:
 	@echo "--- 🚀 Bumping patch version ---"
 	uv run src/datasheets/bump_version.py
+
+generate-sheet:
+	@echo "--- 📊 Generating datasheet ---"
+	uv run src/datasheets/generate_sheet.py
+
+update-stats:
+	@echo "--- 🚀 Recomputing Descriptive statistics ---"
+	uv run src/datasheets/update_descriptive_statistics.py
+
+add-datasheet:
+	@echo "--- 💾 Adding a new datasheet ---"
+	@$(MAKE) generate-sheet
+	@$(MAKE) update-stats

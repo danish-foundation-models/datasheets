@@ -1,6 +1,6 @@
 [project]
 name = "datasheets"
-version = "0.0.6"
+version = "0.0.9"
 description = "Project code for the dfm datasheets."
 readme = "README.md"
 requires-python = ">=3.12,<3.13" # 3.13 have issues with spacy and pytorch
@@ -16,7 +16,11 @@ dependencies = [
     "plotnine>=0.14.5",
     "plotly>=6.0.1",
     "nbformat>=4.2.0",
-    "kaleido==0.2.1"
+    "kaleido==0.2.1",
+    "questionary>=2.1.0",
+    "pyyaml>=6.0.2",
+    "tqdm>=4.67.1",
+    "polars>=1.30.0",
 ]
 
 [dependency-groups]

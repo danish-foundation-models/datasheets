@@ -5,6 +5,75 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.9] - 2025-06-17
+
+### Added
+
+- Added the rest of the dynaword datasets:
+  - cellar
+  - danske-taler
+  - eur-lex-sum-da
+  - fm-udgivelser
+  - memo
+  - miljoeportalen
+  - ncc_books
+  - ncc_maalfrid
+  - ncc_newspaper
+  - ncc_parliament
+  - nordjyllandnews
+  - nota
+  - opensubtitles
+
+### Changed
+
+- Fixed error in `src/datasheets/generate_sheet.py`. 
+  - Wrote CC0 instead of CC-0
+
+
+## [v0.0.8] - 2025-06-16
+
+### Added 
+
+- Added a script for simple datasheet generation
+  - `src/datasheets/generate_sheet.py`
+- Added two datasets
+  - ai-aktindsigt
+  - plandata
+
+### Changed 
+
+- Refactored the convert script (`src/datasheets/convert.py`), to improve speed, and readability.
+
+### Removed
+
+- Deleted the `convert.sh` script
+
+## [v0.0.7] - 2025-06-16
+
+### Added
+
+- Added all of the Danish Gigaword datasets
+  - adl
+  - botxt
+  - dannet
+  - depbank
+  - ep
+  - ft
+  - gutenberg
+  - hest
+  - jvj
+  - naat
+  - relig
+  - retsinformationdk
+  - retspraksis
+  - skat
+  - spont
+  - synne
+  - tv2r
+  - wiki
+  - wikibooks
+  - wikisource
+
 ## [v0.0.6] - 2025-06-13
 
 ### Added

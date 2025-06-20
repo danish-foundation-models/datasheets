@@ -1,25 +1,27 @@
 ---
-pretty_name: REPLACE
+pretty_name: PRETTY_NAME
 language:
-- da
-license: other
-license_name: REPLACE
+- LANGUAGES
+license: LICENCE_ID
+license_name: LICENSE_NAME
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
 domains:
-- Other # [REPLACE]
+- DOMAINS
 ---
 
-# Dataset Card for [REPLACE]
+# Dataset Card for PRETTY_NAME
 
 <!-- START-SHORT DESCRIPTION -->
-[WRITE THIS]
+SHORT_DESCRIPTION
 <!-- END-SHORT DESCRIPTION -->
 
-<!-- This data has been contributed by [COMPANY] through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). -->
+LONG_DESCRIPTION
+
+<!-- CONTRIBUTION-PLACEHOLDER -->
 
 
 ## Dataset Description
@@ -59,9 +61,8 @@ An entry in the dataset consists of the following fields:
 # Additional Information
 
 ## License Information
-This data is licensed under the data sharing agreement made between the contributor and the Dansk Sprogmodel Konsortium (DSK). 
-It allows DFM to use the data for training and releasing models, but prohibits DFM from releasing any of the data, except metadata describing the data. 
+LICENSE_INFORMATION
 
 ### Citation Information
 
-There is currently no citation for this dataset.
+CITATION_INFORMATION
