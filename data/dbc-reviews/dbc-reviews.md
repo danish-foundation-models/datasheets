@@ -23,7 +23,7 @@ domains:
 dbc-reviews consists of more than 214 thousand reviews of books and other materials collected and created by DBC D1G1TAL (former Dansk Bibliotekscenter).
 <!-- END-SHORT DESCRIPTION -->
 
-The dataset contains thousands of reviews in Danish lamnugage, which are supplemented by English, Norwegian, Swedish, German, and other language reviews. Instances that comprise this dataset represent reviews of books or other materials. The dataset includes reviews created between 1991 and 2024.
+The dataset contains thousands of reviews in the Danish language, which are supplemented by English, Norwegian, Swedish, German, and other language reviews. Instances that comprise this dataset represent reviews of books or other materials. The dataset includes reviews created between 1991 and 2024.
 
 
 
