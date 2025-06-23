@@ -4,7 +4,8 @@ language:
 - en
 - da
 - se
-- 'no'
+- nb
+- nn
 license: other
 license_name: Written agreement (public models, private data)
 task_categories:
