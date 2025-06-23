@@ -49,14 +49,24 @@ configs:
 - config_name: ncc_maalfrid
 - config_name: ncc_newspaper
 - config_name: ncc_parliament
+- config_name: dbc-abstracts
+- config_name: dbc-faktalink
+- config_name: dbc-forfatterweb
+- config_name: dbc-reviews
+- config_name: scrape_hovedstaden
+- config_name: danish-pd
 annotations_creators:
 - no-annotation
 language_creators:
 - crowdsourced
 language:
 - da
+- en
+- se
+- nb
+- nn
 multilinguality:
-- monolingual
+- multilingual
 source_datasets:
 - original
 task_categories:
@@ -77,7 +87,7 @@ This repository contains the datasheets for DFM. This repostory documents.
 <!-- START README TABLE -->
 |             |                                                                                                                                          |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| **Version** | 0.0.9 ([Changelog](/CHANGELOG.md)) |
+| **Version** | 0.0.11 ([Changelog](/CHANGELOG.md)) |
 | **License** | Non publicly available                                                                                                                   |
 | **Models**  | Currently not model is publicly available that is trained on the data                                                                    |
 | **Contact** | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
@@ -98,10 +108,10 @@ This repository contains the datasheets for DFM. This repostory documents.
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Number of samples**: 1.14M
-- **Number of tokens (Llama 3)**: 5.52B
-- **Average document length (characters)**: 15145.81
+- **Language**: Danish, English, Swedish, Norwegian Bokmål, Norwegian Nynorsk
+- **Number of samples**: 11.30M
+- **Number of tokens (Llama 3)**: 6.82B
+- **Average document length (characters)**: 1973.23
 <!-- END-DESC-STATS -->
 
 ### Summary
@@ -118,56 +128,62 @@ These datasets were collected and curated with the intention of developing langu
 We generally split the dataset into two categories: Public release sources and research sources. 
 
 <!-- START-MAIN TABLE -->
-| Source              | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                                           |
-|:--------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:--------------------------------------------------|
-| [cellar]            | The official digital repository for European Union legal documents and open data                                                                                                                        | Legal        | 1.15B       | [CC-BY-SA 4.0]                                    |
-| [plandata]          | A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types             | Governmental | 1.03B       | [Written agreement (public models, private data)] |
-| [ncc_books]         | Danish books extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from OCR                                                                               | Books        | 531.97M     | [CC-0]                                            |
-| [retsinformationdk] | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 516.47M     | [Danish Copyright Law]                            |
-| [hest]              | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                | Social Media | 389.31M     | [CC-0]                                            |
-| [ncc_parliament]    | Collections from the Norwegian parliament in Danish. Extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from ocr                                       | Other        | 338.87M     | [NLOD 2.0]                                        |
-| [opensubtitles]     | Danish subsection of [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles/corpus/version/OpenSubtitles)                                                                                                   | Conversation | 271.60M     | [CC-0]                                            |
-| [ai-aktindsigt]     | Multiple web scrapes from municipality websites collected as a part of the [AI-aktindsigt](https://ai-aktindsigt.dk) project                                                                            | Web          | 139.03M     | [Apache 2.0]                                      |
-| [miljoeportalen]    | Data from [Danmarks Miljøportalen](https://www.miljoeportal.dk/om-danmarks-miljoeportal/) (Denmark's Environment Portal)                                                                                | Legal        | 128.47M     | [CC-0]                                            |
-| [skat]              | Skat is the Danish tax authority. This dataset contains content from its website skat.dk                                                                                                                | Legal        | 122.11M     | [CC-0]                                            |
-| [wiki]              | The Danish subsection of [wikipedia](https://en.wikipedia.org/wiki/Main_Page)                                                                                                                           | Encyclopedic | 121.74M     | [CC-0]                                            |
-| [ft]                | Records from all meetings of The Danish parliament (Folketinget) in the parliament hall                                                                                                                 | Conversation | 114.09M     | [CC-0]                                            |
-| [memo]              | The MeMo corpus comprising almost all Danish novels from the period 1870-1899, known as the Modern Breakthrough                                                                                         | Books        | 110.23M     | [CC-BY-SA 4.0]                                    |
-| [ep]                | The Danish subsection of [Europarl](https://aclanthology.org/2005.mtsummit-papers.11/)                                                                                                                  | Conversation | 100.88M     | [CC-0]                                            |
-| [dsk-dkmedier]      | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024                                                                                              | News         | 65.44M      | [DSK-1]                                           |
-| [adl]               | Danish literature from 1700-2023 from the [Archive for Danish Literature](https://tekster.kb.dk/text?editorial=no&f%5Bsubcollection_ssi%5D%5B%5D=adl&match=one&search_field=Alt) (ADL)                  | Books        | 58.49M      | [CC-0]                                            |
-| [retspraksis]       | Case law or judical practice in Denmark derived from [Retspraksis](https://da.wikipedia.org/wiki/Retspraksis)                                                                                           | Legal        | 57.08M      | [CC-0]                                            |
-| [fm-udgivelser]     | The official publication series of the Danish Ministry of Finance containing economic analyses, budget proposals, and fiscal policy documents                                                           | Legal        | 50.33M      | [CC-BY-SA 4.0]                                    |
-| [nordjyllandnews]   | Articles from the Danish Newspaper [TV2 Nord](https://www.tv2nord.dk)                                                                                                                                   | News         | 37.90M      | [CC-0]                                            |
-| [dsk-vejle]         | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area            | Web          | 33.52M      | [DSK-1]                                           |
-| [eur-lex-sum-da]    | The Danish subsection of EUR-lex SUM consisting of EU legislation paired with professionally written summaries                                                                                          | Legal        | 31.37M      | [CC-BY-SA 4.0]                                    |
-| [ncc_maalfrid]      | Danish content from Norwegian institutions websites                                                                                                                                                     | Web          | 29.26M      | [NLOD 2.0]                                        |
-| [tv2r]              | Contemporary Danish newswire articles published between 2010 and 2019                                                                                                                                   | News         | 21.62M      | [CC-BY-SA 4.0]                                    |
-| [dsk-salling]       | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages | Web          | 10.75M      | [DSK-1]                                           |
-| [danske-taler]      | Danish Speeches from [dansketaler.dk](https://www.dansketaler.dk)                                                                                                                                       | Conversation | 8.23M       | [CC-0]                                            |
-| [nota]              | The text only part of the [Nota lyd- og tekstdata](https://sprogteknologi.dk/dataset/nota-lyd-og-tekstdata) dataset                                                                                     | Readaloud    | 7.30M       | [CC-0]                                            |
-| [gutenberg]         | The Danish subsection from Project [Gutenberg](https://www.gutenberg.org)                                                                                                                               | Books        | 6.76M       | [Gutenberg]                                       |
-| [wikibooks]         | The Danish Subsection of [Wikibooks](https://www.wikibooks.org)                                                                                                                                         | Books        | 6.24M       | [CC-0]                                            |
-| [dsk-atp]           | A collection of crawled webpages that is managed by ATP                                                                                                                                                 | Web          | 6.10M       | [DSK-1]                                           |
-| [wikisource]        | The Danish subsection of [Wikisource](https://en.wikisource.org/wiki/Main_Page)                                                                                                                         | Encyclopedic | 5.34M       | [CC-0]                                            |
-| [dsk-cbrain]        | A collection of Marketing material, product guides, and datasheets produced by cBrain for their products                                                                                                | Other        | 4.19M       | [DSK-1]                                           |
-| [jvj]               | The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikipedia.org/wiki/Johannes_V._Jensen)                                                                                         | Books        | 3.55M       | [CC-BY-SA 4.0]                                    |
-| [spont]             | Conversational samples collected as a part of research projects at Aarhus University                                                                                                                    | Conversation | 1.56M       | [CC-0]                                            |
-| [dannet]            | [DanNet](https://cst.ku.dk/projekter/dannet) is a Danish WordNet                                                                                                                                        | Other        | 1.47M       | [DanNet 1.0]                                      |
-| [relig]             | Danish religious text from the 1700-2022                                                                                                                                                                | Books        | 1.24M       | [CC-0]                                            |
-| [dsk-odense]        | A set of newsletters stories, covering events in Odense Municipality. Have been published on their website                                                                                              | News         | 1.19M       | [DSK-1]                                           |
-| [dsk-danskerhverv]  | A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide                                                                                                | News         | 1.12M       | [DSK-1]                                           |
-| [ncc_newspaper]     | OCR'd Newspapers derived from [NCC](https://huggingface.co/datasets/NbAiLab/NCC)                                                                                                                        | News         | 1.05M       | [CC-0]                                            |
-| [dsk-plesner]       | A combination of crawled webpages from Plesners own website, and a series of internal documents outlining procedures                                                                                    | Other        | 970.32K     | [DSK-1]                                           |
-| [botxt]             | The Bornholmsk Ordbog Dictionary Project                                                                                                                                                                | Dialect      | 847.87K     | [CC-0]                                            |
-| [dsk-alexandra]     | A collection of crawled webpages that is managed by Alexandra Institutet                                                                                                                                | Web          | 602.39K     | [DSK-1]                                           |
-| [dsk-vitec]         | A collection of documents covering product descriptions, to newsletters, to internal documentation                                                                                                      | Other        | 540.80K     | [DSK-1]                                           |
-| [dsk-ida]           | A collection of newsletters, articles and other texts produced by IDA                                                                                                                                   | News         | 438.44K     | [DSK-1]                                           |
-| [naat]              | Danish speeches from 1930-2022                                                                                                                                                                          | Conversation | 286.55K     | [CC-0]                                            |
-| [depbank]           | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                  | Other        | 184.92K     | [CC-BY-SA 4.0]                                    |
-| [dsk-hofor]         | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other        | 143.49K     | [DSK-1]                                           |
-| [synne]             | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                 | Other        | 52.33K      | [CC-0]                                            |
-| **Total**           |                                                                                                                                                                                                         |              | 5.52B       |                                                   |
+| Source               | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                                           |
+|:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:--------------------------------------------------|
+| [cellar]             | The official digital repository for European Union legal documents and open data                                                                                                                        | Legal        | 1.15B       | [CC-BY-SA 4.0]                                    |
+| [plandata]           | A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types             | Governmental | 1.03B       | [Written agreement (public models, private data)] |
+| [dbc-abstracts]      | dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                  | Books        | 694.42M     | [Written agreement (public models, private data)] |
+| [danish-pd]          | **PleIAs - Danish Public Domain** is a large collection aiming to aggregate all Danish monographies and periodicals in the public domain                                                                | Books        | 532.43M     | [Public Domain]                                   |
+| [ncc_books]          | Danish books extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from OCR                                                                               | Books        | 531.97M     | [CC-0]                                            |
+| [retsinformationdk]  | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 516.35M     | [Danish Copyright Law]                            |
+| [hest]               | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                | Social Media | 389.32M     | [CC-0]                                            |
+| [ncc_parliament]     | Collections from the Norwegian parliament in Danish. Extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from ocr                                       | Other        | 338.87M     | [NLOD 2.0]                                        |
+| [opensubtitles]      | Danish subsection of [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles/corpus/version/OpenSubtitles)                                                                                                   | Conversation | 271.60M     | [CC-0]                                            |
+| [ai-aktindsigt]      | Multiple web scrapes from municipality websites collected as a part of the [AI-aktindsigt](https://ai-aktindsigt.dk) project                                                                            | Web          | 139.23M     | [Apache 2.0]                                      |
+| [miljoeportalen]     | Data from [Danmarks Miljøportalen](https://www.miljoeportal.dk/om-danmarks-miljoeportal/) (Denmark's Environment Portal)                                                                                | Legal        | 127.38M     | [CC-0]                                            |
+| [skat]               | Skat is the Danish tax authority. This dataset contains content from its website skat.dk                                                                                                                | Legal        | 122.11M     | [CC-0]                                            |
+| [wiki]               | The Danish subsection of [wikipedia](https://en.wikipedia.org/wiki/Main_Page)                                                                                                                           | Encyclopedic | 122.00M     | [CC-0]                                            |
+| [ft]                 | Records from all meetings of The Danish parliament (Folketinget) in the parliament hall                                                                                                                 | Conversation | 114.09M     | [CC-0]                                            |
+| [memo]               | The MeMo corpus comprising almost all Danish novels from the period 1870-1899, known as the Modern Breakthrough                                                                                         | Books        | 110.23M     | [CC-BY-SA 4.0]                                    |
+| [ep]                 | The Danish subsection of [Europarl](https://aclanthology.org/2005.mtsummit-papers.11/)                                                                                                                  | Conversation | 100.84M     | [CC-0]                                            |
+| [dsk-dkmedier]       | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024                                                                                              | News         | 65.33M      | [DSK-1]                                           |
+| [adl]                | Danish literature from 1700-2023 from the [Archive for Danish Literature](https://tekster.kb.dk/text?editorial=no&f%5Bsubcollection_ssi%5D%5B%5D=adl&match=one&search_field=Alt) (ADL)                  | Books        | 58.49M      | [CC-0]                                            |
+| [retspraksis]        | Case law or judical practice in Denmark derived from [Retspraksis](https://da.wikipedia.org/wiki/Retspraksis)                                                                                           | Legal        | 56.26M      | [CC-0]                                            |
+| [dbc-reviews]        | dbc-reviews consists of more than 214 thousand reviews of books and other materials collected and created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                | Books        | 53.96M      | [Written agreement (public models, private data)] |
+| [fm-udgivelser]      | The official publication series of the Danish Ministry of Finance containing economic analyses, budget proposals, and fiscal policy documents                                                           | Legal        | 50.33M      | [CC-BY-SA 4.0]                                    |
+| [nordjyllandnews]    | Articles from the Danish Newspaper [TV2 Nord](https://www.tv2nord.dk)                                                                                                                                   | News         | 37.90M      | [CC-0]                                            |
+| [eur-lex-sum-da]     | The Danish subsection of EUR-lex SUM consisting of EU legislation paired with professionally written summaries                                                                                          | Legal        | 31.37M      | [CC-BY-SA 4.0]                                    |
+| [ncc_maalfrid]       | Danish content from Norwegian institutions websites                                                                                                                                                     | Web          | 29.26M      | [NLOD 2.0]                                        |
+| [dsk-vejle]          | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area            | Web          | 27.99M      | [DSK-1]                                           |
+| [scrape_hovedstaden] | Digitaliseringsstyrelsen udgiver ét datasæt på baggrund af offentliggjorte tekster fra Region Hovedstadens dokumentsamling                                                                              | Encyclopedic | 27.04M      | [CC-0]                                            |
+| [tv2r]               | Contemporary Danish newswire articles published between 2010 and 2019                                                                                                                                   | News         | 21.67M      | [CC-BY-SA 4.0]                                    |
+| [dsk-salling]        | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages | Web          | 9.79M       | [DSK-1]                                           |
+| [danske-taler]       | Danish Speeches from [dansketaler.dk](https://www.dansketaler.dk)                                                                                                                                       | Conversation | 8.23M       | [CC-0]                                            |
+| [nota]               | The text only part of the [Nota lyd- og tekstdata](https://sprogteknologi.dk/dataset/nota-lyd-og-tekstdata) dataset                                                                                     | Readaloud    | 7.30M       | [CC-0]                                            |
+| [gutenberg]          | The Danish subsection from Project [Gutenberg](https://www.gutenberg.org)                                                                                                                               | Books        | 6.76M       | [Gutenberg]                                       |
+| [wikibooks]          | The Danish Subsection of [Wikibooks](https://www.wikibooks.org)                                                                                                                                         | Books        | 6.24M       | [CC-0]                                            |
+| [wikisource]         | The Danish subsection of [Wikisource](https://en.wikisource.org/wiki/Main_Page)                                                                                                                         | Encyclopedic | 5.34M       | [CC-0]                                            |
+| [dsk-cbrain]         | A collection of Marketing material, product guides, and datasheets produced by cBrain for their products                                                                                                | Other        | 4.19M       | [DSK-1]                                           |
+| [jvj]                | The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikipedia.org/wiki/Johannes_V._Jensen)                                                                                         | Books        | 3.55M       | [CC-BY-SA 4.0]                                    |
+| [dsk-atp]            | A collection of crawled webpages that is managed by ATP                                                                                                                                                 | Web          | 2.86M       | [DSK-1]                                           |
+| [dbc-faktalink]      | dbc-faktalink consists of more than 5 hundred articles created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                                                                 | Encyclopedic | 1.99M       | [Written agreement (public models, private data)] |
+| [spont]              | Conversational samples collected as a part of research projects at Aarhus University                                                                                                                    | Conversation | 1.56M       | [CC-0]                                            |
+| [dannet]             | [DanNet](https://cst.ku.dk/projekter/dannet) is a Danish WordNet                                                                                                                                        | Other        | 1.48M       | [DanNet 1.0]                                      |
+| [dbc-forfatterweb]   | dbc-forfatterweb consists of more than 1 thousand articles created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                                                       | Encyclopedic | 1.42M       | [Written agreement (public models, private data)] |
+| [relig]              | Danish religious text from the 1700-2022                                                                                                                                                                | Books        | 1.24M       | [CC-0]                                            |
+| [dsk-odense]         | A set of newsletters stories, covering events in Odense Municipality. Have been published on their website                                                                                              | News         | 1.18M       | [DSK-1]                                           |
+| [dsk-danskerhverv]   | A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide                                                                                                | News         | 1.12M       | [DSK-1]                                           |
+| [ncc_newspaper]      | OCR'd Newspapers derived from [NCC](https://huggingface.co/datasets/NbAiLab/NCC)                                                                                                                        | News         | 1.05M       | [CC-0]                                            |
+| [dsk-plesner]        | A combination of crawled webpages from Plesners own website, and a series of internal documents outlining procedures                                                                                    | Other        | 896.33K     | [DSK-1]                                           |
+| [botxt]              | The Bornholmsk Ordbog Dictionary Project                                                                                                                                                                | Dialect      | 847.87K     | [CC-0]                                            |
+| [dsk-alexandra]      | A collection of crawled webpages that is managed by Alexandra Institutet                                                                                                                                | Web          | 584.35K     | [DSK-1]                                           |
+| [dsk-vitec]          | A collection of documents covering product descriptions, to newsletters, to internal documentation                                                                                                      | Other        | 537.07K     | [DSK-1]                                           |
+| [dsk-ida]            | A collection of newsletters, articles and other texts produced by IDA                                                                                                                                   | News         | 436.74K     | [DSK-1]                                           |
+| [naat]               | Danish speeches from 1930-2022                                                                                                                                                                          | Conversation | 286.55K     | [CC-0]                                            |
+| [depbank]            | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                  | Other        | 184.92K     | [CC-BY-SA 4.0]                                    |
+| [dsk-hofor]          | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other        | 143.49K     | [DSK-1]                                           |
+| [synne]              | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                 | Other        | 52.02K      | [CC-0]                                            |
+| **Total**            |                                                                                                                                                                                                         |              | 6.82B       |                                                   |
 
 [adl]: data/adl/adl.md
 [botxt]: data/botxt/botxt.md
@@ -216,6 +232,12 @@ We generally split the dataset into two categories: Public release sources and r
 [ncc_maalfrid]: data/ncc_maalfrid/ncc_maalfrid.md
 [ncc_newspaper]: data/ncc_newspaper/ncc_newspaper.md
 [ncc_parliament]: data/ncc_parliament/ncc_parliament.md
+[dbc-abstracts]: data/dbc-abstracts/dbc-abstracts.md
+[dbc-faktalink]: data/dbc-faktalink/dbc-faktalink.md
+[dbc-forfatterweb]: data/dbc-forfatterweb/dbc-forfatterweb.md
+[dbc-reviews]: data/dbc-reviews/dbc-reviews.md
+[scrape_hovedstaden]: data/scrape_hovedstaden/scrape_hovedstaden.md
+[danish-pd]: data/danish-pd/danish-pd.md
 
 
 [CC-0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
@@ -239,6 +261,11 @@ We generally split the dataset into two categories: Public release sources and r
 [Written agreement (public models, private data)]: ./data/plandata/plandata.md#license-information
 [NLOD 2.0]: ./data/ncc_maalfrid/ncc_maalfrid.md#license-information
 [NLOD 2.0]: ./data/ncc_parliament/ncc_parliament.md#license-information
+[Written agreement (public models, private data)]: ./data/dbc-abstracts/dbc-abstracts.md#license-information
+[Written agreement (public models, private data)]: ./data/dbc-faktalink/dbc-faktalink.md#license-information
+[Written agreement (public models, private data)]: ./data/dbc-forfatterweb/dbc-forfatterweb.md#license-information
+[Written agreement (public models, private data)]: ./data/dbc-reviews/dbc-reviews.md#license-information
+[Public Domain]: ./data/danish-pd/danish-pd.md#license-information
 <!-- END-MAIN TABLE -->
 
 <!-- **Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).

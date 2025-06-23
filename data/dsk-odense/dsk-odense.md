@@ -3,7 +3,7 @@ pretty_name: DSK - Odense Kommune
 language:
 - da
 license: other
-license_name: DSK-1 
+license_name: DSK-1
 task_categories:
 - text-generation
 - fill-mask
@@ -26,10 +26,10 @@ This data has been contributed by Odense Kommune through the [Dansk Sprogmodel K
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Other
-- **Number of samples**: 1.14K
-- **Number of tokens (Llama 3)**: 1.19M
-- **Average document length (characters)**: 3149.65
+- **Domains**: News
+- **Number of samples**: 1.13K
+- **Number of tokens (Llama 3)**: 1.18M
+- **Average document length (characters)**: 3147.24
 <!-- END-DESC-STATS -->
 
 

@@ -33,9 +33,9 @@ A WordNet is a lexico-semantic network which show the meaning and the relation b
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
 - **Domains**: Other
-- **Number of samples**: 49.04K
-- **Number of tokens (Llama 3)**: 1.47M
-- **Average document length (characters)**: 90.80
+- **Number of samples**: 47.60K
+- **Number of tokens (Llama 3)**: 1.48M
+- **Average document length (characters)**: 90.88
 <!-- END-DESC-STATS -->
 
 

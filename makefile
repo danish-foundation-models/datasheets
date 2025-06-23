@@ -6,6 +6,10 @@ test:
 	@echo "--- 🧪 Running tests ---"
 	uv run pytest src/tests/ | tee test_results.log
 
+test-sheets:
+	@echo "--- 🧪 Running tests on datasheets ---"
+	uv run pytest src/tests/test_datasheets.py | tee test_results.log
+
 lint:
 	@echo "--- 🧹 Running linters ---"
 	uv run ruff format . 			# running ruff formatting

@@ -1,6 +1,7 @@
 import logging
-from datetime import date
+from datetime import date, datetime
 from enum import Enum
+from typing import Union
 
 from pydantic import BaseModel, BeforeValidator
 from typing_extensions import Annotated
@@ -18,8 +19,11 @@ class SampleSchema(BaseModel):
     id: str
     text: str
     source: str
-    added: date
-    created: Annotated[tuple[date, date], BeforeValidator(ensure_tuple)]
+    added: Union[date, datetime]  # Accepts either a date or datetime
+    created: Annotated[
+        tuple[Union[date, datetime], Union[date, datetime]],
+        BeforeValidator(ensure_tuple),
+    ]
     token_count: int
 
 

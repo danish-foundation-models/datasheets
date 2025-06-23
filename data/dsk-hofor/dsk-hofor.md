@@ -27,7 +27,7 @@ This data has been contributed by HOFOR through the [Dansk Sprogmodel Konsortium
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Other
+- **Domains**: Other, News
 - **Number of samples**: 11
 - **Number of tokens (Llama 3)**: 143.49K
 - **Average document length (characters)**: 38505.27

@@ -31,10 +31,10 @@ This data has been contributed by ATP through the [Dansk Sprogmodel Konsortium](
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Other
-- **Number of samples**: 3.96K
-- **Number of tokens (Llama 3)**: 6.10M
-- **Average document length (characters)**: 3336.89
+- **Domains**: Web
+- **Number of samples**: 1.90K
+- **Number of tokens (Llama 3)**: 2.86M
+- **Average document length (characters)**: 3286.98
 <!-- END-DESC-STATS -->
 
 

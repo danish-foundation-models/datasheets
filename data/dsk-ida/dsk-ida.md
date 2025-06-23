@@ -27,10 +27,10 @@ This data has been contributed by IDA through the [Dansk Sprogmodel Konsortium](
 
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
-- **Domains**: Other
-- **Number of samples**: 45
-- **Number of tokens (Llama 3)**: 438.44K
-- **Average document length (characters)**: 32772.96
+- **Domains**: News, Other
+- **Number of samples**: 44
+- **Number of tokens (Llama 3)**: 436.74K
+- **Average document length (characters)**: 33397.14
 <!-- END-DESC-STATS -->
 
 

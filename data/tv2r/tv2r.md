@@ -32,9 +32,9 @@ It contains articles of regional interest, written following editorial standards
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
 - **Domains**: News
-- **Number of samples**: 49.14K
-- **Number of tokens (Llama 3)**: 21.62M
-- **Average document length (characters)**: 1303.38
+- **Number of samples**: 49.13K
+- **Number of tokens (Llama 3)**: 21.67M
+- **Average document length (characters)**: 1303.39
 <!-- END-DESC-STATS -->
 
 

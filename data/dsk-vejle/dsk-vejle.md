@@ -37,9 +37,9 @@ This data has been contributed by Vejle Kommune through the [Dansk Sprogmodel Ko
 <!-- START-DESC-STATS -->
 - **Language**: dan, dansk, Danish
 - **Domains**: Web
-- **Number of samples**: 20.68K
-- **Number of tokens (Llama 3)**: 33.52M
-- **Average document length (characters)**: 6337.25
+- **Number of samples**: 16.77K
+- **Number of tokens (Llama 3)**: 27.99M
+- **Average document length (characters)**: 6731.78
 <!-- END-DESC-STATS -->
 
 
