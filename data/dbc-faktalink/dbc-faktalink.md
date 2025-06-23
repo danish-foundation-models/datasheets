@@ -10,18 +10,25 @@ task_categories:
 task_ids:
 - language-modeling
 domains:
-- Books
 - Encyclopedic
 ---
 
 # Dataset Card for DBC D1G1TAL - Faktalink
 
 <!-- START-SHORT DESCRIPTION -->
-dbc-faktalink consists of more than 5 hundred articles created by DBC D1G1TAL (former Dansk Bibliotekscenter).
+dbc-faktalink consists of more than 5 hundred articles created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter).
 <!-- END-SHORT DESCRIPTION -->
 
 All articles are written in Danish language. Instances that comprise this dataset represent articles on a variety of topics on aspects relevant to Danish society.
 The dataset includes articles created between 1991 and 2024.
+
+Descrition taken from [dbcdigital.dk](https://dbcdigital.dk/abonnementer-ydelser/faktalink/)
+
+>Faktalink is a tool used by libraries and schools to provide factual knowledge on current, socially relevant, and historical topics. Through serious, trustworthy, and thoroughly researched articles, students and library users can gain a solid overview of various current and important subjects, as well as historical events.
+>
+>On Faktalink, you'll find articles on everything from politics and history to sports, culture, and much more. We prioritize topics that are relevant for school use and those with broader interest.
+>
+>There are around 500 articles and themes on Faktalink, and they are continuously updated with the latest information. Additionally, the site is regularly expanded with new, relevant articles and themes.
 
 
 

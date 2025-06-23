@@ -62,8 +62,9 @@ language_creators:
 language:
 - da
 - en
-- 'no'
 - se
+- nb
+- nn
 multilinguality:
 - multilingual
 source_datasets:
@@ -107,7 +108,7 @@ This repository contains the datasheets for DFM. This repostory documents.
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish, English, Swedish, Norwegian Bokmål, Norwegian Nynorsk
 - **Number of samples**: 11.30M
 - **Number of tokens (Llama 3)**: 6.82B
 - **Average document length (characters)**: 1973.23
@@ -131,8 +132,8 @@ We generally split the dataset into two categories: Public release sources and r
 |:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:--------------------------------------------------|
 | [cellar]             | The official digital repository for European Union legal documents and open data                                                                                                                        | Legal        | 1.15B       | [CC-BY-SA 4.0]                                    |
 | [plandata]           | A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types             | Governmental | 1.03B       | [Written agreement (public models, private data)] |
-| [dbc-abstracts]      | dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                            | Books        | 694.42M     | [Written agreement (public models, private data)] |
-| [danish-pd]          | **Danish-Public Domain** or **Danish-PD** is a large collection aiming to aggregate all Danish monographies and periodicals in the public domain                                                        | Books        | 532.43M     | [Public Domain]                                   |
+| [dbc-abstracts]      | dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                  | Books        | 694.42M     | [Written agreement (public models, private data)] |
+| [danish-pd]          | **PleIAs - Danish Public Domain** is a large collection aiming to aggregate all Danish monographies and periodicals in the public domain                                                                | Books        | 532.43M     | [Public Domain]                                   |
 | [ncc_books]          | Danish books extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from OCR                                                                               | Books        | 531.97M     | [CC-0]                                            |
 | [retsinformationdk]  | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 516.35M     | [Danish Copyright Law]                            |
 | [hest]               | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                | Social Media | 389.32M     | [CC-0]                                            |
@@ -165,10 +166,10 @@ We generally split the dataset into two categories: Public release sources and r
 | [dsk-cbrain]         | A collection of Marketing material, product guides, and datasheets produced by cBrain for their products                                                                                                | Other        | 4.19M       | [DSK-1]                                           |
 | [jvj]                | The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikipedia.org/wiki/Johannes_V._Jensen)                                                                                         | Books        | 3.55M       | [CC-BY-SA 4.0]                                    |
 | [dsk-atp]            | A collection of crawled webpages that is managed by ATP                                                                                                                                                 | Web          | 2.86M       | [DSK-1]                                           |
-| [dbc-faktalink]      | dbc-faktalink consists of more than 5 hundred articles created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                                                           | Books        | 1.99M       | [Written agreement (public models, private data)] |
+| [dbc-faktalink]      | dbc-faktalink consists of more than 5 hundred articles created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                                                                 | Encyclopedic | 1.99M       | [Written agreement (public models, private data)] |
 | [spont]              | Conversational samples collected as a part of research projects at Aarhus University                                                                                                                    | Conversation | 1.56M       | [CC-0]                                            |
 | [dannet]             | [DanNet](https://cst.ku.dk/projekter/dannet) is a Danish WordNet                                                                                                                                        | Other        | 1.48M       | [DanNet 1.0]                                      |
-| [dbc-forfatterweb]   | dbc-forfatterweb consists of more than 1 thousand articles created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                                                       | Books        | 1.42M       | [Written agreement (public models, private data)] |
+| [dbc-forfatterweb]   | dbc-forfatterweb consists of more than 1 thousand articles created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                                                       | Encyclopedic | 1.42M       | [Written agreement (public models, private data)] |
 | [relig]              | Danish religious text from the 1700-2022                                                                                                                                                                | Books        | 1.24M       | [CC-0]                                            |
 | [dsk-odense]         | A set of newsletters stories, covering events in Odense Municipality. Have been published on their website                                                                                              | News         | 1.18M       | [DSK-1]                                           |
 | [dsk-danskerhverv]   | A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide                                                                                                | News         | 1.12M       | [DSK-1]                                           |

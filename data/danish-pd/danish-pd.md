@@ -1,5 +1,5 @@
 ---
-pretty_name: Danish Public Domain
+pretty_name: PleIAs - Danish Public Domain
 language:
 - da
 license: other
@@ -11,12 +11,14 @@ task_ids:
 - language-modeling
 domains:
 - Books
+source_datasets:
+- PleIAs/Danish-PD
 ---
 
-# Dataset Card for Danish Public Domain
+# Dataset Card for PleIAs - Danish Public Domain
 
 <!-- START-SHORT DESCRIPTION -->
-**Danish-Public Domain** or **Danish-PD** is a large collection aiming to aggregate all Danish monographies and periodicals in the public domain.
+**PleIAs - Danish Public Domain** is a large collection aiming to aggregate all Danish monographies and periodicals in the public domain.
 <!-- END-SHORT DESCRIPTION -->
 
 The collection contains 3113 individual titles making up 322,141,347 words recovered from multiple sources, including Internet Archive and various European national libraries and cultural heritage institutions. Each parquet file has the full text of 2,000 books selected at random.

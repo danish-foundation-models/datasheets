@@ -10,7 +10,6 @@ task_categories:
 task_ids:
 - language-modeling
 domains:
-- Books
 - Encyclopedic
 ---
 
@@ -19,6 +18,12 @@ domains:
 <!-- START-SHORT DESCRIPTION -->
 dbc-forfatterweb consists of more than 1 thousand articles created by DBC D1G1TAL (former Dansk Bibliotekscenter).
 <!-- END-SHORT DESCRIPTION -->
+
+Forfatter web is a tool created by DBC D1G1TAL. Description from [dbcdigital.dk](https://dbcdigital.dk/abonnementer-ydelser/forfatterweb/)
+
+> Forfatterweb is a tool for libraries and schools that provides factual knowledge about literature. With a wide array of thoroughly researched author portraits and themes, as well as introductions to literary genres and periods, Forfatterweb is your gateway to understanding books, authorships, and literary movements throughout history.
+>
+> Forfatterweb is a subscription service and can be used with either a Uni-Login or library login, as long as your school or library subscribes to Forfatterweb.
 
 All articles are written in Danish language. Instances that comprise this dataset represent articles on Danish writers. 
 The dataset includes articles created between 1991 and 2024.

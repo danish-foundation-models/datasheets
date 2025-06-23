@@ -2,7 +2,7 @@ import logging
 from enum import Enum
 from pathlib import Path
 from textwrap import dedent
-from typing import Any, Literal, Self, cast
+from typing import Any, Self, cast
 
 import yaml
 from datasets import Dataset, load_dataset
@@ -10,7 +10,14 @@ from pydantic import BaseModel, field_validator
 
 from datasheets.descriptive_stats import DescriptiveStatsOverview
 from datasheets.plots import create_descriptive_statistics_plots
-from datasheets.typings import DOMAIN, LICENSE, LICENSE_NAMES_MAPPING
+from datasheets.typings import (
+    DOMAIN,
+    LANG_TYPE,
+    LICENSE,
+    LICENSE_NAMES_MAPPING,
+    LANGUAGES,
+    LANGUAGE_NAMES_MAPPING,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +55,7 @@ class DataSheet(BaseModel):
     pretty_name: str
     license: LICENSE
     license_name: str | None
-    language: list[Literal["da", "en", "se", "no"]]
+    language: list[LANG_TYPE]
     domains: list[DOMAIN] | None  # None for main readme # TODO: make literal
     path: Path
     frontmatter: dict[str, Any]
@@ -157,12 +164,11 @@ class DataSheet(BaseModel):
         else:
             d_stats = descriptive_stats
 
-        if len(self.language) != 1 and self.language[0] != "da":
-            e = NotImplementedError(  # raise NotImplementedError(
-                "This script only handles the language codes 'da'"
+        if any(lang not in LANGUAGES for lang in self.language):
+            raise NotImplementedError(  # raise NotImplementedError(
+                f"This script only handles the language codes {', '.join(LANGUAGES)}"
             )
-            logger.warning(e)
-        languages = "dan, dansk, Danish"
+        languages = ", ".join([LANGUAGE_NAMES_MAPPING[lang] for lang in self.language])
 
         package = dedent(f"""
         - **Language**: {languages}\n""")

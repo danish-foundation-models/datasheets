@@ -20,10 +20,10 @@ domains:
 # Dataset Card for DBC D1G1TAL - Abstracts 
 
 <!-- START-SHORT DESCRIPTION -->
-dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by DBC D1G1TAL (former Dansk Bibliotekscenter).
+dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter).
 <!-- END-SHORT DESCRIPTION -->
 
-The dataset contains millions of abstracts in Danish lamnugage, which are supplemented by English, Norwegian, Swedish, German, and other language abstracts.
+The dataset contains millions of abstracts in the Danish lanugage, which are supplemented by English, Norwegian, Swedish, German, and other language abstracts.
 The dataset was collected and created by DBC D1G1TAL A/S as one of the backbones for their catalogue of books and other materials.
 The dataset includes abstracts created between 1991 and 2024.
 
@@ -33,7 +33,7 @@ The dataset includes abstracts created between 1991 and 2024.
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: English, Danish, Swedish, Norwegian Bokmål, Norwegian Nynorsk
 - **Domains**: Books
 - **Number of samples**: 9.89M
 - **Number of tokens (Llama 3)**: 694.42M

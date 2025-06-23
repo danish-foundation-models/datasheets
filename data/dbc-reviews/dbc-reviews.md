@@ -4,7 +4,8 @@ language:
 - en
 - da
 - se
-- 'no'
+- nb
+- nn
 license: other
 license_name: Written agreement (public models, private data)
 task_categories:
@@ -31,7 +32,7 @@ The dataset contains thousands of reviews in the Danish language, which are supp
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: English, Danish, Swedish, Norwegian Bokmål, Norwegian Nynorsk
 - **Domains**: Books, Other
 - **Number of samples**: 213.93K
 - **Number of tokens (Llama 3)**: 53.96M
