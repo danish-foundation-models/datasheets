@@ -12,7 +12,7 @@ import json
 import logging
 from pathlib import Path
 import re
-from typing import cast
+from typing import Any, cast
 from packaging.version import Version, InvalidVersion
 
 import plotly.express as px
@@ -151,7 +151,7 @@ def update_dataset(
 
     # Load the dataset using `data_files` when dataset_name = "default"
 
-    load_kwargs = {"path": "parquet", "split": "train"}
+    load_kwargs: dict[str, Any] = {"path": "parquet", "split": "train"}
 
     if dataset_name == "default":
         dataset_paths = []
@@ -171,10 +171,14 @@ def update_dataset(
 
         latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
 
+        if not latest_version_dataset_path:
+            logger.error(f"Something went wrong in finding the {dataset_name} dataset.")
+            return
+
         load_kwargs["path"] = str(latest_version_dataset_path)
 
     logger.info(
-        f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
+        f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"  # type: ignore
     )
     ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])
     ds = cast(Dataset, ds)

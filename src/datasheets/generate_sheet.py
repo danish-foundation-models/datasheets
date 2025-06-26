@@ -158,6 +158,20 @@ def create_card_content(template_content, data):
     return f"---\n{updated_front_matter_str}---\n{body_content}"
 
 
+def add_dataset_to_readme(dataset_id: str):
+    # Update main readme
+    main_sheet = DataSheet.load_from_path(repo_path / "README.md")
+    _datasets = [
+        cfg["config_name"]  # type: ignore
+        for cfg in main_sheet.frontmatter["configs"]  # type: ignore
+        if cfg["config_name"] != "default"  # type: ignore
+    ]
+
+    if dataset_id not in _datasets:
+        main_sheet.frontmatter["configs"].append({"config_name": dataset_id})
+        main_sheet.write_to_path(repo_path / "README.md")
+
+
 def main():
     """Main function to run the script."""
     if not TEMPLATE_PATH.exists():
@@ -184,19 +198,7 @@ def main():
     # Write the file
     output_path.write_text(final_content, encoding="utf-8")
 
-    # Update main readme
-    main_sheet = DataSheet.load_from_path(repo_path / "README.md")
-    _datasets = [
-        cfg["config_name"]  # type: ignore
-        for cfg in main_sheet.frontmatter["configs"]  # type: ignore
-        if cfg["config_name"] != "default"  # type: ignore
-    ]
-
-    if user_data["dataset_id"] not in _datasets:
-        main_sheet.frontmatter["configs"].append(
-            {"config_name": user_data["dataset_id"]}
-        )
-        main_sheet.write_to_path(repo_path / "README.md")
+    add_dataset_to_readme(user_data["dataset_id"])
 
     print(f"\n✅ Successfully created dataset card at: {output_path}")
 

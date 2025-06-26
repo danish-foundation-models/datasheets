@@ -3,7 +3,7 @@ from typing import cast
 import pytest
 from datasets import Dataset, load_dataset
 
-from .conftest import DATASET_NAMES, get_all_datasets, get_dataset_path
+from ..conftest import DATASET_NAMES, get_all_datasets, get_dataset_path
 
 
 @pytest.mark.parametrize("dataset_name", DATASET_NAMES)
