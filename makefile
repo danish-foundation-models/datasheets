@@ -36,3 +36,7 @@ add-datasheet:
 	@echo "--- 💾 Adding a new datasheet ---"
 	@$(MAKE) generate-sheet
 	@$(MAKE) update-stats
+
+sync-dynaword:
+	@echo "--- 🔄 Syncing with Dynaword ---"
+	uv run src/datasheets/sync_dynaword.py
