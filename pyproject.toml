@@ -21,6 +21,7 @@ dependencies = [
     "pyyaml>=6.0.2",
     "tqdm>=4.67.1",
     "polars>=1.30.0",
+    "semhash>=0.3.0",
 ]
 
 [dependency-groups]
