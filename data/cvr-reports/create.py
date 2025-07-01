@@ -65,33 +65,33 @@ def read_file(md_file: Path) -> dict:
 
 
 def main(input_dir: Path, save_path: Path):
-    # if not save_path.name.endswith(".parquet"):
-    #     save_path.mkdir(parents=True)
-    #     save_path = save_path / f"{SOURCE}.parquet"
+    if not save_path.name.endswith(".parquet"):
+        save_path.mkdir(parents=True)
+        save_path = save_path / f"{SOURCE}.parquet"
 
-    # logger.info("Scanning files...")
-    # md_files = get_md_files(input_dir, max_size=None)
-    # logger.info(f"Found {len(md_files)} files.")
+    logger.info("Scanning files...")
+    md_files = get_md_files(input_dir, max_size=None)
+    logger.info(f"Found {len(md_files)} files.")
 
-    # with ThreadPoolExecutor() as executor:
-    #     rows = list(
-    #         tqdm(
-    #             executor.map(read_file, md_files),
-    #             total=len(md_files),
-    #             desc="Reading files",
-    #         )
-    #     )
+    with ThreadPoolExecutor() as executor:
+        rows = list(
+            tqdm(
+                executor.map(read_file, md_files),
+                total=len(md_files),
+                desc="Reading files",
+            )
+        )
 
-    # logger.info("Converting rows to dataframe")
-    # df = pd.DataFrame(rows)
-    # logger.info("Converting dataframe to table")
-    # table: pa.Table = pa.Table.from_pandas(df)
-    # logger.info("Converting table to dataset")
+    logger.info("Converting rows to dataframe")
+    df = pd.DataFrame(rows)
+    logger.info("Converting dataframe to table")
+    table: pa.Table = pa.Table.from_pandas(df)
+    logger.info("Converting table to dataset")
 
-    # # Save directly to Parquet
-    # pq.write_table(table, str(save_path))
-    # del table
-    # gc.collect()
+    # Save directly to Parquet
+    pq.write_table(table, str(save_path))
+    del table
+    gc.collect()
     new_save_path = save_path.parent / (save_path.stem + "_processed.parquet")
     print(new_save_path)
 
