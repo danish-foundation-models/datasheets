@@ -201,6 +201,10 @@ def update_dataset(
 
         latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
 
+        if not latest_version_dataset_path:
+            logger.error(f"Something went wrong in finding the {dataset_name} dataset.")
+            return
+
         load_kwargs["path"] = str(latest_version_dataset_path)
 
         logger.info(

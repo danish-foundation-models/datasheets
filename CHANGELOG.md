@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.12] - 2025-06-26
+
+### Added
+
+- Added a script for syncronising with `danish-dynaword` (`src/datasheets/sync_dynaword.py`)
+  - Can be called by `make sync-dynaword`
+  - This will pull dynaword, copy parquet and markdown files, and update main readme.
+- Added a short texts test
+  - Testing for documents with 1 or fewer tokens. 
+
+### Changed
+
+- Moved the duplicates test to `src/tests/test_quality` to mimic dynaword structure. 
+
 ## [v0.0.11] - 2025-06-17
 
 ### Added
