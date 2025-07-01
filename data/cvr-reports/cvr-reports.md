@@ -31,9 +31,9 @@ The report contains the financials of the company along with written statements 
 <!-- START-DESC-STATS -->
 - **Language**: Danish, English
 - **Domains**: Financial
-- **Number of samples**: 1.32M
-- **Number of tokens (Llama 3)**: 8.68B
-- **Average document length (characters)**: 23942.41
+- **Number of samples**: 185.91K
+- **Number of tokens (Llama 3)**: 1.49B
+- **Average document length (characters)**: 31813.61
 <!-- END-DESC-STATS -->
 
 

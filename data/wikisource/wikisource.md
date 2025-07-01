@@ -28,7 +28,7 @@ The Danish subsection of [Wikisource](https://en.wikisource.org/wiki/Main_Page).
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Encyclopedic
 - **Number of samples**: 2.42K
 - **Number of tokens (Llama 3)**: 5.34M

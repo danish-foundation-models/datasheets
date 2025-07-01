@@ -34,8 +34,8 @@ The dataset includes articles created between 1991 and 2024.
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: Books, Encyclopedic
+- **Language**: Danish
+- **Domains**: Encyclopedic
 - **Number of samples**: 1.19K
 - **Number of tokens (Llama 3)**: 1.42M
 - **Average document length (characters)**: 3638.96

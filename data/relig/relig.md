@@ -31,7 +31,7 @@ without any pre-processing other than file format conversion.
 
  
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Books
 - **Number of samples**: 66
 - **Number of tokens (Llama 3)**: 1.24M

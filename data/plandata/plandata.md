@@ -31,7 +31,7 @@ Authored and officially adopted by municipal authorities, these documents often 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Governmental
 - **Number of samples**: 101.19K
 - **Number of tokens (Llama 3)**: 1.03B

@@ -29,7 +29,7 @@ Danish subsection of [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles/corpus/v
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Conversation, Spoken, Subtitles
 - **Number of samples**: 29.82K
 - **Number of tokens (Llama 3)**: 271.60M

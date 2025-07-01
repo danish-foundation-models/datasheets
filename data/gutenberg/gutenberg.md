@@ -30,7 +30,7 @@ Project Gutenberg is an online library of free eBooks. Project Gutenberg was the
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Books
 - **Number of samples**: 66
 - **Number of tokens (Llama 3)**: 6.76M

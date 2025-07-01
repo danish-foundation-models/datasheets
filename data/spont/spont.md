@@ -41,7 +41,7 @@ Speech is transcribed post-hoc by native speakers. Studies published relying on 
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Conversation, Spoken
 - **Number of samples**: 411
 - **Number of tokens (Llama 3)**: 1.56M

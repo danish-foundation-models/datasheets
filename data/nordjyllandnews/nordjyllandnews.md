@@ -27,7 +27,7 @@ The data is derived from the Huggingface dataset [alexandrainst/nordjylland-news
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: News
 - **Number of samples**: 75.22K
 - **Number of tokens (Llama 3)**: 37.90M

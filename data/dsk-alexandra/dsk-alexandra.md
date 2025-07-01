@@ -25,7 +25,7 @@ This data has been contributed by Alexandra Institutet through the [Dansk Sprogm
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Web
 - **Number of samples**: 386
 - **Number of tokens (Llama 3)**: 584.35K

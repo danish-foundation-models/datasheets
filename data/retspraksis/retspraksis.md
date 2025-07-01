@@ -31,7 +31,7 @@ It encompasses the body of legal decisions made by Danish courts, which play a s
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Legal
 - **Number of samples**: 4.36K
 - **Number of tokens (Llama 3)**: 56.26M

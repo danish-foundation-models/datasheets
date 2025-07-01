@@ -38,7 +38,7 @@ This data has been contributed by Salling Group through the [Dansk Sprogmodel Ko
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Web
 - **Number of samples**: 23.48K
 - **Number of tokens (Llama 3)**: 9.79M

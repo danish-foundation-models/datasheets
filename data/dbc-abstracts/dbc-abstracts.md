@@ -37,7 +37,7 @@ The dataset includes abstracts created between 1991 and 2024.
 - **Domains**: Books
 - **Number of samples**: 9.89M
 - **Number of tokens (Llama 3)**: 694.42M
-- **Average document length (characters)**: 329.68
+- **Average document length (characters)**: 329.69
 <!-- END-DESC-STATS -->
 
 

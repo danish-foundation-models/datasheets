@@ -26,7 +26,7 @@ This data has been contributed by Plesner through the [Dansk Sprogmodel Konsorti
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Other, Web
 - **Number of samples**: 1.69K
 - **Number of tokens (Llama 3)**: 896.33K

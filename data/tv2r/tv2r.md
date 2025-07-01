@@ -30,7 +30,7 @@ It contains articles of regional interest, written following editorial standards
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: News
 - **Number of samples**: 49.13K
 - **Number of tokens (Llama 3)**: 21.67M

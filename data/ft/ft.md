@@ -33,7 +33,7 @@ In the parliament hall, one speaker at a time addresses members of the parliamen
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Conversation, Spoken
 - **Number of samples**: 1.31K
 - **Number of tokens (Llama 3)**: 114.09M

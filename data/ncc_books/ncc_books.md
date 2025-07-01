@@ -27,7 +27,7 @@ The Norwegian Colossal Corpus is a collection of multiple smaller Norwegian corp
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Books
 - **Number of samples**: 4.90K
 - **Number of tokens (Llama 3)**: 531.97M

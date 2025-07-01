@@ -29,7 +29,7 @@ The dataset consists of multiple scrapes of municipal websites compiled in conne
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Web
 - **Number of samples**: 200.91K
 - **Number of tokens (Llama 3)**: 139.23M

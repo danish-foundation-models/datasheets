@@ -33,11 +33,11 @@ Additional information about this dataset can be found on their [project page](h
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Books
 - **Number of samples**: 858
-- **Number of tokens (Llama 3)**: 110.23M
-- **Average document length (characters)**: 371689.87
+- **Number of tokens (Llama 3)**: 113.74M
+- **Average document length (characters)**: 375749.09
 <!-- END-DESC-STATS -->
 
 

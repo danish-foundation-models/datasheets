@@ -36,11 +36,11 @@ Learn more about danske taler by reading their [about us](https://www.dansketale
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Conversation, Speeches, Spoken
-- **Number of samples**: 2.66K
-- **Number of tokens (Llama 3)**: 8.23M
-- **Average document length (characters)**: 9446.26
+- **Number of samples**: 2.91K
+- **Number of tokens (Llama 3)**: 8.72M
+- **Average document length (characters)**: 9140.42
 <!-- END-DESC-STATS -->
 
 

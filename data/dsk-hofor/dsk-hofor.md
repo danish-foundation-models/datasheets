@@ -26,7 +26,7 @@ This data has been contributed by HOFOR through the [Dansk Sprogmodel Konsortium
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Other, News
 - **Number of samples**: 11
 - **Number of tokens (Llama 3)**: 143.49K
