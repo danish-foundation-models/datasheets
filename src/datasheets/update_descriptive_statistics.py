@@ -151,10 +151,10 @@ def update_dataset(
 
     # Load the dataset using `data_files` when dataset_name = "default"
 
-    load_kwargs = {"path": "parquet", "split": "train"}
+    load_kwargs: dict[str, str | list[str]] = {"path": "parquet", "split": "train"}
 
     if dataset_name == "default":
-        dataset_paths = []
+        dataset_paths: list[str] = []
 
         for dataset in _datasets:
             dataset_data_path = repo_path.parent / "datasets" / dataset / "original"
@@ -176,7 +176,7 @@ def update_dataset(
     logger.info(
         f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
     )
-    ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])
+    ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])  # type: ignore
     ds = cast(Dataset, ds)
     desc_stats = DescriptiveStatsOverview.from_dataset(ds)
     desc_stats.to_disk(desc_stats_path)

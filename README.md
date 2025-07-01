@@ -55,6 +55,7 @@ configs:
 - config_name: dbc-reviews
 - config_name: scrape_hovedstaden
 - config_name: danish-pd
+- config_name: cvr-reports
 annotations_creators:
 - no-annotation
 language_creators:
@@ -109,9 +110,9 @@ This repository contains the datasheets for DFM. This repostory documents.
 
 <!-- START-DESC-STATS -->
 - **Language**: Danish, English, Swedish, Norwegian Bokmål, Norwegian Nynorsk
-- **Number of samples**: 11.30M
-- **Number of tokens (Llama 3)**: 6.82B
-- **Average document length (characters)**: 1973.23
+- **Number of samples**: 12.66M
+- **Number of tokens (Llama 3)**: 15.81B
+- **Average document length (characters)**: 4326.36
 <!-- END-DESC-STATS -->
 
 ### Summary
@@ -130,6 +131,7 @@ We generally split the dataset into two categories: Public release sources and r
 <!-- START-MAIN TABLE -->
 | Source               | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                                           |
 |:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:--------------------------------------------------|
+| [cvr-reports]        | Annual reports from danish companies in the period 2010-2025                                                                                                                                            | Financial    | 8.68B       | [Written agreement (public models, private data)] |
 | [cellar]             | The official digital repository for European Union legal documents and open data                                                                                                                        | Legal        | 1.15B       | [CC-BY-SA 4.0]                                    |
 | [plandata]           | A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types             | Governmental | 1.03B       | [Written agreement (public models, private data)] |
 | [dbc-abstracts]      | dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                  | Books        | 694.42M     | [Written agreement (public models, private data)] |
@@ -183,7 +185,7 @@ We generally split the dataset into two categories: Public release sources and r
 | [depbank]            | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                  | Other        | 184.92K     | [CC-BY-SA 4.0]                                    |
 | [dsk-hofor]          | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other        | 143.49K     | [DSK-1]                                           |
 | [synne]              | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                 | Other        | 52.02K      | [CC-0]                                            |
-| **Total**            |                                                                                                                                                                                                         |              | 6.82B       |                                                   |
+| **Total**            |                                                                                                                                                                                                         |              | 15.51B      |                                                   |
 
 [adl]: data/adl/adl.md
 [botxt]: data/botxt/botxt.md
@@ -238,6 +240,7 @@ We generally split the dataset into two categories: Public release sources and r
 [dbc-reviews]: data/dbc-reviews/dbc-reviews.md
 [scrape_hovedstaden]: data/scrape_hovedstaden/scrape_hovedstaden.md
 [danish-pd]: data/danish-pd/danish-pd.md
+[cvr-reports]: data/cvr-reports/cvr-reports.md
 
 
 [CC-0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
@@ -266,6 +269,7 @@ We generally split the dataset into two categories: Public release sources and r
 [Written agreement (public models, private data)]: ./data/dbc-forfatterweb/dbc-forfatterweb.md#license-information
 [Written agreement (public models, private data)]: ./data/dbc-reviews/dbc-reviews.md#license-information
 [Public Domain]: ./data/danish-pd/danish-pd.md#license-information
+[Written agreement (public models, private data)]: ./data/cvr-reports/cvr-reports.md#license-information
 <!-- END-MAIN TABLE -->
 
 <!-- **Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).

@@ -11,7 +11,7 @@ from pydantic import BaseModel, field_validator
 from datasheets.descriptive_stats import DescriptiveStatsOverview
 from datasheets.plots import create_descriptive_statistics_plots
 from datasheets.typings import (
-    DOMAIN,
+    DOMAIN_TYPE,
     LANG_TYPE,
     LICENSE,
     LICENSE_NAMES_MAPPING,
@@ -55,8 +55,10 @@ class DataSheet(BaseModel):
     pretty_name: str
     license: LICENSE
     license_name: str | None
-    language: list[LANG_TYPE]
-    domains: list[DOMAIN] | None  # None for main readme # TODO: make literal
+    language: list[LANG_TYPE]  # type: ignore
+    domains: (
+        list[DOMAIN_TYPE] | None  # type: ignore
+    )  # None for main readme # TODO: make literal
     path: Path
     frontmatter: dict[str, Any]
     body: str
