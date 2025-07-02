@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.13] - 2025-07-01
+
+### Added 
+
+- Added the `cvr-reports` dataset, which is a collection of annual reports from danish companies.
+- Added a semantic deduplication script that can be used for within dataset deduplication.
+- Added a "Financial" domain for the `cvr-reports` dataset
+
+### Changed
+
+- Updated the `find_latest_dataset_version` such that it now accounts for dataset types, i.e. original vs. dedup vs. processed
+
 ## [v0.0.12] - 2025-06-26
 
 ### Added
