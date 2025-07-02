@@ -17,7 +17,7 @@ import logging
 import sys
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
-from datasets import Dataset, load_dataset
+from datasets import load_dataset
 import pandas as pd
 from tqdm import tqdm
 import pyarrow as pa
