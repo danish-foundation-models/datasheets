@@ -145,5 +145,5 @@ if __name__ == "__main__":
     if not input_path.exists():
         logger.info(f"Input directory {input_path} does not exist.")
         sys.exit(1)
-    
+
     main(input_path, save_path)
