@@ -10,7 +10,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ### Added 
 
 - Added the `cvr-reports` dataset, which is a collection of annual reports from danish companies.
-- Added a semantic deduplication script that can be used for within dataset deduplication.
 - Added a "Financial" domain for the `cvr-reports` dataset
 
 ### Changed

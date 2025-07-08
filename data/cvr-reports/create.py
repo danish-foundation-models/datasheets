@@ -11,6 +11,7 @@
 # dynaword = { git = "https://huggingface.co/datasets/danish-foundation-models/danish-dynaword", rev = "00e7f2aee7f7ad2da423419f77ecbb9c0536de0d" }
 # ///
 
+import argparse
 from datetime import datetime
 import gc
 import logging
@@ -92,8 +93,8 @@ def main(input_dir: Path, save_path: Path):
     pq.write_table(table, str(save_path))
     del table
     gc.collect()
+
     new_save_path = save_path.parent / (save_path.stem + "_processed.parquet")
-    print(new_save_path)
 
     ds = load_dataset(
         path="parquet", data_files=[str(save_path)], split="train", num_proc=15
@@ -106,9 +107,26 @@ def main(input_dir: Path, save_path: Path):
     ds.to_parquet(str(new_save_path))
 
 
+def create_parser():
+    parser = argparse.ArgumentParser(
+        description="Create a Parquet file from markdown files in a directory."
+    )
+    parser.add_argument(
+        "input_dir",
+        default=None,
+        type=Path,
+        help="Path to the input directory containing markdown files.",
+    )
+    parser.add_argument(
+        "output_dir",
+        default=None,
+        type=Path,
+        help="Path to the output directory where the Parquet file will be saved.",
+    )
+    return parser
+
+
 if __name__ == "__main__":
-    input_path = Path(sys.argv[1])
-    save_path = Path(sys.argv[2])
     log_path = Path(__file__).parent / f"{SOURCE}.log"
     logging.basicConfig(
         level=logging.INFO,
@@ -118,4 +136,14 @@ if __name__ == "__main__":
             logging.FileHandler(log_path),
         ],
     )
+
+    parser = create_parser()
+    args = parser.parse_args()
+    input_path = args.input_dir
+    save_path = args.output_dir
+
+    if not input_path.exists():
+        logger.info(f"Input directory {input_path} does not exist.")
+        sys.exit(1)
+    
     main(input_path, save_path)
