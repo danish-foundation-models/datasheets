@@ -27,7 +27,7 @@ The EU Dataset Cellar serves as the central access point for all official EU pub
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Legal
 - **Number of samples**: 63.40K
 - **Number of tokens (Llama 3)**: 1.15B

@@ -28,7 +28,7 @@ The dataset is designed for training and evaluating automatic text summarization
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Legal
 - **Number of samples**: 1.00K
 - **Number of tokens (Llama 3)**: 31.37M

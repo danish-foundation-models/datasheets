@@ -32,7 +32,7 @@ The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikiped
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Books
 - **Number of samples**: 42
 - **Number of tokens (Llama 3)**: 3.55M

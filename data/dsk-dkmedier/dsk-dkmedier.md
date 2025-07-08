@@ -25,7 +25,7 @@ This data has been contributed by DK Medier through the [Dansk Sprogmodel Konsor
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: News
 - **Number of samples**: 105.11K
 - **Number of tokens (Llama 3)**: 65.33M

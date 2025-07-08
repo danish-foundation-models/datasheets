@@ -12,7 +12,7 @@ import json
 import logging
 from pathlib import Path
 import re
-from typing import Any, cast
+from typing import cast
 from packaging.version import Version, InvalidVersion
 
 import plotly.express as px
@@ -36,20 +36,26 @@ _datasets = [
     if cfg["config_name"] != "default"  # type: ignore
 ]
 
-
 logger = logging.getLogger(__name__)
+# Define dataset type priorities (lower number = higher priority)
+DATASET_TYPE_PRIORITY = {
+    "processed": 1,
+    "dedup": 2,
+    "original": 3,
+}
 
 
 def find_latest_dataset_version(dataset_parent_path: Path) -> Path | None:
     """
-    Finds the path to the latest version of a dataset within a given directory.
+    Finds the path to the latest dataset version based on dataset type priority and semantic version.
 
     Args:
-        original_dataset_parent_path: A Path object pointing to the data directory
+        dataset_parent_path: A Path object pointing to the dataset directory (e.g., ".../datasets/mydataset")
 
     Returns:
-        A Path object to the directory of the latest version (e.g., Path(".../original/v2.0.0")),
-        or None if the data directory does not exist, or no valid version folders are found.
+        A Path object to the directory of the latest versioned dataset,
+        e.g., Path(".../datasets/mydataset/processed/v2.0.0"),
+        or None if nothing valid is found.
     """
     if not dataset_parent_path.is_dir():
         logger.warning(
@@ -57,43 +63,65 @@ def find_latest_dataset_version(dataset_parent_path: Path) -> Path | None:
         )
         return None
 
-    found_versions = []
-    # Regex to match 'v' followed by a version string (e.g., "v1.2.3", "v1.0.0-rc1")
-    # We capture the version string itself (without the 'v') to pass to packaging.Version
     version_folder_pattern = re.compile(r"^v(.+)$")
 
-    for item in dataset_parent_path.iterdir():
-        if item.is_dir():
-            match = version_folder_pattern.match(item.name)
-            if match:
-                version_string_without_v = match.group(
-                    1
-                )  # Extract "1.0.0", "2.0.0-beta" etc.
-                try:
-                    # Parse the version string using packaging.version.Version for robust comparison
-                    parsed_version = Version(version_string_without_v)
-                    found_versions.append((parsed_version, item))
-                except InvalidVersion:
-                    # Log if a folder looks like a version but cannot be parsed by packaging
-                    logger.debug(
-                        f"Skipping invalid version string in folder name: {item.name}"
-                    )
-            else:
-                # Log if a folder doesn't match the expected 'v' prefix
-                logger.debug(f"Skipping non-versioned directory: {item.name}")
+    candidates: list[tuple[int, Version, Path]] = []
 
-    if not found_versions:
-        logger.info(f"No valid versioned directories found in: {dataset_parent_path}")
+    for dataset_type_dir in dataset_parent_path.iterdir():
+        if not dataset_type_dir.is_dir():
+            continue
+
+        dataset_type = dataset_type_dir.name
+        if dataset_type not in DATASET_TYPE_PRIORITY:
+            logger.debug(f"Skipping unknown dataset type directory: {dataset_type_dir}")
+            continue
+
+        for version_dir in dataset_type_dir.iterdir():
+            if not version_dir.is_dir():
+                continue
+
+            match = version_folder_pattern.match(version_dir.name)
+            if not match:
+                logger.debug(f"Skipping non-versioned directory: {version_dir}")
+                continue
+
+            version_str = match.group(1)
+
+            try:
+                parsed_version = Version(version_str)
+                candidates.append(
+                    (
+                        DATASET_TYPE_PRIORITY[
+                            dataset_type
+                        ],  # priority (lower is better)
+                        parsed_version,  # parsed Version
+                        version_dir,  # full path
+                    )
+                )
+            except InvalidVersion:
+                logger.debug(
+                    f"Skipping invalid version string in folder name: {version_dir.name}"
+                )
+
+    if not candidates:
+        logger.info(
+            f"No valid versioned dataset directories found in: {dataset_parent_path}"
+        )
         return None
 
-    # Find the maximum version using the parsed Version objects for correct semantic comparison
-    latest_version_obj, latest_version_path = max(found_versions, key=lambda x: x[0])
+    # Sort by dataset type priority first (lowest = highest priority), then by version (highest version last)
+    best_candidate = max(
+        candidates,
+        key=lambda x: (-x[0], x[1]),  # dataset type priority ASC, version DESC
+    )
+
+    _, best_version, best_path = best_candidate
 
     logger.info(
-        f"Found latest dataset version: '{latest_version_path.name}' "
-        f"({latest_version_obj}) in '{dataset_parent_path}'"
+        f"Found latest dataset: '{best_path.parent.name}/{best_path.name}' "
+        f"(type priority {best_candidate[0]}, version {best_version})"
     )
-    return latest_version_path
+    return best_path
 
 
 def create_domain_distribution_plot(
@@ -151,13 +179,13 @@ def update_dataset(
 
     # Load the dataset using `data_files` when dataset_name = "default"
 
-    load_kwargs: dict[str, Any] = {"path": "parquet", "split": "train"}
+    load_kwargs: dict[str, str | list[str]] = {"path": "parquet", "split": "train"}
 
     if dataset_name == "default":
-        dataset_paths = []
+        dataset_paths: list[str] = []
 
         for dataset in _datasets:
-            dataset_data_path = repo_path.parent / "datasets" / dataset / "original"
+            dataset_data_path = repo_path.parent / "datasets" / dataset
             latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
             if not latest_version_dataset_path:
                 logger.warning(f"Something went wrong with {dataset}")
@@ -166,8 +194,10 @@ def update_dataset(
             files = [str(p) for p in latest_version_dataset_path.glob("*.parquet")]
             dataset_paths.extend(files)
         load_kwargs["data_files"] = dataset_paths
+
+        logger.info(f"Computing descriptive stats for: {dataset_name}")
     else:
-        dataset_data_path = repo_path.parent / "datasets" / dataset_name / "original"
+        dataset_data_path = repo_path.parent / "datasets" / dataset_name
 
         latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
 
@@ -177,10 +207,10 @@ def update_dataset(
 
         load_kwargs["path"] = str(latest_version_dataset_path)
 
-    logger.info(
-        f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"  # type: ignore
-    )
-    ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])
+        logger.info(
+            f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
+        )
+    ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])  # type: ignore
     ds = cast(Dataset, ds)
     desc_stats = DescriptiveStatsOverview.from_dataset(ds)
     desc_stats.to_disk(desc_stats_path)

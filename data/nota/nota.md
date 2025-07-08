@@ -30,7 +30,7 @@ Nota lyd- og tekstdata (Tekst only) is a readaloud dataset consisting of few ver
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Readaloud, Spoken
 - **Number of samples**: 446
 - **Number of tokens (Llama 3)**: 7.30M

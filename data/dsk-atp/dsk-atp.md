@@ -30,7 +30,7 @@ This data has been contributed by ATP through the [Dansk Sprogmodel Konsortium](
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Web
 - **Number of samples**: 1.90K
 - **Number of tokens (Llama 3)**: 2.86M

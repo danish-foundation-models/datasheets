@@ -35,11 +35,11 @@ Der gøres opmærksom på, at korpusset er udviklet med henblik på udvikling af
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Encyclopedic
 - **Number of samples**: 24.00K
 - **Number of tokens (Llama 3)**: 27.04M
-- **Average document length (characters)**: 3328.91
+- **Average document length (characters)**: 3329.05
 <!-- END-DESC-STATS -->
 
 

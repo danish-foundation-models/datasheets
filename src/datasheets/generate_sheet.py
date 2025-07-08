@@ -4,26 +4,11 @@ from pathlib import Path
 
 from datasheets.datasheet import DataSheet
 from datasheets.paths import repo_path
+from datasheets.typings import DOMAIN, LANGUAGES
 
 # --- Configuration ---
 
 # Pre-defined choices for prompts
-LANGUAGES_CHOICES = ["en", "da", "se", "no"]
-DOMAINS_CHOICES = [
-    "Books",
-    "Conversation",
-    "Dialect",
-    "Encyclopedic",
-    "Legal",
-    "News",
-    "Other",
-    "Readaloud",
-    "Social Media",
-    "Speeches",
-    "Spoken",
-    "Subtitles",
-    "Web",
-]
 LICENSE_ID_CHOICES = ["cc0-1.0", "cc-by-sa-4.0", "apache-2.0", "other"]
 LICENSE_NAMES_MAPPING = {
     "cc0-1.0": "CC-0",
@@ -57,7 +42,7 @@ def get_user_input():
     # --- Languages ---
     selected_langs = questionary.checkbox(
         "Select the languages (press space to select):",
-        choices=LANGUAGES_CHOICES + ["Other..."],
+        choices=LANGUAGES + ["Other..."],
     ).ask()
 
     if "Other..." in selected_langs:
@@ -70,9 +55,7 @@ def get_user_input():
     data["languages"] = selected_langs
 
     # --- Domains ---
-    data["domains"] = questionary.checkbox(
-        "Select the domains:", choices=DOMAINS_CHOICES
-    ).ask()
+    data["domains"] = questionary.checkbox("Select the domains:", choices=DOMAIN).ask()
 
     # --- License ---
     data["license_id"] = questionary.select(

@@ -31,10 +31,10 @@ The publications are authoritative sources of information on Danish fiscal polic
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Legal
 - **Number of samples**: 443
-- **Number of tokens (Llama 3)**: 50.33M
+- **Number of tokens (Llama 3)**: 50.34M
 - **Average document length (characters)**: 490101.93
 <!-- END-DESC-STATS -->
 

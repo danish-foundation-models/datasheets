@@ -1,10 +1,11 @@
 from typing import Literal
 
-DOMAIN = Literal[
+DOMAIN = [
     "Books",
     "Conversation",
     "Dialect",
     "Encyclopedic",
+    "Financial",
     "Governmental",
     "Legal",
     "News",
@@ -16,6 +17,7 @@ DOMAIN = Literal[
     "Subtitles",
     "Web",
 ]
+DOMAIN_TYPE = Literal[*DOMAIN]
 
 LICENSE = Literal["cc0-1.0", "other", "cc-by-sa-4.0", "apache-2.0"]
 
@@ -26,7 +28,7 @@ LICENSE_NAMES_MAPPING = {
 }
 
 LANGUAGES = ["da", "en", "se", "nb", "nn", "de", "fr", "nl", "it"]
-LANG_TYPE = Literal["da", "en", "se", "nb", "nn", "de", "fr", "nl", "it"]
+LANG_TYPE = Literal[*LANGUAGES]
 
 LANGUAGE_NAMES_MAPPING = {
     "da": "Danish",

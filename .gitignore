@@ -175,6 +175,7 @@ cython_debug/
 
 # tmp files
 **/tmp.py
+tmp/
 
 # MacOS
 .DS_Store

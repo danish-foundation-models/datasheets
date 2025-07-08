@@ -27,7 +27,7 @@ Documents are derived from the [Målfrid collection](https://www.nb.no/sprakbank
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Web
 - **Number of samples**: 33.34K
 - **Number of tokens (Llama 3)**: 29.26M

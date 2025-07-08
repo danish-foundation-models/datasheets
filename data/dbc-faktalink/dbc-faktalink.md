@@ -36,11 +36,11 @@ Descrition taken from [dbcdigital.dk](https://dbcdigital.dk/abonnementer-ydelser
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: Books, Encyclopedic
-- **Number of samples**: 523
+- **Language**: Danish
+- **Domains**: Encyclopedic
+- **Number of samples**: 522
 - **Number of tokens (Llama 3)**: 1.99M
-- **Average document length (characters)**: 11717.05
+- **Average document length (characters)**: 11739.48
 <!-- END-DESC-STATS -->
 
 

@@ -35,7 +35,7 @@ This data has been contributed by Vejle Kommune through the [Dansk Sprogmodel Ko
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Web
 - **Number of samples**: 16.77K
 - **Number of tokens (Llama 3)**: 27.99M

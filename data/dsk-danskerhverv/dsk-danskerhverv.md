@@ -25,7 +25,7 @@ This data has been contributed by Dansk Erhverv through the [Dansk Sprogmodel Ko
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: News
 - **Number of samples**: 1.19K
 - **Number of tokens (Llama 3)**: 1.12M

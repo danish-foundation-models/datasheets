@@ -16,8 +16,13 @@ DATASET_NAMES = [
 
 
 def get_dataset_path(dataset_name: str) -> Path:
-    dataset_data_path = root_path.parent / "datasets" / dataset_name / "original"
+    dataset_data_path = root_path.parent / "datasets" / dataset_name
     latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
+
+    assert latest_version_dataset_path, (
+        f"Something went wrong with the {dataset_name} dataset"
+    )
+
     return latest_version_dataset_path
 
 

@@ -30,7 +30,7 @@ You can read more about wikipedia on their [about](https://en.wikipedia.org/wiki
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Encyclopedic
 - **Number of samples**: 264.43K
 - **Number of tokens (Llama 3)**: 122.00M

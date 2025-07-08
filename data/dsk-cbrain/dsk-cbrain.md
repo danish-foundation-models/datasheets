@@ -25,7 +25,7 @@ This data has been contributed by cBrain through the [Dansk Sprogmodel Konsortiu
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Other
 - **Number of samples**: 435
 - **Number of tokens (Llama 3)**: 4.19M

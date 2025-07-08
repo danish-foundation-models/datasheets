@@ -25,7 +25,7 @@ This data has been contributed by Odense Kommune through the [Dansk Sprogmodel K
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: News
 - **Number of samples**: 1.13K
 - **Number of tokens (Llama 3)**: 1.18M

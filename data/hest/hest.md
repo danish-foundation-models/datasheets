@@ -32,7 +32,7 @@ Its inclusion as training data for large language models have multiple times rea
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Social Media
 - **Number of samples**: 14.34K
 - **Number of tokens (Llama 3)**: 389.32M
