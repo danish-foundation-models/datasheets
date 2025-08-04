@@ -129,9 +129,11 @@ These datasets were collected and curated with the intention of developing langu
 ### Languages
 This dataset includes the following languages:
 
-- dan-Latn
-
-Language is denoted using [BCP-47](https://en.wikipedia.org/wiki/IETF_language_tag), using the langauge code ISO 639-3 and the script code ISO 15924. The last element denote the region variant.
+- Danish
+- English
+- Swedish
+- Norwegian Bokmål
+- Norwegian Nynorsk
 
 
 ### Domains
