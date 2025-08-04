@@ -25,7 +25,11 @@ from datasheets.git_utilities import (
     get_latest_revision,
 )
 from datasheets.paths import repo_path
-from datasheets.tables import create_overview_table, create_overview_table_str, create_grouped_table_str
+from datasheets.tables import (
+    create_overview_table,
+    create_overview_table_str,
+    create_grouped_table_str,
+)
 
 logger = logging.getLogger(__name__)
 
