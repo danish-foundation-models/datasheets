@@ -100,7 +100,10 @@ This repository contains the datasheets for DFM. This repostory documents.
   - [Dataset Description](#dataset-description)
     - [Summary](#summary)
     - [Curation Rationale](#curation-rationale)
-    - [Dataset Overview](#dataset-overview)
+    - [Languages](#languages)
+    - [Domains](#domains)
+    - [Licensing](#licensing)
+    - [Dataset Statistics](#dataset-statistics)
   - [Additional Information](#additional-information)
     - [Citation Information](#citation-information)
     - [Disclaimer](#disclaimer)
@@ -123,15 +126,196 @@ The DFM Datasheets is a collection of datasheets for datasets used for [Danish F
 
 These datasets were collected and curated with the intention of developing language models for Danish.
 
+### Languages
+This dataset includes the following languages:
 
-### Dataset Overview
+- dan-Latn
 
-We generally split the dataset into two categories: Public release sources and research sources. 
+Language is denoted using [BCP-47](https://en.wikipedia.org/wiki/IETF_language_tag), using the langauge code ISO 639-3 and the script code ISO 15924. The last element denote the region variant.
+
+
+### Domains
+
+This dynaword consist of data from various domains (e.g., legal, books, social media). The following table and figure give an overview of the relative distributions of these domains. To see a full overview of the source check out the [source data section](#source-data)
+
+<div style="display: flex; gap: 20px; align-items: flex-start;">
+
+<div style="flex: 1;">
+
+
+<!-- START-DOMAIN TABLE -->
+| Domain       | Sources                                                                                                           | N. Tokens   |
+|:-------------|:------------------------------------------------------------------------------------------------------------------|:------------|
+| Legal        | [retsinformationdk], [retspraksis], [skat], [fm-udgivelser], [eur-lex-sum-da], [miljoeportalen], [cellar]         | 2.36B       |
+| Books        | [adl], [gutenberg], [jvj], [relig], [wikibooks], [memo], [ncc_books], [dbc-abstracts], [dbc-reviews], [danish-pd] | 2.00B       |
+| Financial    | [cvr-reports]                                                                                                     | 1.49B       |
+| Governmental | [plandata]                                                                                                        | 1.03B       |
+| Conversation | [ep], [ft], [naat], [spont], [danske-taler], [opensubtitles]                                                      | 497.09M     |
+| Social Media | [hest]                                                                                                            | 389.32M     |
+| Other        | [dannet], [depbank], [synne], [dsk-cbrain], [dsk-hofor], [dsk-plesner], [dsk-vitec], [ncc_parliament]             | 346.36M     |
+| Web          | [dsk-alexandra], [dsk-atp], [dsk-salling], [dsk-vejle], [ai-aktindsigt], [ncc_maalfrid]                           | 209.72M     |
+| Encyclopedic | [wiki], [wikisource], [dbc-faktalink], [dbc-forfatterweb], [scrape_hovedstaden]                                   | 157.80M     |
+| News         | [tv2r], [dsk-danskerhverv], [dsk-dkmedier], [dsk-ida], [dsk-odense], [nordjyllandnews], [ncc_newspaper]           | 128.69M     |
+| Readaloud    | [nota]                                                                                                            | 7.30M       |
+| Dialect      | [botxt]                                                                                                           | 847.97K     |
+| **Total**    |                                                                                                                   | 8.62B       |
+
+[adl]: data/adl/adl.md
+[botxt]: data/botxt/botxt.md
+[dannet]: data/dannet/dannet.md
+[depbank]: data/depbank/depbank.md
+[ep]: data/ep/ep.md
+[ft]: data/ft/ft.md
+[gutenberg]: data/gutenberg/gutenberg.md
+[hest]: data/hest/hest.md
+[jvj]: data/jvj/jvj.md
+[naat]: data/naat/naat.md
+[relig]: data/relig/relig.md
+[retsinformationdk]: data/retsinformationdk/retsinformationdk.md
+[retspraksis]: data/retspraksis/retspraksis.md
+[skat]: data/skat/skat.md
+[spont]: data/spont/spont.md
+[synne]: data/synne/synne.md
+[tv2r]: data/tv2r/tv2r.md
+[wiki]: data/wiki/wiki.md
+[wikibooks]: data/wikibooks/wikibooks.md
+[wikisource]: data/wikisource/wikisource.md
+[dsk-alexandra]: data/dsk-alexandra/dsk-alexandra.md
+[dsk-atp]: data/dsk-atp/dsk-atp.md
+[dsk-cbrain]: data/dsk-cbrain/dsk-cbrain.md
+[dsk-danskerhverv]: data/dsk-danskerhverv/dsk-danskerhverv.md
+[dsk-dkmedier]: data/dsk-dkmedier/dsk-dkmedier.md
+[dsk-hofor]: data/dsk-hofor/dsk-hofor.md
+[dsk-ida]: data/dsk-ida/dsk-ida.md
+[dsk-odense]: data/dsk-odense/dsk-odense.md
+[dsk-plesner]: data/dsk-plesner/dsk-plesner.md
+[dsk-salling]: data/dsk-salling/dsk-salling.md
+[dsk-vejle]: data/dsk-vejle/dsk-vejle.md
+[dsk-vitec]: data/dsk-vitec/dsk-vitec.md
+[plandata]: data/plandata/plandata.md
+[ai-aktindsigt]: data/ai-aktindsigt/ai-aktindsigt.md
+[danske-taler]: data/danske-taler/danske-taler.md
+[fm-udgivelser]: data/fm-udgivelser/fm-udgivelser.md
+[eur-lex-sum-da]: data/eur-lex-sum-da/eur-lex-sum-da.md
+[memo]: data/memo/memo.md
+[miljoeportalen]: data/miljoeportalen/miljoeportalen.md
+[nordjyllandnews]: data/nordjyllandnews/nordjyllandnews.md
+[nota]: data/nota/nota.md
+[opensubtitles]: data/opensubtitles/opensubtitles.md
+[cellar]: data/cellar/cellar.md
+[ncc_books]: data/ncc_books/ncc_books.md
+[ncc_maalfrid]: data/ncc_maalfrid/ncc_maalfrid.md
+[ncc_newspaper]: data/ncc_newspaper/ncc_newspaper.md
+[ncc_parliament]: data/ncc_parliament/ncc_parliament.md
+[dbc-abstracts]: data/dbc-abstracts/dbc-abstracts.md
+[dbc-faktalink]: data/dbc-faktalink/dbc-faktalink.md
+[dbc-forfatterweb]: data/dbc-forfatterweb/dbc-forfatterweb.md
+[dbc-reviews]: data/dbc-reviews/dbc-reviews.md
+[scrape_hovedstaden]: data/scrape_hovedstaden/scrape_hovedstaden.md
+[danish-pd]: data/danish-pd/danish-pd.md
+[cvr-reports]: data/cvr-reports/cvr-reports.md
+<!-- END-DOMAIN TABLE -->
+
+</div>
+
+<div style="flex: 1;">
+
+<p align="center">
+<img src="./images/domain_distribution.png" width="400" style="margin-right: 10px;" />
+</p>
+
+</div>
+
+</div>
+
+
+### Licensing
+
+The following gives an overview of the licensing in the Dynaword. To get the exact license of the individual datasets check out the [overview table](#source-data).
+These license is applied to the constituent data, i.e., the text. The collection of datasets (metadata, quality control, etc.) is licensed under [CC-0](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en).
+
+<!-- START-LICENSE TABLE -->
+| License                                         | Sources                                                                                                                                                                                                                                                           | N. Tokens   |
+|:------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
+| CC-0                                            | [adl], [botxt], [ep], [ft], [hest], [naat], [relig], [retspraksis], [skat], [spont], [synne], [wiki], [wikibooks], [wikisource], [danske-taler], [miljoeportalen], [nordjyllandnews], [nota], [opensubtitles], [ncc_books], [ncc_newspaper], [scrape_hovedstaden] | 1.99B       |
+| Written agreement (public models, private data) | [plandata], [dbc-abstracts], [dbc-faktalink], [dbc-forfatterweb], [dbc-reviews]                                                                                                                                                                                   | 1.78B       |
+| Verbal agreement                                | [cvr-reports]                                                                                                                                                                                                                                                     | 1.49B       |
+| CC-BY-SA 4.0                                    | [depbank], [jvj], [tv2r], [fm-udgivelser], [eur-lex-sum-da], [memo], [cellar]                                                                                                                                                                                     | 1.37B       |
+| Other (No attribution required)                 | [retsinformationdk]                                                                                                                                                                                                                                               | 818.25M     |
+| Public Domain                                   | [danish-pd]                                                                                                                                                                                                                                                       | 532.43M     |
+| Other (Attribution required)                    | [dannet], [gutenberg], [ai-aktindsigt], [ncc_maalfrid], [ncc_parliament]                                                                                                                                                                                          | 515.61M     |
+| DSK-1                                           | [dsk-alexandra], [dsk-atp], [dsk-cbrain], [dsk-danskerhverv], [dsk-dkmedier], [dsk-hofor], [dsk-ida], [dsk-odense], [dsk-plesner], [dsk-salling], [dsk-vejle], [dsk-vitec]                                                                                        | 115.06M     |
+| **Total**                                       |                                                                                                                                                                                                                                                                   | 8.62B       |
+
+[adl]: data/adl/adl.md
+[botxt]: data/botxt/botxt.md
+[dannet]: data/dannet/dannet.md
+[depbank]: data/depbank/depbank.md
+[ep]: data/ep/ep.md
+[ft]: data/ft/ft.md
+[gutenberg]: data/gutenberg/gutenberg.md
+[hest]: data/hest/hest.md
+[jvj]: data/jvj/jvj.md
+[naat]: data/naat/naat.md
+[relig]: data/relig/relig.md
+[retsinformationdk]: data/retsinformationdk/retsinformationdk.md
+[retspraksis]: data/retspraksis/retspraksis.md
+[skat]: data/skat/skat.md
+[spont]: data/spont/spont.md
+[synne]: data/synne/synne.md
+[tv2r]: data/tv2r/tv2r.md
+[wiki]: data/wiki/wiki.md
+[wikibooks]: data/wikibooks/wikibooks.md
+[wikisource]: data/wikisource/wikisource.md
+[dsk-alexandra]: data/dsk-alexandra/dsk-alexandra.md
+[dsk-atp]: data/dsk-atp/dsk-atp.md
+[dsk-cbrain]: data/dsk-cbrain/dsk-cbrain.md
+[dsk-danskerhverv]: data/dsk-danskerhverv/dsk-danskerhverv.md
+[dsk-dkmedier]: data/dsk-dkmedier/dsk-dkmedier.md
+[dsk-hofor]: data/dsk-hofor/dsk-hofor.md
+[dsk-ida]: data/dsk-ida/dsk-ida.md
+[dsk-odense]: data/dsk-odense/dsk-odense.md
+[dsk-plesner]: data/dsk-plesner/dsk-plesner.md
+[dsk-salling]: data/dsk-salling/dsk-salling.md
+[dsk-vejle]: data/dsk-vejle/dsk-vejle.md
+[dsk-vitec]: data/dsk-vitec/dsk-vitec.md
+[plandata]: data/plandata/plandata.md
+[ai-aktindsigt]: data/ai-aktindsigt/ai-aktindsigt.md
+[danske-taler]: data/danske-taler/danske-taler.md
+[fm-udgivelser]: data/fm-udgivelser/fm-udgivelser.md
+[eur-lex-sum-da]: data/eur-lex-sum-da/eur-lex-sum-da.md
+[memo]: data/memo/memo.md
+[miljoeportalen]: data/miljoeportalen/miljoeportalen.md
+[nordjyllandnews]: data/nordjyllandnews/nordjyllandnews.md
+[nota]: data/nota/nota.md
+[opensubtitles]: data/opensubtitles/opensubtitles.md
+[cellar]: data/cellar/cellar.md
+[ncc_books]: data/ncc_books/ncc_books.md
+[ncc_maalfrid]: data/ncc_maalfrid/ncc_maalfrid.md
+[ncc_newspaper]: data/ncc_newspaper/ncc_newspaper.md
+[ncc_parliament]: data/ncc_parliament/ncc_parliament.md
+[dbc-abstracts]: data/dbc-abstracts/dbc-abstracts.md
+[dbc-faktalink]: data/dbc-faktalink/dbc-faktalink.md
+[dbc-forfatterweb]: data/dbc-forfatterweb/dbc-forfatterweb.md
+[dbc-reviews]: data/dbc-reviews/dbc-reviews.md
+[scrape_hovedstaden]: data/scrape_hovedstaden/scrape_hovedstaden.md
+[danish-pd]: data/danish-pd/danish-pd.md
+[cvr-reports]: data/cvr-reports/cvr-reports.md
+<!-- END-LICENSE TABLE -->
+
+### Source Data
+
+Below follows a brief overview of the sources in the corpus along with their individual license. To get more information about the individual dataset click the hyperlink in the table.
+
+<details>
+<summary><b>Overview Table (click to unfold)</b></summary>
+
+You can learn more about each dataset by pressing the link in the first column.
 
 <!-- START-MAIN TABLE -->
 | Source               | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                                           |
 |:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:--------------------------------------------------|
-| [cvr-reports]        | Annual reports from danish companies in the period 2010-2025                                                                                                                                            | Financial    | 1.49B       | [Written agreement (public models, private data)] |
+| [cvr-reports]        | Annual reports from danish companies in the period 2010-2025                                                                                                                                            | Financial    | 1.49B       | [Verbal agreement]                                |
 | [cellar]             | The official digital repository for European Union legal documents and open data                                                                                                                        | Legal        | 1.15B       | [CC-BY-SA 4.0]                                    |
 | [plandata]           | A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types             | Governmental | 1.03B       | [Written agreement (public models, private data)] |
 | [retsinformationdk]  | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 818.25M     | [Danish Copyright Law]                            |
@@ -269,8 +453,9 @@ We generally split the dataset into two categories: Public release sources and r
 [Written agreement (public models, private data)]: ./data/dbc-forfatterweb/dbc-forfatterweb.md#license-information
 [Written agreement (public models, private data)]: ./data/dbc-reviews/dbc-reviews.md#license-information
 [Public Domain]: ./data/danish-pd/danish-pd.md#license-information
-[Written agreement (public models, private data)]: ./data/cvr-reports/cvr-reports.md#license-information
+[Verbal agreement]: ./data/cvr-reports/cvr-reports.md#license-information
 <!-- END-MAIN TABLE -->
+</details>
 
 <!-- **Public Release sources**: These sources include datasets that either public released under permissible licenses or where explicit permission have been given by the data owner to train and release models based on the data. The primary source for the non-public training data is [DSK](https://alexandra.dk/dsk/).
 
@@ -298,13 +483,7 @@ Below follows a brief overview of the sources in the corpus along with their ind
 
 
 ### Dataset Statistics
-The following plot show the domains distribution of the datasets:
-
-<p align="center">
-<img src="./images/domain_distribution.png" width="400" style="margin-right: 10px;" />
-</p>
-
-
+The following plot pr. dataset histograms displaying document lengths.
 
 <details>
 <summary>Per dataset histograms</summary>

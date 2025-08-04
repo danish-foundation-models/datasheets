@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Literal
 
 import pandas as pd
 
@@ -106,6 +107,100 @@ def create_overview_table(
         df["N. Tokens"] = df["N. Tokens"].apply(human_readable_large_int)
 
     return df
+
+
+def _get_normalized_license(ds: DataSheet) -> str:
+    non_standard_license_names = {
+        "Apache 2.0": "Other (Attribution required)",
+        "NLOD 2.0": "Other (Attribution required)",
+        "DanNet 1.0": "Other (Attribution required)",
+        "Gutenberg": "Other (Attribution required)",
+        "Danish Copyright Law": "Other (No attribution required)",
+    }
+    if (
+        ds.license_name not in non_standard_license_names
+        and ds.license_name is not None
+    ):
+        return ds.license_name
+    if ds.license_name is None:
+        raise ValueError(
+            f"Datasheet {ds.pretty_name} has no license name specified in the frontmatter."
+        )
+    return non_standard_license_names[ds.license_name]
+
+
+def _get_feature_by_string(
+    datasheet: DataSheet, feature_name: Literal["Domain", "Language", "License"]
+) -> str:
+    """Get a specific feature from the frontmatter."""
+
+    match feature_name:
+        case "Domain":
+            return datasheet.domains[0] if datasheet.domains else "N/A"
+        case "Language":
+            return ", ".join(datasheet.language)
+        case "License":
+            return _get_normalized_license(datasheet)
+        case _:
+            raise ValueError(f"Unknown feature: {feature_name}")
+
+
+def create_grouped_table(
+    group: Literal["Domain", "Language", "License"] = "Domain",
+    repo_path: Path = repo_path,
+    add_readable_tokens: bool = True,
+    add_total_row: bool = True,
+) -> pd.DataFrame:
+    table = {
+        "Sources": [],
+        group: [],
+        "N. Tokens": [],
+    }
+
+    for dataset in _datasets:
+        dataset_path = repo_path / "data" / dataset
+        readme_path = dataset_path / f"{dataset_path.name}.md"
+
+        sheet = DataSheet.load_from_path(readme_path)
+        desc_stats = sheet.get_descritive_stats()
+        feature = _get_feature_by_string(sheet, group)
+
+        table["Sources"] += [f"[{dataset_path.name}]"]
+        table[group] += [feature]
+        table["N. Tokens"] += [desc_stats.number_of_tokens]
+
+    if add_total_row:
+        table["Sources"] += [""]
+        table[group] += ["**Total**"]
+        table["N. Tokens"] += [sum(table["N. Tokens"])]
+
+    df = pd.DataFrame.from_dict(table)
+
+    df = df.groupby(group).agg({"Sources": lambda x: ", ".join(x), "N. Tokens": "sum"})
+
+    df = df.sort_values("N. Tokens", ascending=False)
+
+    df.index.name = group
+    df = df.reset_index()
+
+    # Trick the Total row to be at the bottom.
+    new_index = list(df.index.drop(0)) + [0]
+    df = df.reindex(new_index)
+
+    if add_readable_tokens:
+        df["N. Tokens"] = df["N. Tokens"].apply(human_readable_large_int)
+
+    return df
+
+
+def create_grouped_table_str(
+    repo_path: Path = repo_path,
+    group: Literal["Domain", "Language", "License"] = "Domain",
+) -> str:
+    table = create_grouped_table(group=group, repo_path=repo_path)
+    readme_references = create_dataset_readme_references()
+    package = f"{table.to_markdown(index=False, maxcolwidths=[None, None, None])}\n\n{readme_references}\n\n"
+    return package
 
 
 def create_overview_table_str(repo_path: Path = repo_path) -> str:

@@ -25,7 +25,7 @@ from datasheets.git_utilities import (
     get_latest_revision,
 )
 from datasheets.paths import repo_path
-from datasheets.tables import create_overview_table, create_overview_table_str
+from datasheets.tables import create_overview_table, create_overview_table_str, create_grouped_table_str
 
 logger = logging.getLogger(__name__)
 
@@ -222,10 +222,15 @@ def update_dataset(
 
     if dataset_name == "default":
         logger.info("Updating Overview table")
-        package = create_overview_table_str()
-        sheet.body = sheet.replace_tag(package=package, tag="MAIN TABLE")
+        overview_table = create_overview_table_str()
+        sheet.body = sheet.replace_tag(package=overview_table, tag="MAIN TABLE")
+        logger.info("Updating domain table")
+        domain_table = create_grouped_table_str(group="Domain")
+        sheet.body = sheet.replace_tag(package=domain_table, tag="DOMAIN TABLE")
+        logger.info("Updating license table")
+        domain_table = create_grouped_table_str(group="License")
+        sheet.body = sheet.replace_tag(package=domain_table, tag="LICENSE TABLE")
         create_domain_distribution_plot()
-
     sheet.write_to_path()
 
 
