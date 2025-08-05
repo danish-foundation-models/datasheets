@@ -34,7 +34,7 @@ Martin Sundahl Laursen and Thiusius R. Savarimuthu from the University of Southe
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Medical, Encyclopedic
 - **Number of samples**: 24.00K
 - **Number of tokens (Llama 3)**: 27.07M

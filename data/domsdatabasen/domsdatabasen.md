@@ -56,7 +56,7 @@ Domsdatabasen is continuously being developed. As digitization progresses and te
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Legal
 - **Number of samples**: 8.47K
 - **Number of tokens (Llama 3)**: 86.35M

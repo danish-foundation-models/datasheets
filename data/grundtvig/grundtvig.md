@@ -31,7 +31,7 @@ The project is scheduled for completion in 2030 and will comprise 1,000 individu
 
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
+- **Language**: Danish
 - **Domains**: Books
 - **Number of samples**: 632
 - **Number of tokens (Llama 3)**: 10.53M
