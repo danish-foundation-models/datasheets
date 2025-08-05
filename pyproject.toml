@@ -1,6 +1,6 @@
 [project]
 name = "datasheets"
-version = "0.0.13"
+version = "0.0.14"
 description = "Project code for the dfm datasheets."
 readme = "README.md"
 requires-python = ">=3.12,<3.13" # 3.13 have issues with spacy and pytorch
