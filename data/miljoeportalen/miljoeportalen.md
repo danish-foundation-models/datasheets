@@ -27,8 +27,6 @@ Danmarks Miljøportal's goal is for environmental data to be included early in a
 This can be decisions specifically targeted at the environment such as water plans, Green Tripartite Agreement, biodiversity and nature restoration, but also decisions about, for example, renewable energy, climate adaptation, new roads, residential areas, and industrial enterprises, where environmental aspects need to be considered.
 
 
-
-
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
@@ -41,6 +39,23 @@ This can be decisions specifically targeted at the environment such as water pla
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+
+
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "miljoeportalen_0",
+  "text": "Bila110  g   1 101 10 - miljTIL R  lj  TIL RTIL RøraÆTSHUSKO  pp  ÆTSHUS KOÆTSHUS Kort\n\nLOKALPLAN NR[...]",
+  "source": "miljoeportalen",
+  "added": "2025-03-24",
+  "created": "2024-01-01, 2025-01-01",
+  "token_count": 9054
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -49,9 +64,7 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
-
-
-### Additional Processing
+<!-- END-SAMPLE -->
 
 
 ### Dataset Statistics
@@ -63,9 +76,16 @@ An entry in the dataset consists of the following fields:
 <!-- END-DATASET PLOTS -->
 
 
-# Additional Information
 
-## License Information
+## Additional Information
+
+
+<!-- ### Data includes
+
+TODO: KRISTIAN I assume this is just the website or is it also reports? 
+-->
+
+### License information
 This dataset is licensed under CCO this license was clarified by support@miljoeportal.dk: 
  
 > Data er underlagt Creative Common CC0, se:
@@ -73,6 +93,8 @@ This dataset is licensed under CCO this license was clarified by support@miljoep
 > 
 > Lad mig vide hvis du har yderligere spørgsmål.
 > Har du spørgsmål til din sag eller yderligere kommentarer, bedes du besvare denne mail.
+
+
 
 ### Citation Information
 

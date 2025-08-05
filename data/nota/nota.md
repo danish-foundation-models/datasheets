@@ -39,6 +39,22 @@ Nota lyd- og tekstdata (Tekst only) is a readaloud dataset consisting of few ver
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "INSL20160004",
+  "text": "Inspiration nr. 4, 2016\nBiblioteksbetjening \nTelefon: 39 13 46 00\nEmail: biblioteket@nota.dk\nInspira[...]",
+  "source": "nota",
+  "added": "2025-02-03",
+  "created": "2016-01-01, 2016-12-31",
+  "token_count": 69977
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -47,9 +63,12 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
+<!-- END-SAMPLE -->
 
 
 ### Additional Processing
+
+
 
 
 ### Dataset Statistics
@@ -61,9 +80,7 @@ An entry in the dataset consists of the following fields:
 <!-- END-DATASET PLOTS -->
 
 
-# Additional Information
-
-## License Information
+## Additional Information
 
 
 ### Citation Information

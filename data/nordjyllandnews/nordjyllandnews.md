@@ -4,11 +4,15 @@ language:
 - da
 license: cc0-1.0
 license_name: CC-0
+size_categories:
+- 10-100k
 task_categories:
 - text-generation
 - fill-mask
 task_ids:
 - language-modeling
+source_datasets:
+- alexandrainst/nordjylland-news-summarization
 domains:
 - News
 ---
@@ -19,12 +23,11 @@ domains:
 Articles from the Danish Newspaper [TV2 Nord](https://www.tv2nord.dk).
 <!-- END-SHORT DESCRIPTION -->
 
+
 The data is derived from the Huggingface dataset [alexandrainst/nordjylland-news-summarization](https://huggingface.co/datasets/alexandrainst/nordjylland-news-summarization) originally intended for text summarization.
 
-
-
-
 ## Dataset Description
+
 
 <!-- START-DESC-STATS -->
 - **Language**: Danish
@@ -36,6 +39,23 @@ The data is derived from the Huggingface dataset [alexandrainst/nordjylland-news
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+
+
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "nordjyllandnews_0",
+  "text": "Lav et referat af nedenstående tekst:\n\nTekst:\nOpdatering: Manden er nu fundet af Nordjyllands Politi[...]",
+  "source": "nordjyllandnews",
+  "added": "2024-12-16",
+  "created": "2000-01-01, 2024-01-01",
+  "token_count": 628
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -44,9 +64,7 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
-
-
-### Additional Processing
+<!-- END-SAMPLE -->
 
 
 ### Dataset Statistics
@@ -58,10 +76,16 @@ An entry in the dataset consists of the following fields:
 <!-- END-DATASET PLOTS -->
 
 
-# Additional Information
 
-## License Information
+## Additional Information
 
+
+## Opportunities for Improvement
+
+An updated version of the this data could be fetched from their [API](https://developer.bazo.dk/#876ab6f9-e057-43e3-897a-1563de34397e).
+
+# Sourced data
+This dataset is derived from [`alexandrainst/nordjylland-news-summarization`](https://huggingface.co/datasets/alexandrainst/nordjylland-news-summarization)
 
 ### Citation Information
 

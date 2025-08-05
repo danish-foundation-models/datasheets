@@ -21,9 +21,6 @@ Collections from the Norwegian parliament in Danish. Extracted from the [Norwegi
 
 The Norwegian Colossal Corpus is a collection of multiple smaller Norwegian corpuses suitable for training large language models.
 
-
-
-
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
@@ -36,6 +33,21 @@ The Norwegian Colossal Corpus is a collection of multiple smaller Norwegian corp
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "digistorting_1906-07_part6_vol-a_part2",
+  "text": "Liknes —Aaroot i foranstaaende oversigt over omkostningerne er beregnet til kr. 37 500,00 under foru[...]",
+  "source": "ncc_parliament",
+  "added": "2025-05-08",
+  "created": "2021-01-01, 2021-12-31",
+  "token_count": 360308
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -44,9 +56,8 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
+<!-- END-SAMPLE -->
 
-
-### Additional Processing
 
 
 ### Dataset Statistics
@@ -57,13 +68,43 @@ An entry in the dataset consists of the following fields:
 </p>
 <!-- END-DATASET PLOTS -->
 
-
-# Additional Information
+## Additional Information
 
 ## License Information
+
 This dataset is licensed under [NLOD 2.0](https://data.norge.no/nlod/en/2.0). 
 This license is derived from the original [publication](https://huggingface.co/datasets/NbAiLab/NCC), which is published by the 
 [National Library of Norway](https://www.nb.no/en/).
+
+## Filtering
+
+This subset is the result of the following filtering from all available data splits on the [NCC](https://huggingface.co/datasets/NbAiLab/NCC):
+
+- is_parliament: Documents, which are tagged as parliament data
+- language_filter: Document is classified as Danish with a threshold of 0.75
+- min_length: Document has at least 10 words (whitespace separated strings + punctuation)
+- alpha_ratio: The ratio of all words / words with only alphabetical characters is at least 0.7
+- min_stop_words: The document contains at least 2 Danish stop words
+- duplicate: Duplicate documents were removed
+
+The effect of each of these steps is outlined in the table below:
+
+| Filtering step  | Number of document |
+| --------------- | ------------------ |
+| is_parliament   | 9 528              |
+| language_filter | 1 275              |
+| min_length      | 1 275              |
+| alpha_ratio     | 1 077              |
+| min_stop_words  | 1 077              |
+| duplicate       | 1 077              |
+
+Note that a total of 976 long texts (>~1e5 tokens) were found.
+
+
+### Quality
+
+It is important to note, that recurring [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) errors and historic expressions in older 
+texts hinder the legibility of some of the documents and make differentiating between Norwegian and Danish difficult.
 
 
 ### Citation Information

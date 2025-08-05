@@ -16,12 +16,10 @@ domains:
 # Dataset Card for Norwegian Colossal Corpus (books)
 
 <!-- START-SHORT DESCRIPTION -->
-Danish books extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from OCR.
+Danish books extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from OCR. 
 <!-- END-SHORT DESCRIPTION -->
 
 The Norwegian Colossal Corpus is a collection of multiple smaller Norwegian corpuses suitable for training large language models.  
-
-
 
 
 ## Dataset Description
@@ -36,6 +34,21 @@ The Norwegian Colossal Corpus is a collection of multiple smaller Norwegian corp
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "digibok_2009033103031",
+  "text": "P. FR. RIST. OLAF RYES SAGA. OPTEGNELSER, DAGBØGER OG BREVE. DET NORDISKE FORLAG. Denne Bog søger at[...]",
+  "source": "ncc_books",
+  "added": "2025-05-08",
+  "created": "1899-01-01, 1899-12-31",
+  "token_count": 192301
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -44,9 +57,8 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
+<!-- END-SAMPLE -->
 
-
-### Additional Processing
 
 
 ### Dataset Statistics
@@ -61,9 +73,39 @@ An entry in the dataset consists of the following fields:
 # Additional Information
 
 ## License Information
+
 This dataset is licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). 
 This license is derived from the original [publication](https://huggingface.co/datasets/NbAiLab/NCC), which is published by the 
 [National Library of Norway](https://www.nb.no/en/).
+
+
+## Filtering
+
+This subset is the result of the following filtering from all available data splits on the [NCC](https://huggingface.co/datasets/NbAiLab/NCC):
+
+- is_books: Documents, which are tagged as books
+- language_filter: Document is classified as Danish with a threshold of 0.75
+- min_length: Document has at least 10 words (whitespace separated strings + punctuation)
+- alpha_ratio: The ratio of all words / words with only alphabetical characters is at least 0.7
+- min_stop_words: The document contains at least 2 Danish stop words
+- duplicate: Duplicate documents were removed
+
+The effect of each of these steps is outlined in the table below:
+
+| Filtering step  | Number of document |
+| --------------- | ------------------ |
+| is_books        | 20 939             |
+| language_filter | 5 125              |
+| min_length      | 5 125              |
+| alpha_ratio     | 4 902              |
+| min_stop_words  | 4 902              |
+| duplicate       | 4 902              |
+
+
+## Quality
+
+It is important to note, that recurring [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) errors and historic expressions in older 
+texts hinder the legibility of some of the documents and make differentiating between Norwegian and Danish difficult.
 
 ### Citation Information
 

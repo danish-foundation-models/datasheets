@@ -52,12 +52,12 @@ An example from the dataset looks as follows.
 <!-- START-SAMPLE -->
 ```py
 {
-  "id": "retsinformationdk_173889",
-  "text": "Den fulde tekst Pressenævnets kendelse i sag nr. 15-70-00822\nResumé\nForeningen for Skånsomt Kystfisk[...]",
+  "id": "AA014851",
+  "text": "Indsamlingsnævnets afgørelse i sag nr. 22-730-00015\n\nIndsamlingsnævnet fandt det kritisabelt, at Gad[...]",
   "source": "retsinformationdk",
-  "added": "2019-11-22",
-  "created": "2000-01-01, 2022-01-01",
-  "token_count": 900
+  "added": "2025-06-26",
+  "created": "2025-06-25, 2025-06-25",
+  "token_count": 4062
 }
 ```
 
