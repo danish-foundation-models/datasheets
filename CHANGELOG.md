@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.14] - 2025-08-04
+
+### Changed
+
+- Reorganised the tables in the readme for better clarity of the individusl datasets
+
 ## [v0.0.13] - 2025-07-01
 
 ### Added 
