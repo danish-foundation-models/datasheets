@@ -105,10 +105,10 @@ def copy_markdown_files(input_folder: Path, output_folder: Path):
             destination.parent.mkdir(parents=True, exist_ok=True)
             add_dataset_to_readme(dataset_name)
 
-        shutil.copy(
-            dir / (dataset_name + file_ext),
-            destination,
-        )
+            shutil.copy(
+                dir / (dataset_name + file_ext),
+                destination,
+            )
 
         logger.info(f"Moving to: {destination}")
 
@@ -116,7 +116,7 @@ def copy_markdown_files(input_folder: Path, output_folder: Path):
 def main():
     # Sync / Download dynaword
     dynaword_path = download_repo()
-
+    
     # Iterate over data folder
     ## Copy parquet to data/dataset/{dataset_name}/original/{newest version}
     copy_parquet_files(dynaword_path / "data", repo_path.parent / "datasets")

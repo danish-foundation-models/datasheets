@@ -148,21 +148,22 @@ This dynaword consist of data from various domains (e.g., legal, books, social m
 
 
 <!-- START-DOMAIN TABLE -->
-| Domain       | Sources                                                                                                           | N. Tokens   |
-|:-------------|:------------------------------------------------------------------------------------------------------------------|:------------|
-| Legal        | [retsinformationdk], [retspraksis], [skat], [fm-udgivelser], [eur-lex-sum-da], [miljoeportalen], [cellar]         | 2.36B       |
-| Books        | [adl], [gutenberg], [jvj], [relig], [wikibooks], [memo], [ncc_books], [dbc-abstracts], [dbc-reviews], [danish-pd] | 2.00B       |
-| Financial    | [cvr-reports]                                                                                                     | 1.49B       |
-| Governmental | [plandata]                                                                                                        | 1.03B       |
-| Conversation | [ep], [ft], [naat], [spont], [danske-taler], [opensubtitles]                                                      | 497.09M     |
-| Social Media | [hest]                                                                                                            | 389.32M     |
-| Other        | [dannet], [depbank], [synne], [dsk-cbrain], [dsk-hofor], [dsk-plesner], [dsk-vitec], [ncc_parliament]             | 346.36M     |
-| Web          | [dsk-alexandra], [dsk-atp], [dsk-salling], [dsk-vejle], [ai-aktindsigt], [ncc_maalfrid]                           | 209.72M     |
-| Encyclopedic | [wiki], [wikisource], [dbc-faktalink], [dbc-forfatterweb], [scrape_hovedstaden]                                   | 157.80M     |
-| News         | [tv2r], [dsk-danskerhverv], [dsk-dkmedier], [dsk-ida], [dsk-odense], [nordjyllandnews], [ncc_newspaper]           | 128.69M     |
-| Readaloud    | [nota]                                                                                                            | 7.30M       |
-| Dialect      | [botxt]                                                                                                           | 847.97K     |
-| **Total**    |                                                                                                                   | 8.62B       |
+| Domain       | Sources                                                                                                                        | N. Tokens   |
+|:-------------|:-------------------------------------------------------------------------------------------------------------------------------|:------------|
+| Legal        | [retsinformationdk], [retspraksis], [skat], [fm-udgivelser], [eur-lex-sum-da], [miljoeportalen], [cellar], [domsdatabasen]     | 2.44B       |
+| Financial    | [cvr-reports]                                                                                                                  | 2.32B       |
+| Books        | [adl], [gutenberg], [jvj], [relig], [wikibooks], [memo], [ncc_books], [dbc-abstracts], [dbc-reviews], [danish-pd], [grundtvig] | 2.01B       |
+| Governmental | [plandata]                                                                                                                     | 1.03B       |
+| Conversation | [ep], [ft], [naat], [spont], [danske-taler], [opensubtitles]                                                                   | 497.09M     |
+| Social Media | [hest]                                                                                                                         | 389.32M     |
+| Other        | [dannet], [depbank], [synne], [dsk-cbrain], [dsk-hofor], [dsk-plesner], [dsk-vitec], [ncc_parliament]                          | 346.36M     |
+| Web          | [dsk-alexandra], [dsk-atp], [dsk-salling], [dsk-vejle], [ai-aktindsigt], [ncc_maalfrid]                                        | 209.72M     |
+| Encyclopedic | [wiki], [wikisource], [dbc-faktalink], [dbc-forfatterweb]                                                                      | 130.76M     |
+| News         | [tv2r], [dsk-danskerhverv], [dsk-dkmedier], [dsk-ida], [dsk-odense], [nordjyllandnews], [ncc_newspaper]                        | 128.69M     |
+| Medical      | [health_hovedstaden]                                                                                                           | 27.07M      |
+| Readaloud    | [nota]                                                                                                                         | 7.30M       |
+| Dialect      | [botxt]                                                                                                                        | 847.97K     |
+| **Total**    |                                                                                                                                | 9.55B       |
 
 [adl]: data/adl/adl.md
 [botxt]: data/botxt/botxt.md
@@ -215,9 +216,11 @@ This dynaword consist of data from various domains (e.g., legal, books, social m
 [dbc-faktalink]: data/dbc-faktalink/dbc-faktalink.md
 [dbc-forfatterweb]: data/dbc-forfatterweb/dbc-forfatterweb.md
 [dbc-reviews]: data/dbc-reviews/dbc-reviews.md
-[scrape_hovedstaden]: data/scrape_hovedstaden/scrape_hovedstaden.md
 [danish-pd]: data/danish-pd/danish-pd.md
 [cvr-reports]: data/cvr-reports/cvr-reports.md
+[health_hovedstaden]: data/health_hovedstaden/health_hovedstaden.md
+[grundtvig]: data/grundtvig/grundtvig.md
+[domsdatabasen]: data/domsdatabasen/domsdatabasen.md
 <!-- END-DOMAIN TABLE -->
 
 </div>
@@ -239,17 +242,17 @@ The following gives an overview of the licensing in the Dynaword. To get the exa
 These license is applied to the constituent data, i.e., the text. The collection of datasets (metadata, quality control, etc.) is licensed under [CC-0](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en).
 
 <!-- START-LICENSE TABLE -->
-| License                                         | Sources                                                                                                                                                                                                                                                           | N. Tokens   |
-|:------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
-| CC-0                                            | [adl], [botxt], [ep], [ft], [hest], [naat], [relig], [retspraksis], [skat], [spont], [synne], [wiki], [wikibooks], [wikisource], [danske-taler], [miljoeportalen], [nordjyllandnews], [nota], [opensubtitles], [ncc_books], [ncc_newspaper], [scrape_hovedstaden] | 1.99B       |
-| Written agreement (public models, private data) | [plandata], [dbc-abstracts], [dbc-faktalink], [dbc-forfatterweb], [dbc-reviews]                                                                                                                                                                                   | 1.78B       |
-| Verbal agreement                                | [cvr-reports]                                                                                                                                                                                                                                                     | 1.49B       |
-| CC-BY-SA 4.0                                    | [depbank], [jvj], [tv2r], [fm-udgivelser], [eur-lex-sum-da], [memo], [cellar]                                                                                                                                                                                     | 1.37B       |
-| Other (No attribution required)                 | [retsinformationdk]                                                                                                                                                                                                                                               | 818.25M     |
-| Public Domain                                   | [danish-pd]                                                                                                                                                                                                                                                       | 532.43M     |
-| Other (Attribution required)                    | [dannet], [gutenberg], [ai-aktindsigt], [ncc_maalfrid], [ncc_parliament]                                                                                                                                                                                          | 515.61M     |
-| DSK-1                                           | [dsk-alexandra], [dsk-atp], [dsk-cbrain], [dsk-danskerhverv], [dsk-dkmedier], [dsk-hofor], [dsk-ida], [dsk-odense], [dsk-plesner], [dsk-salling], [dsk-vejle], [dsk-vitec]                                                                                        | 115.06M     |
-| **Total**                                       |                                                                                                                                                                                                                                                                   | 8.62B       |
+| License                                         | Sources                                                                                                                                                                                                                                                                        | N. Tokens   |
+|:------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
+| Verbal agreement                                | [cvr-reports]                                                                                                                                                                                                                                                                  | 2.32B       |
+| CC-0                                            | [adl], [botxt], [ep], [ft], [hest], [naat], [relig], [retspraksis], [skat], [spont], [synne], [wiki], [wikibooks], [wikisource], [danske-taler], [miljoeportalen], [nordjyllandnews], [nota], [opensubtitles], [ncc_books], [ncc_newspaper], [health_hovedstaden], [grundtvig] | 2.00B       |
+| Written agreement (public models, private data) | [plandata], [dbc-abstracts], [dbc-faktalink], [dbc-forfatterweb], [dbc-reviews]                                                                                                                                                                                                | 1.78B       |
+| CC-BY-SA 4.0                                    | [depbank], [jvj], [tv2r], [fm-udgivelser], [eur-lex-sum-da], [memo], [cellar]                                                                                                                                                                                                  | 1.37B       |
+| Other (No attribution required)                 | [retsinformationdk], [domsdatabasen]                                                                                                                                                                                                                                           | 904.61M     |
+| Public Domain                                   | [danish-pd]                                                                                                                                                                                                                                                                    | 532.43M     |
+| Other (Attribution required)                    | [dannet], [gutenberg], [ai-aktindsigt], [ncc_maalfrid], [ncc_parliament]                                                                                                                                                                                                       | 515.61M     |
+| DSK-1                                           | [dsk-alexandra], [dsk-atp], [dsk-cbrain], [dsk-danskerhverv], [dsk-dkmedier], [dsk-hofor], [dsk-ida], [dsk-odense], [dsk-plesner], [dsk-salling], [dsk-vejle], [dsk-vitec]                                                                                                     | 115.06M     |
+| **Total**                                       |                                                                                                                                                                                                                                                                                | 9.55B       |
 
 [adl]: data/adl/adl.md
 [botxt]: data/botxt/botxt.md
@@ -302,9 +305,11 @@ These license is applied to the constituent data, i.e., the text. The collection
 [dbc-faktalink]: data/dbc-faktalink/dbc-faktalink.md
 [dbc-forfatterweb]: data/dbc-forfatterweb/dbc-forfatterweb.md
 [dbc-reviews]: data/dbc-reviews/dbc-reviews.md
-[scrape_hovedstaden]: data/scrape_hovedstaden/scrape_hovedstaden.md
 [danish-pd]: data/danish-pd/danish-pd.md
 [cvr-reports]: data/cvr-reports/cvr-reports.md
+[health_hovedstaden]: data/health_hovedstaden/health_hovedstaden.md
+[grundtvig]: data/grundtvig/grundtvig.md
+[domsdatabasen]: data/domsdatabasen/domsdatabasen.md
 <!-- END-LICENSE TABLE -->
 
 ### Source Data
