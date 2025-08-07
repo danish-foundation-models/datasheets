@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12,<3.13" # 3.13 have issues with spacy and pytorch
 dependencies = [
     # for commands
-    "datasets>=3.0.0", # loading and validating datasets
+    "datasets>=4.0.0", # loading and validating datasets
     "gitpython>=3.1.43", # interacting with git
     "pydantic>=2.10.4", # validating schemas
     "tabulate>=0.9.0", # creating md table

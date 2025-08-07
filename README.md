@@ -1,61 +1,114 @@
 ---
 license: other
 configs:
-- config_name: default
 - config_name: adl
+  set: dfm
 - config_name: botxt
+  set: dfm
 - config_name: dannet
+  set: dfm
 - config_name: depbank
+  set: dfm
 - config_name: ep
+  set: dfm
 - config_name: ft
+  set: dfm
 - config_name: gutenberg
+  set: dfm
 - config_name: hest
+  set: dfm
 - config_name: jvj
+  set: dfm
 - config_name: naat
+  set: dfm
 - config_name: relig
+  set: dfm
 - config_name: retsinformationdk
+  set: dfm
 - config_name: retspraksis
+  set: dfm
 - config_name: skat
+  set: dfm
 - config_name: spont
+  set: dfm
 - config_name: synne
+  set: dfm
 - config_name: tv2r
+  set: dfm
 - config_name: wiki
+  set: dfm
 - config_name: wikibooks
+  set: dfm
 - config_name: wikisource
+  set: dfm
 - config_name: dsk-alexandra
+  set: dfm
 - config_name: dsk-atp
+  set: dfm
 - config_name: dsk-cbrain
+  set: dfm
 - config_name: dsk-danskerhverv
+  set: dfm
 - config_name: dsk-dkmedier
+  set: dfm
 - config_name: dsk-hofor
+  set: dfm
 - config_name: dsk-ida
+  set: dfm
 - config_name: dsk-odense
+  set: dfm
 - config_name: dsk-plesner
+  set: dfm
 - config_name: dsk-salling
+  set: dfm
 - config_name: dsk-vejle
+  set: dfm
 - config_name: dsk-vitec
+  set: dfm
 - config_name: plandata
+  set: dfm
 - config_name: ai-aktindsigt
+  set: dfm
 - config_name: danske-taler
+  set: dfm
 - config_name: fm-udgivelser
+  set: dfm
 - config_name: eur-lex-sum-da
+  set: dfm
 - config_name: memo
+  set: dfm
 - config_name: miljoeportalen
+  set: dfm
 - config_name: nordjyllandnews
+  set: dfm
 - config_name: nota
+  set: dfm
 - config_name: opensubtitles
+  set: dfm
 - config_name: cellar
+  set: dfm
 - config_name: ncc_books
+  set: dfm
 - config_name: ncc_maalfrid
+  set: dfm
 - config_name: ncc_newspaper
+  set: dfm
 - config_name: ncc_parliament
+  set: dfm
 - config_name: dbc-abstracts
+  set: dfm
 - config_name: dbc-faktalink
+  set: dfm
 - config_name: dbc-forfatterweb
+  set: dfm
 - config_name: dbc-reviews
+  set: dfm
 - config_name: scrape_hovedstaden
+  set: dfm
 - config_name: danish-pd
+  set: dfm
 - config_name: cvr-reports
+  set: dfm
 annotations_creators:
 - no-annotation
 language_creators:
@@ -75,10 +128,6 @@ task_categories:
 task_ids:
 - language-modeling
 pretty_name: DFM Datasheets
-language_bcp47:
-- da
-- da-bornholm
-- da-synnejyl
 ---
 
 # DFM Datasheets
