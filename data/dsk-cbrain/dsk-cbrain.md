@@ -25,11 +25,9 @@ This data has been contributed by cBrain through the [Dansk Sprogmodel Konsortiu
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Other
 - **Number of samples**: 435
 - **Number of tokens (Llama 3)**: 4.19M
-- **Average document length (characters)**: 38337.69
+- **Average document length in tokens (min, max)**: 9.64K (121, 79.55K)
 <!-- END-DESC-STATS -->
 
 

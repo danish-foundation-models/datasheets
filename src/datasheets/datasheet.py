@@ -1,4 +1,6 @@
+import json
 import logging
+from datetime import datetime
 from enum import Enum
 from pathlib import Path
 from textwrap import dedent
@@ -9,14 +11,14 @@ from datasets import Dataset, load_dataset
 from pydantic import BaseModel, field_validator
 
 from datasheets.descriptive_stats import DescriptiveStatsOverview
-from datasheets.plots import create_descriptive_statistics_plots
+from datasheets.plots.descriptive_statistics_plots import (
+    create_descriptive_statistics_plots,
+)
 from datasheets.typings import (
     DOMAIN_TYPE,
     LANG_TYPE,
     LICENSE,
     LICENSE_NAMES_MAPPING,
-    LANGUAGES,
-    LANGUAGE_NAMES_MAPPING,
 )
 
 logger = logging.getLogger(__name__)
@@ -38,7 +40,22 @@ DATASET_PLOTS_template = """
 """
 
 
-def human_readable_large_int(value: int) -> str:
+SAMPLE_template = """
+```py
+{sample}
+```
+### Data Fields
+An entry in the dataset consists of the following fields:
+- `id` (`str`): An unique identifier for each document.
+- `text`(`str`): The content of the document.
+- `source` (`str`): The source of the document (see [Source Data](#source-data)).
+- `added` (`str`): An date for when the document was added to this collection.
+- `created` (`str`): An date range for when the document was originally created.
+- `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
+"""
+
+
+def convert_to_human_readable(value: float) -> str:
     thresholds = [
         (1_000_000_000, "B"),
         (1_000_000, "M"),
@@ -49,6 +66,19 @@ def human_readable_large_int(value: int) -> str:
             return f"{value / threshold:.2f}{label}"
 
     return str(value)
+
+
+def create_sample_str(sample: dict[str, Any], max_str_len: int = 100):
+    for k in sample:
+        if isinstance(sample[k], str) and len(sample[k]) > max_str_len:
+            sample[k] = sample[k][:max_str_len] + "[...]"
+        if isinstance(sample[k], datetime):
+            sample[k] = str(sample[k])
+
+    json_sample = json.dumps(sample, indent=2, ensure_ascii=False)
+    sample_str = SAMPLE_template.format(sample=json_sample)
+
+    return sample_str
 
 
 class DataSheet(BaseModel):
@@ -166,24 +196,11 @@ class DataSheet(BaseModel):
         else:
             d_stats = descriptive_stats
 
-        if any(lang not in LANGUAGES for lang in self.language):
-            raise NotImplementedError(  # raise NotImplementedError(
-                f"This script only handles the language codes {', '.join(LANGUAGES)}"
-            )
-        languages = ", ".join([LANGUAGE_NAMES_MAPPING[lang] for lang in self.language])
-
-        package = dedent(f"""
-        - **Language**: {languages}\n""")
-
-        if self.domains:
-            domains = ", ".join(self.domains)
-            package += f"- **Domains**: {domains}\n"
-
-        package += (
+        package = (
             dedent(f"""
-        - **Number of samples**: {human_readable_large_int(d_stats.number_of_samples)}
-        - **Number of tokens (Llama 3)**: {human_readable_large_int(d_stats.number_of_tokens)}
-        - **Average document length (characters)**: {d_stats.average_document_length:.2f}
+        - **Number of samples**: {convert_to_human_readable(d_stats.number_of_samples)}
+        - **Number of tokens (Llama 3)**: {convert_to_human_readable(d_stats.number_of_tokens)}
+        - **Average document length in tokens (min, max)**: {convert_to_human_readable(d_stats.average_document_length_tokens)} ({convert_to_human_readable(d_stats.min_length_tokens)}, {convert_to_human_readable(d_stats.max_length_tokens)})
         """).strip()
             + "\n"
         )
@@ -204,11 +221,9 @@ class DataSheet(BaseModel):
 
     def replace_tag(self, package: str, tag: str | DEFAULT_SECTION_TAGS) -> str:
         """Add replace a tag in the datasheet body.
-
         Args:
             package: What you want to replace it with
             tag: What tag you want to replace
-
         Returns:
             The entire body text
         """
@@ -263,7 +278,7 @@ class DataSheet(BaseModel):
 
 
 if __name__ == "__main__":
-    from datasheets.paths import repo_path
+    from dynaword.paths import repo_path
 
     sheet = DataSheet.load_from_path(repo_path / "data" / "dannet" / "dannet.md")
     ds = sheet.get_dataset()

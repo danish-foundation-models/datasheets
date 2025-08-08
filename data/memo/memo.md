@@ -9,6 +9,8 @@ task_categories:
 - fill-mask
 task_ids:
 - language-modeling
+source_datasets:
+- MiMe-MeMo/Corpus-v1.1
 domains:
 - Books
 ---
@@ -21,27 +23,34 @@ The MeMo corpus comprising almost all Danish novels from the period 1870-1899, k
 
 The MeMo corpus is established to investigate literary and cultural change in a seminal epoch of Scandinavian cultural and social history (known as 'the modern breakthrough') using natural language processing and other computational methods. The corpus consists of original novels by Norwegian and Danish authors printed in Denmark in the period 1870-99. It includes 858 volumes, totaling 4.5 million sentences and 65 million words.
 
-
-Lex.dk is a Danish online encyclopedia platform providing access to reliable and authoritative knowledge on a wide range of topics. It is created and curated by experts, ensuring high-quality, accurate content. The platform serves as a central hub for general and specialized information in Danish, making it a valuable resource for education, research, and general learning.
-
-
-Additional information about this dataset can be found on their [project page](https://nors.ku.dk/english/research/projects/measuring-modernity/) or on their huggingface [dataset](https://huggingface.co/datasets/MiMe-MeMo/Corpus-v1.1).
-
-
-
+Additional information about this dataset can be found on their [project page](https://nors.ku.dk/english/research/projects/measuring-modernity/) or on their huggingface [dataset](https://huggingface.co/datasets/MiMe-MeMo/Corpus-v1.1). The dataset can be inspected online using [the Korp platform](https://alf.hum.ku.dk/korp/?mode=memo_all#?cqp=%5B%5D&corpus=memo_all).
 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 858
 - **Number of tokens (Llama 3)**: 113.74M
-- **Average document length (characters)**: 375749.09
+- **Average document length in tokens (min, max)**: 132.57K (6.67K, 720.17K)
 <!-- END-DESC-STATS -->
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "1887_Paulsen_EnFremtidskvinde",
+  "text": "En fremtidskvinde?\n\nSkrevet af John Paulsen\nPubliceret 1887 af Schubothe\n ------- \n\nDen skandinavisk[...]",
+  "source": "memo",
+  "added": "2025-06-23",
+  "created": "1887-01-01, 1887-12-31",
+  "token_count": 98454
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -50,9 +59,7 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
-
-
-### Additional Processing
+<!-- END-SAMPLE -->
 
 
 ### Dataset Statistics
@@ -63,11 +70,21 @@ An entry in the dataset consists of the following fields:
 </p>
 <!-- END-DATASET PLOTS -->
 
+### Processing
 
-# Additional Information
+In addition to the text itself we prefix the document with the title, year, author name, pseudonym and publisher. This is to allow the model to learn the relation between the document and relevant metadata.
 
-## License Information
 
+### Updated and Corrections
+
+This version fixed a previous [issues]( https://huggingface.co/datasets/danish-foundation-models/danish-dynaword/discussions/67) in MeMo where the documents where incorrectly truncated and normalized. Removing this truncation led to a >10x increase in number of tokens. 
+
+
+## Additional Information
+
+
+### Contact
+For questions related to the processing and conversion feel free to open a [discussion thread](https://huggingface.co/datasets/danish-foundation-models/danish-dynaword/discussions) for question related to the initial collect of the data please contact the project PI, Jens Bjerring-Hansen, associate professor at Copenhagen University.
 
 ### Citation Information
 
@@ -82,5 +99,19 @@ This dataset is derived from the publicly availabe dataset [MiMe-MeMo/Corpus-v1.
   pages={177--186},
   year={2022},
   organization={ceur workshop proceedings}
+}
+```
+
+### Other uses of this dataset
+
+This study have additionally 
+```
+@inproceedings{feldkamp_canonical_2024,
+    address = {Miami, Florida, USA},
+    title = {Canonical {Status} and {Literary} {Influence}: {A} {Comparative} {Study} of {Danish} {Novels} from the {Modern} {Breakthrough} (1870--1900)},
+    booktitle = {Proceedings of the {Joint} 4th {International} {Conference} on {Natural} {Language} {Processing} for {Digital} {Humanities}},
+    publisher = {Association for Computational Linguistics, Forthcoming},
+    author = {Feldkamp, Pascale and Lassche, Alie and Kostkan, Jan and Kardos, Márton and Baunvig, Katrine F. and Nielbo, Kristoffer L.},
+    year = {2024},
 }
 ```

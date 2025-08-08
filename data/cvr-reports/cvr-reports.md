@@ -64,11 +64,9 @@ Once filed, all annual reports are made publicly accessible through the Danish B
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish, English
-- **Domains**: Financial
-- **Number of samples**: 185.91K
-- **Number of tokens (Llama 3)**: 1.49B
-- **Average document length (characters)**: 31813.61
+- **Number of samples**: 288.35K
+- **Number of tokens (Llama 3)**: 2.32B
+- **Average document length in tokens (min, max)**: 8.05K (2, 1.83M)
 <!-- END-DESC-STATS -->
 
 
@@ -101,7 +99,7 @@ An entry in the dataset consists of the following fields:
 # Additional Information
 
 ## License Information
-> Indgået mundtlig aftale mellem DFM og repræsentant for Erhversstyrelsen.
+> Indgået mundtlig aftale mellem DFM og repræsentant for Erhversstyrelsen.  
 > Ved spørgsmål kontakt os på mail: kristian.n.jensen@alexandra.dk
 >
 

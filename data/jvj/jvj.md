@@ -32,11 +32,9 @@ The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikiped
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 42
 - **Number of tokens (Llama 3)**: 3.55M
-- **Average document length (characters)**: 254893.67
+- **Average document length in tokens (min, max)**: 84.50K (15.47K, 271.79K)
 <!-- END-DESC-STATS -->
 
 

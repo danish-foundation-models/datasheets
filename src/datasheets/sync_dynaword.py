@@ -53,9 +53,7 @@ def copy_parquet_files(input_folder: Path, output_folder: Path):
         if dataset_name == "lexdk":
             continue  # LexDK have been taken down, but datasheet is still available in dynaword.
 
-        dataset_version = find_latest_dataset_version(
-            output_folder / dataset_name / "original"
-        )
+        dataset_version = find_latest_dataset_version(output_folder / dataset_name)
 
         if not dataset_version:  # TODO: Create the new directory here instead.
             logger.warning(f"Did not find the {dataset_name} dataset. Creating folder.")
@@ -104,6 +102,11 @@ def copy_markdown_files(input_folder: Path, output_folder: Path):
             )
             destination.parent.mkdir(parents=True, exist_ok=True)
             add_dataset_to_readme(dataset_name)
+
+            shutil.copy(
+                dir / (dataset_name + file_ext),
+                destination,
+            )
 
         logger.info(f"Moving to: {destination}")
 

@@ -1,5 +1,6 @@
 import logging
 from pathlib import Path
+from typing import cast
 
 import pandas as pd
 import plotnine as pn
@@ -13,8 +14,13 @@ def create_descriptive_statistics_plots(
     save_dir: Path,
 ) -> tuple[Path, pn.ggplot]:
     logger.info("creating descriptive statistics plot to readme.")
-    lengths = dataset["token_count"]
-    df = pd.DataFrame({"lengths": lengths, "Source": dataset["source"]})
+    # lengths = dataset["token_count"]
+    df = dataset.to_pandas()
+    df = cast(pd.DataFrame, df)
+    df = df[["token_count", "source"]].rename(
+        columns={"token_count": "lengths", "source": "Source"}
+    )
+    # df = pd.DataFrame({"lengths": lengths, "Source": dataset["source"]})
 
     plot = (
         pn.ggplot(df, pn.aes(x="lengths", y=pn.after_stat("count")))

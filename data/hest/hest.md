@@ -32,11 +32,9 @@ Its inclusion as training data for large language models have multiple times rea
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Social Media
 - **Number of samples**: 14.34K
 - **Number of tokens (Llama 3)**: 389.32M
-- **Average document length (characters)**: 83232.81
+- **Average document length in tokens (min, max)**: 27.15K (3, 9.81M)
 <!-- END-DESC-STATS -->
 
 

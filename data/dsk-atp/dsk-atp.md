@@ -30,11 +30,9 @@ This data has been contributed by ATP through the [Dansk Sprogmodel Konsortium](
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Web
 - **Number of samples**: 1.90K
 - **Number of tokens (Llama 3)**: 2.86M
-- **Average document length (characters)**: 3286.98
+- **Average document length in tokens (min, max)**: 1.51K (12, 34.13K)
 <!-- END-DESC-STATS -->
 
 

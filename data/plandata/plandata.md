@@ -31,11 +31,9 @@ Authored and officially adopted by municipal authorities, these documents often 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Governmental
 - **Number of samples**: 101.19K
 - **Number of tokens (Llama 3)**: 1.03B
-- **Average document length (characters)**: 34778.50
+- **Average document length in tokens (min, max)**: 10.20K (6, 13.35M)
 <!-- END-DESC-STATS -->
 
 

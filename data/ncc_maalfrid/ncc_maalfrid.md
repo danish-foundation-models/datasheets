@@ -21,21 +21,31 @@ Danish content from Norwegian institutions websites.
 
 Documents are derived from the [Målfrid collection](https://www.nb.no/sprakbanken/en/resource-catalogue/oai-nb-no-sbr-69/) as a subsection of the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC), which is a collection of multiple smaller Norwegian corpuses suitable for training large language models.
 
-
-
-
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Web
 - **Number of samples**: 33.34K
 - **Number of tokens (Llama 3)**: 29.26M
-- **Average document length (characters)**: 2538.43
+- **Average document length in tokens (min, max)**: 877.7404907607391 (12, 5.11K)
 <!-- END-DESC-STATS -->
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "maalfrid_56267641f4d6de44ab69875a31634e31e68db1a8_166",
+  "text": "Anno 1815, Torsdagen den 5te Octbr. blev i Sagen Fuldmægtig Engebrethsen contra Snedkermester Hansen[...]",
+  "source": "ncc_maalfrid",
+  "added": "2025-05-08",
+  "created": "2021-01-01, 2021-12-31",
+  "token_count": 742
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -44,9 +54,8 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
+<!-- END-SAMPLE -->
 
-
-### Additional Processing
 
 
 ### Dataset Statistics
@@ -57,13 +66,34 @@ An entry in the dataset consists of the following fields:
 </p>
 <!-- END-DATASET PLOTS -->
 
-
-# Additional Information
+## Additional Information
 
 ## License Information
+
 This dataset is licensed under [NLOD 2.0](https://data.norge.no/nlod/en/2.0). 
 This license is derived from the original [publication](https://huggingface.co/datasets/NbAiLab/NCC), which is published by the 
 [National Library of Norway](https://www.nb.no/en/).
+
+## Filtering
+
+This subset is the result of the following filtering from all available data splits on the [NCC](https://huggingface.co/datasets/NbAiLab/NCC):
+
+- is_maalfrid: Documents, which are tagged as a part of the Målfrid corpus
+- language_filter: Document is classified as Danish with a threshold of 0.75
+- min_length: Document has at least 10 words (whitespace separated strings + punctuation)
+- alpha_ratio: The ratio of all words / words with only alphabetical characters is at least 0.7
+- min_stop_words: The document contains at least 2 Danish stop words
+- duplicate: Duplicate documents were removed
+
+| Filtering step  | Number of document |
+| --------------- | ------------------ |
+| is_maalfrid     | 4 719 569          |
+| language_filter | 51523              |
+| min_length      | 49 948             |
+| alpha_ratio     | 33 390             |
+| min_stop_words  | 33 340             |
+| duplicate       | 33 336             |
+
 
 ### Citation Information
 

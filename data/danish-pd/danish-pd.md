@@ -29,11 +29,9 @@ The collection contains 3113 individual titles making up 322,141,347 words recov
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 33.28K
 - **Number of tokens (Llama 3)**: 532.43M
-- **Average document length (characters)**: 43748.10
+- **Average document length in tokens (min, max)**: 16.00K (82, 27.00K)
 <!-- END-DESC-STATS -->
 
 

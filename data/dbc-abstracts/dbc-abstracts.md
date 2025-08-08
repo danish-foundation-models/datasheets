@@ -33,11 +33,9 @@ The dataset includes abstracts created between 1991 and 2024.
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: English, Danish, Swedish, Norwegian Bokmål, Norwegian Nynorsk
-- **Domains**: Books
 - **Number of samples**: 9.89M
 - **Number of tokens (Llama 3)**: 694.42M
-- **Average document length (characters)**: 329.69
+- **Average document length in tokens (min, max)**: 70.2343489339804 (2, 10.41K)
 <!-- END-DESC-STATS -->
 
 

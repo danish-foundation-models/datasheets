@@ -25,11 +25,9 @@ This data has been contributed by DK Medier through the [Dansk Sprogmodel Konsor
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.33M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 103.64K
+- **Number of tokens (Llama 3)**: 63.64M
+- **Average document length in tokens (min, max)**: 614.0232537944211 (44, 28.66K)
 <!-- END-DESC-STATS -->
 
 

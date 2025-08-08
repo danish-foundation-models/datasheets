@@ -5,11 +5,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v0.0.15] - 2025-08-08
+
+### Changed
+
+- Synced all Dynaword datasets. That added three and changed one: 
+  - Added: Domsdatabasen
+  - Added: Grundtvig
+  - Added: Enevældens nyheder
+  - Changed: scrape_hovedstaden -> health_hovedstaden
+- Synced descriptive stats code with dynaword to follow the same format. That also simplifies the update of the default dataset
+- Updated the cvr-reports dataset with more data. That added ~1B tokens
+
+
 ## [v0.0.14] - 2025-08-04
 
 ### Changed
 
-- Reorganised the tables in the readme for better clarity of the individusl datasets
+- Reorganised the tables in the readme for better clarity of the individual datasets
 
 ## [v0.0.13] - 2025-07-01
 

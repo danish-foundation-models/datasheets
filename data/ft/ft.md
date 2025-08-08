@@ -33,11 +33,9 @@ In the parliament hall, one speaker at a time addresses members of the parliamen
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Conversation, Spoken
 - **Number of samples**: 1.31K
 - **Number of tokens (Llama 3)**: 114.09M
-- **Average document length (characters)**: 266745.19
+- **Average document length in tokens (min, max)**: 86.76K (49, 342.32K)
 <!-- END-DESC-STATS -->
 
 
