@@ -4,21 +4,21 @@ from datetime import datetime
 from enum import Enum
 from pathlib import Path
 from textwrap import dedent
-from typing import Any, Literal, Self, cast
+from typing import Any, Self, cast
 
 import yaml
-from datasets import Dataset, IterableDataset, load_dataset
+from datasets import Dataset, load_dataset
 from pydantic import BaseModel, field_validator
 
 from datasheets.descriptive_stats import DescriptiveStatsOverview
-from datasheets.plots.descriptive_statistics_plots import create_descriptive_statistics_plots
+from datasheets.plots.descriptive_statistics_plots import (
+    create_descriptive_statistics_plots,
+)
 from datasheets.typings import (
     DOMAIN_TYPE,
     LANG_TYPE,
     LICENSE,
     LICENSE_NAMES_MAPPING,
-    LANGUAGES,
-    LANGUAGE_NAMES_MAPPING,
 )
 
 logger = logging.getLogger(__name__)

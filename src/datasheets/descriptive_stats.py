@@ -66,15 +66,28 @@ class DescriptiveStatsOverview:
 
     @classmethod
     def from_dataset(cls, dataset: Dataset) -> DescriptiveStatsOverview:
-        dataset = dataset.map(lambda x: {"char_count": [len(t) for t in x["text"]]}, batched=True, num_proc=4)
+        dataset = dataset.map(
+            lambda x: {
+                "sum_char_count": [sum([len(t) for t in x["text"]])],
+                "min_char_count": [min([len(t) for t in x["text"]])],
+                "max_char_count": [max([len(t) for t in x["text"]])],
+                "sum_token_count": [sum(x["token_count"])],
+                "min_token_count": [min(x["token_count"])],
+                "max_token_count": [max(x["token_count"])],
+                "length": [len(x["text"])],
+            },
+            batched=True,
+            num_proc=4,
+            remove_columns=dataset.column_names,
+        )
         return cls(
-            number_of_samples=len(dataset),
-            number_of_tokens=sum(dataset["token_count"]),
-            min_length_tokens=min(dataset["token_count"]),
-            max_length_tokens=max(dataset["token_count"]),
-            number_of_characters=sum(dataset["char_count"]),
-            min_length_characters=min(dataset["char_count"]),
-            max_length_characters=max(dataset["char_count"]),
+            number_of_samples=sum(dataset["length"]),
+            number_of_tokens=sum(dataset["sum_token_count"]),
+            min_length_tokens=min(dataset["min_token_count"]),
+            max_length_tokens=max(dataset["max_token_count"]),
+            number_of_characters=sum(dataset["sum_char_count"]),
+            min_length_characters=min(dataset["min_char_count"]),
+            max_length_characters=max(dataset["max_char_count"]),
         )
 
     def __add__(self, other: DescriptiveStatsOverview) -> DescriptiveStatsOverview:

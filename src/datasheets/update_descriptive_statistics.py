@@ -8,7 +8,6 @@ Example use:
 """
 
 import argparse
-import json
 import logging
 from pathlib import Path
 import re
@@ -20,12 +19,7 @@ from datasets import Dataset, load_dataset
 
 from datasheets.datasheet import DataSheet
 from datasheets.descriptive_stats import DescriptiveStatsOverview
-from datasheets.git_utilities import (
-    check_is_ancestor,
-    get_latest_revision,
-)
 from datasheets.paths import repo_path
-from datasheets.plots.plot_tokens_over_time import create_tokens_over_time_plot
 from datasheets.tables import (
     create_overview_table,
     create_overview_table_str,
@@ -166,8 +160,6 @@ def update_dataset(
     desc_stats_path = dataset_path / "descriptive_stats.json"
     markdown_path = dataset_path / readme_name
 
-    rev = get_latest_revision(dataset_path)
-
     if desc_stats_path.exists() and force is False:
         logger.info(
             f"descriptive statistics for '{dataset_name}' is already exists (``{desc_stats_path}``), skipping."
@@ -192,7 +184,9 @@ def update_dataset(
         logger.info(
             f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
         )
-        ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])  # type: ignore
+        ds = load_dataset(
+            **load_kwargs, columns=["id", "text", "token_count", "source"] # type: ignore
+        )  
         ds = cast(Dataset, ds)
         desc_stats = DescriptiveStatsOverview.from_dataset(ds)
         sheet.body = sheet.add_dataset_plots(ds, create_plot=True)
@@ -216,7 +210,6 @@ def update_dataset(
         domain_table = create_grouped_table_str(group="License")
         sheet.body = sheet.replace_tag(package=domain_table, tag="LICENSE TABLE")
         create_domain_distribution_plot()
-        create_tokens_over_time_plot()
 
     sheet.write_to_path()
 
