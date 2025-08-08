@@ -1,6 +1,9 @@
 {
   "number_of_samples": 16765,
-  "average_document_length": 6731.77500745601,
   "number_of_tokens": 27990813,
-  "revision": "48207f1d375d60fd21b794f95d49ca731d059b5a"
+  "min_length_tokens": 11,
+  "max_length_tokens": 651441,
+  "number_of_characters": 112858208,
+  "min_length_characters": 20,
+  "max_length_characters": 9359787
 }

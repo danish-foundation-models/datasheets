@@ -31,11 +31,9 @@ without any pre-processing other than file format conversion.
 
  
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 66
 - **Number of tokens (Llama 3)**: 1.24M
-- **Average document length (characters)**: 53873.56
+- **Average document length in tokens (min, max)**: 18.85K (473, 66.42K)
 <!-- END-DESC-STATS -->
 
 

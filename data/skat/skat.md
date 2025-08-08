@@ -28,11 +28,9 @@ Skat is the Danish tax authority. This dataset contains content from its website
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Legal
 - **Number of samples**: 14.71K
 - **Number of tokens (Llama 3)**: 122.11M
-- **Average document length (characters)**: 24027.20
+- **Average document length in tokens (min, max)**: 8.30K (2, 175.22K)
 <!-- END-DESC-STATS -->
 
 

@@ -32,11 +32,9 @@ While the dataset was initially intended as a rich annotation, this corpora only
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Other
 - **Number of samples**: 536
 - **Number of tokens (Llama 3)**: 185.45K
-- **Average document length (characters)**: 1018.90
+- **Average document length in tokens (min, max)**: 345.99626865671644 (261, 517)
 <!-- END-DESC-STATS -->
 
 

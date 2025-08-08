@@ -25,11 +25,9 @@ This data has been contributed by Alexandra Institutet through the [Dansk Sprogm
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Web
 - **Number of samples**: 386
 - **Number of tokens (Llama 3)**: 584.35K
-- **Average document length (characters)**: 5120.78
+- **Average document length in tokens (min, max)**: 1.51K (10, 56.50K)
 <!-- END-DESC-STATS -->
 
 

@@ -21,21 +21,31 @@ OCR'd Newspapers derived from [NCC](https://huggingface.co/datasets/NbAiLab/NCC)
 
 The Norwegian Colossal Corpus is a collection of multiple smaller Norwegian corpuses suitable for training large language models.
 
-
-
-
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: News
 - **Number of samples**: 5.37K
 - **Number of tokens (Llama 3)**: 1.05M
-- **Average document length (characters)**: 571.69
+- **Average document length in tokens (min, max)**: 195.95942676344686 (12, 3.85K)
 <!-- END-DESC-STATS -->
 
 
 ## Dataset Structure
+An example from the dataset looks as follows.
+<!-- START-SAMPLE -->
+```py
+{
+  "id": "fylkestidendeforsognogfjordane_null_null_19410723_69_54_1_MODSMD_ARTICLE5",
+  "text": "STOCKHOLM: Det er kommet melding Ul den svenske turlst forenlng om at de to svenske ljellklatrerne s[...]",
+  "source": "ncc_newspaper",
+  "added": "2025-05-01",
+  "created": "1941-01-01, 1941-12-31",
+  "token_count": 137
+}
+```
+
+### Data Fields
+
 An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
@@ -44,9 +54,8 @@ An entry in the dataset consists of the following fields:
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
+<!-- END-SAMPLE -->
 
-
-### Additional Processing
 
 
 ### Dataset Statistics
@@ -57,13 +66,40 @@ An entry in the dataset consists of the following fields:
 </p>
 <!-- END-DATASET PLOTS -->
 
-
 # Additional Information
 
 ## License Information
+
 This dataset is licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 This license is derived from the original [publication](https://huggingface.co/datasets/NbAiLab/NCC), which is published by the 
 [National Library of Norway](https://www.nb.no/en/).
+
+## Filtering
+
+This subset is the result of the following filtering from all available data splits on the [NCC](https://huggingface.co/datasets/NbAiLab/NCC):
+
+- is_books: Documents, which are tagged as newspapers
+- language_filter: Document is classified as Danish with a threshold of 0.75
+- min_length: Document has at least 10 words (whitespace separated strings + punctuation)
+- alpha_ratio: The ratio of all words / words with only alphabetical characters is at least 0.7
+- min_stop_words: The document contains at least 2 Danish stop words
+- duplicate: Duplicate documents were removed
+
+The effect of each of these steps is outlined in the table below:
+
+| Filtering step  | Number of document |
+| --------------- | ------------------ |
+| is_books        | 504 602            |
+| language_filter | 7 632              |
+| min_length      | 6 401              |
+| alpha_ratio     | 5 439              |
+| min_stop_words  | 5 374              |
+| duplicate       | 5 373              |
+
+## Quality
+
+It is important to note, that recurring [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) errors and historic expressions in older 
+texts hinder the legibility of some of the documents and make differentiating between Norwegian and Danish difficult.
 
 ### Citation Information
 

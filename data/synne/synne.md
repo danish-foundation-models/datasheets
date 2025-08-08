@@ -28,11 +28,9 @@ Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk),
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Other
 - **Number of samples**: 177
 - **Number of tokens (Llama 3)**: 52.02K
-- **Average document length (characters)**: 782.40
+- **Average document length in tokens (min, max)**: 293.8813559322034 (128, 891)
 <!-- END-DESC-STATS -->
 
 

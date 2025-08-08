@@ -8,6 +8,7 @@ DOMAIN = [
     "Financial",
     "Governmental",
     "Legal",
+    "Medical",
     "News",
     "Other",
     "Readaloud",

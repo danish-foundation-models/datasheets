@@ -1,46 +1,13 @@
+from __future__ import annotations
+
 import json
 import logging
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Self, Any
-from functools import partial
 
 from datasets import Dataset
-from transformers import AutoTokenizer
-
-from datasheets.dataset_structure import ColumnNames
-
-from datasheets.git_utilities import (
-    get_current_revision,
-)
 
 logger = logging.getLogger(__name__)
-
-
-def _tokenize_function(
-    examples: dict[str, Any], tokenizer: AutoTokenizer
-) -> dict[str, Any]:
-    token_count = [
-        len(tokens)
-        for tokens in tokenizer(examples[ColumnNames.text.value], padding=False)[  # type: ignore
-            "input_ids"
-        ]
-    ]
-    examples[ColumnNames.token_count.value] = token_count
-    return examples
-
-
-def add_token_count(
-    ds: Dataset,
-    tokenizer_name: str = "AI-Sweden-Models/Llama-3-8B-instruct",
-    num_proc: int = 4,
-) -> Dataset:
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_name, use_fast=True)
-
-    tokenize = partial(_tokenize_function, tokenizer=tokenizer)  # type: ignore
-
-    ds = ds.map(tokenize, batched=True, num_proc=num_proc)
-    return ds
 
 
 def calculate_average_document_length(
@@ -52,29 +19,90 @@ def calculate_average_document_length(
 
 @dataclass()
 class DescriptiveStatsOverview:
+    """
+    Overview of descriptive statistics for a dataset.
+    Attributes:
+        number_of_samples: Total number of samples in the dataset.
+        number_of_tokens: Total number of tokens in the dataset
+        min_length: Minimum document length in tokens.
+        max_length: Maximum document length in tokens.
+        average_document_length: Average document length in tokens.
+    """
+
     number_of_samples: int
-    average_document_length: float
     number_of_tokens: int
+    min_length_tokens: int
+    max_length_tokens: int
+    number_of_characters: int
+    min_length_characters: int
+    max_length_characters: int
+
+    @property
+    def average_document_length_tokens(self) -> float:
+        return (
+            self.number_of_tokens / self.number_of_samples
+            if self.number_of_samples > 0
+            else 0.0
+        )
+
+    @property
+    def average_document_length_characters(self) -> float:
+        return (
+            self.number_of_characters / self.number_of_samples
+            if self.number_of_samples > 0
+            else 0.0
+        )
 
     @classmethod
-    def from_disk(cls, path: Path):
+    def from_disk(cls, path: Path) -> DescriptiveStatsOverview:
         with path.open("r") as f:
             data = json.load(f)
-        if "revision" in data:
-            data.pop("revision")
         obj = cls(**data)
         return obj
 
-    def to_disk(self, path: Path):
-        data = self.__dict__
-        data["revision"] = get_current_revision()
+    def to_disk(self, path: Path) -> None:
         with path.with_suffix(".json").open("w") as f:
             json.dump(self.__dict__, f, indent=2)
 
     @classmethod
-    def from_dataset(cls, dataset: Dataset) -> Self:
+    def from_dataset(cls, dataset: Dataset) -> DescriptiveStatsOverview:
+        dataset = dataset.map(
+            lambda x: {
+                "sum_char_count": [sum([len(t) for t in x["text"]])],
+                "min_char_count": [min([len(t) for t in x["text"]])],
+                "max_char_count": [max([len(t) for t in x["text"]])],
+                "sum_token_count": [sum(x["token_count"])],
+                "min_token_count": [min(x["token_count"])],
+                "max_token_count": [max(x["token_count"])],
+                "length": [len(x["text"])],
+            },
+            batched=True,
+            num_proc=4,
+            remove_columns=dataset.column_names,
+        )
         return cls(
-            number_of_samples=len(dataset),
-            average_document_length=calculate_average_document_length(dataset),
-            number_of_tokens=sum(dataset["token_count"]),
+            number_of_samples=sum(dataset["length"]),
+            number_of_tokens=sum(dataset["sum_token_count"]),
+            min_length_tokens=min(dataset["min_token_count"]),
+            max_length_tokens=max(dataset["max_token_count"]),
+            number_of_characters=sum(dataset["sum_char_count"]),
+            min_length_characters=min(dataset["min_char_count"]),
+            max_length_characters=max(dataset["max_char_count"]),
+        )
+
+    def __add__(self, other: DescriptiveStatsOverview) -> DescriptiveStatsOverview:
+        if not isinstance(other, DescriptiveStatsOverview):
+            raise TypeError("Can only add DescriptiveStatsOverview objects")
+        return DescriptiveStatsOverview(
+            number_of_samples=self.number_of_samples + other.number_of_samples,
+            number_of_tokens=self.number_of_tokens + other.number_of_tokens,
+            min_length_tokens=min(self.min_length_tokens, other.min_length_tokens),
+            max_length_tokens=max(self.max_length_tokens, other.max_length_tokens),
+            number_of_characters=self.number_of_characters + other.number_of_characters,
+            min_length_characters=min(
+                self.min_length_characters, other.min_length_characters
+            ),
+            max_length_characters=max(
+                self.max_length_characters, other.max_length_characters
+            ),
         )

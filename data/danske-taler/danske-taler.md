@@ -21,6 +21,7 @@ domains:
 Danish Speeches from [dansketaler.dk](https://www.dansketaler.dk).
 <!-- END-SHORT DESCRIPTION -->
 
+
 The database dansketaler.dk is managed by Danske Taler, an independent institution that in addition to managing the database and carries out cultural
 and democratic projects based on speeches. 
 Danske Taler state as their goals that they seek to preserve our cultural heritage and promotes active citizenship and democratic confidence through its work. 
@@ -30,17 +31,15 @@ The goal of the dataset is to collect historical and timely speeches and make th
 
 Learn more about danske taler by reading their [about us](https://www.dansketaler.dk/om-os) page.
 
-
-
+> NOTE: Danske-Taler is also collecting [sermons](https://www.dansketaler.dk/praedikener), but these are not included in this dataset. 
 
 ## Dataset Description
 
+
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Conversation, Speeches, Spoken
 - **Number of samples**: 2.91K
 - **Number of tokens (Llama 3)**: 8.72M
-- **Average document length (characters)**: 9140.42
+- **Average document length in tokens (min, max)**: 3.00K (129, 53.40K)
 <!-- END-DESC-STATS -->
 
 
@@ -67,9 +66,29 @@ An entry in the dataset consists of the following fields:
 <!-- END-DATASET PLOTS -->
 
 
-# Additional Information
 
-## License Information
+## Additional Information
+
+
+### Dataset Collection Process
+
+This dataset was collected using the publicly available [API](https://www.dansketaler.dk/api/v1). 
+
+### Quality Assurance
+We check for and remove exact duplicates, empty texts, duplicate ids after the initial download. We additionally check if the articles contain any HTML.
+
+## Opportunities for Improvement
+
+While this dataset can be updated to include the latest availabe speeches. 
+
+We consider the quality of the current collection high with a low chance of 
+incorrect formatting, 
+spelling errors,
+empty documents or 
+misformatted segments. 
+This stems both from the quality assurance, source of documents and subjective inspection.
+
+### License Information
 Since the license information isn't avaiable through the API we collect this data directly from the webpage of each article under the header 
 "Ophavsret".
 
@@ -93,6 +112,8 @@ Speeches without this mention is removed. Such an example include:
 > *Source: [Christina Egelunds tale ved Aarhus Universitets årsfest](https://www.dansketaler.dk/tale/christina-egelunds-tale-ved-aarhus-universitets-arsfest)*
 
 We manually checked the unique set of license descriptions to see if any were open licenses that weren't included in the current criteria.
+
+For specific filtering criteria see the `create.py` script.
 
 ### Citation Information
 

@@ -30,11 +30,9 @@ You can read more about wikipedia on their [about](https://en.wikipedia.org/wiki
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Encyclopedic
 - **Number of samples**: 264.43K
 - **Number of tokens (Llama 3)**: 122.00M
-- **Average document length (characters)**: 1386.98
+- **Average document length in tokens (min, max)**: 461.372631252529 (3, 83.12K)
 <!-- END-DESC-STATS -->
 
 

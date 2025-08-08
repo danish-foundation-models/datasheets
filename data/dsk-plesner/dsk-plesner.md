@@ -26,11 +26,9 @@ This data has been contributed by Plesner through the [Dansk Sprogmodel Konsorti
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Other, Web
 - **Number of samples**: 1.69K
 - **Number of tokens (Llama 3)**: 896.33K
-- **Average document length (characters)**: 2436.30
+- **Average document length in tokens (min, max)**: 531.312981624185 (21, 59.15K)
 <!-- END-DESC-STATS -->
 
 

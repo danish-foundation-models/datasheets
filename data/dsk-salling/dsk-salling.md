@@ -38,11 +38,9 @@ This data has been contributed by Salling Group through the [Dansk Sprogmodel Ko
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Web
 - **Number of samples**: 23.48K
 - **Number of tokens (Llama 3)**: 9.79M
-- **Average document length (characters)**: 1201.28
+- **Average document length in tokens (min, max)**: 417.0077935351987 (2, 72.88K)
 <!-- END-DESC-STATS -->
 
 

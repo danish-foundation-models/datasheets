@@ -3,7 +3,7 @@ from typing import Literal
 
 import pandas as pd
 
-from datasheets.datasheet import DataSheet, human_readable_large_int
+from datasheets.datasheet import DataSheet, convert_to_human_readable
 from datasheets.paths import repo_path
 
 main_sheet = DataSheet.load_from_path(repo_path / "README.md")
@@ -54,7 +54,7 @@ def create_overview_table(
 ) -> pd.DataFrame:
     table = {
         "Source": [],
-        "Source with link": [],
+        "Sources": [],
         "Description": [],
         "Domain": [],
         "N. Tokens": [],
@@ -70,7 +70,7 @@ def create_overview_table(
         main_domain = sheet.domains[0] if sheet.domains else ""
 
         table["Source"] += [f"{dataset_path.name}"]
-        table["Source with link"] += [f"[{dataset_path.name}]"]
+        table["Sources"] += [f"[{dataset_path.name}]"]
         table["License"] += [f"[{sheet.license_name}]"]
         table["Domain"] += [main_domain]
         table["Description"] += [sheet.short_description]
@@ -82,7 +82,7 @@ def create_overview_table(
     if add_total_row:
         total_row = {
             "Source": "**Total**",
-            "Source with link": "**Total**",
+            "Sources": "**Total**",
             "Domain": "",
             "License": "",
             "Description": "",
@@ -96,15 +96,15 @@ def create_overview_table(
             ignore_index=True,
         )
     if add_readme_references:
-        # replace Source with Source with link
-        df["Source"] = df["Source with link"]
-        df = df.drop(columns=["Source with link"])
+        # replace Source with Sources
+        df["Source"] = df["Sources"]
+        df = df.drop(columns=["Sources"])
     else:
-        # remove Source with link
-        df = df.drop(columns=["Source with link"])
+        # remove Sources
+        df = df.drop(columns=["Sources"])
 
     if add_readable_tokens:
-        df["N. Tokens"] = df["N. Tokens"].apply(human_readable_large_int)
+        df["N. Tokens"] = df["N. Tokens"].apply(convert_to_human_readable)
 
     return df
 
@@ -188,7 +188,7 @@ def create_grouped_table(
     df = df.reindex(new_index)
 
     if add_readable_tokens:
-        df["N. Tokens"] = df["N. Tokens"].apply(human_readable_large_int)
+        df["N. Tokens"] = df["N. Tokens"].apply(convert_to_human_readable)
 
     return df
 

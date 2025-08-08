@@ -8,7 +8,6 @@ Example use:
 """
 
 import argparse
-import json
 import logging
 from pathlib import Path
 import re
@@ -20,10 +19,6 @@ from datasets import Dataset, load_dataset
 
 from datasheets.datasheet import DataSheet
 from datasheets.descriptive_stats import DescriptiveStatsOverview
-from datasheets.git_utilities import (
-    check_is_ancestor,
-    get_latest_revision,
-)
 from datasheets.paths import repo_path
 from datasheets.tables import (
     create_overview_table,
@@ -31,14 +26,13 @@ from datasheets.tables import (
     create_grouped_table_str,
 )
 
-logger = logging.getLogger(__name__)
-
 main_sheet = DataSheet.load_from_path(repo_path / "README.md")
 _datasets = [
     cfg["config_name"]  # type: ignore
     for cfg in main_sheet.frontmatter["configs"]  # type: ignore
     if cfg["config_name"] != "default"  # type: ignore
 ]
+
 
 logger = logging.getLogger(__name__)
 # Define dataset type priorities (lower number = higher priority)
@@ -154,53 +148,29 @@ def update_dataset(
     dataset_name: str,
     force: bool = False,
 ) -> None:
-    metadata_base_path = (
+    dataset_path = (
         repo_path / "data" / dataset_name if dataset_name != "default" else repo_path
     )
-    desc_stats_filename = "descriptive_stats.json"
 
     if dataset_name == "default":
         readme_name = "README.md"
     else:
         readme_name = f"{dataset_name}.md"
 
-    desc_stats_path = metadata_base_path / desc_stats_filename
-    markdown_path = metadata_base_path / readme_name
-
-    rev = get_latest_revision(metadata_base_path)
+    desc_stats_path = dataset_path / "descriptive_stats.json"
+    markdown_path = dataset_path / readme_name
 
     if desc_stats_path.exists() and force is False:
-        with desc_stats_path.open("r") as f:
-            last_update = json.load(f).get("revision", None)
+        logger.info(
+            f"descriptive statistics for '{dataset_name}' is already exists (``{desc_stats_path}``), skipping."
+        )
+        return
 
-        if last_update is None:
-            logger.warning(f"revision is not defined in {desc_stats_path}.")
-        elif check_is_ancestor(ancestor_rev=last_update, rev=rev):
-            logger.info(
-                f"Descriptive statistics for '{dataset_name}' is already up to date, skipping."
-            )
-            return
+    logger.info(f"Updating datasheet for: {dataset_name}")
+    sheet = DataSheet.load_from_path(markdown_path)
 
-    # Load the dataset using `data_files` when dataset_name = "default"
-
-    load_kwargs: dict[str, str | list[str]] = {"path": "parquet", "split": "train"}
-
-    if dataset_name == "default":
-        dataset_paths: list[str] = []
-
-        for dataset in _datasets:
-            dataset_data_path = repo_path.parent / "datasets" / dataset
-            latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
-            if not latest_version_dataset_path:
-                logger.warning(f"Something went wrong with {dataset}")
-                continue
-
-            files = [str(p) for p in latest_version_dataset_path.glob("*.parquet")]
-            dataset_paths.extend(files)
-        load_kwargs["data_files"] = dataset_paths
-
-        logger.info(f"Computing descriptive stats for: {dataset_name}")
-    else:
+    if dataset_name != "default":
+        load_kwargs: dict[str, str | list[str]] = {"path": "parquet", "split": "train"}
         dataset_data_path = repo_path.parent / "datasets" / dataset_name
 
         latest_version_dataset_path = find_latest_dataset_version(dataset_data_path)
@@ -214,15 +184,21 @@ def update_dataset(
         logger.info(
             f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
         )
-    ds = load_dataset(**load_kwargs, columns=["id", "text", "token_count", "source"])  # type: ignore
-    ds = cast(Dataset, ds)
-    desc_stats = DescriptiveStatsOverview.from_dataset(ds)
+        ds = load_dataset(
+            **load_kwargs,  # type: ignore
+            columns=["id", "text", "token_count", "source"],
+        )
+        ds = cast(Dataset, ds)
+        desc_stats = DescriptiveStatsOverview.from_dataset(ds)
+        sheet.body = sheet.add_dataset_plots(ds, create_plot=True)
+    else:
+        # compute descriptive stats from existing files
+        desc_paths = (repo_path / "data").glob("**/*descriptive_stats.json")
+        _desc_stats = [DescriptiveStatsOverview.from_disk(p) for p in desc_paths]
+        desc_stats = sum(_desc_stats[1:], start=_desc_stats[0])
     desc_stats.to_disk(desc_stats_path)
 
-    logger.info(f"Updating datasheet for: {dataset_name}")
-    sheet = DataSheet.load_from_path(markdown_path)
     sheet.body = sheet.add_descriptive_stats(descriptive_stats=desc_stats)
-    sheet.body = sheet.add_dataset_plots(ds, create_plot=True)
 
     if dataset_name == "default":
         logger.info("Updating Overview table")
@@ -235,6 +211,7 @@ def update_dataset(
         domain_table = create_grouped_table_str(group="License")
         sheet.body = sheet.replace_tag(package=domain_table, tag="LICENSE TABLE")
         create_domain_distribution_plot()
+
     sheet.write_to_path()
 
 

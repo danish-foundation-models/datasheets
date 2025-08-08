@@ -41,11 +41,9 @@ Speech is transcribed post-hoc by native speakers. Studies published relying on 
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Conversation, Spoken
 - **Number of samples**: 411
 - **Number of tokens (Llama 3)**: 1.56M
-- **Average document length (characters)**: 9736.80
+- **Average document length in tokens (min, max)**: 3.79K (85, 14.03K)
 <!-- END-DESC-STATS -->
 
 
