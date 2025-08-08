@@ -28,11 +28,9 @@ The dataset is designed for training and evaluating automatic text summarization
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Legal
 - **Number of samples**: 1.00K
 - **Number of tokens (Llama 3)**: 31.37M
-- **Average document length (characters)**: 87627.37
+- **Average document length in tokens (min, max)**: 31.31K (2.14K, 1.72M)
 <!-- END-DESC-STATS -->
 
 

@@ -27,11 +27,9 @@ The EU Dataset Cellar serves as the central access point for all official EU pub
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Legal
 - **Number of samples**: 63.40K
 - **Number of tokens (Llama 3)**: 1.15B
-- **Average document length (characters)**: 60987.84
+- **Average document length in tokens (min, max)**: 18.17K (7, 2.60M)
 <!-- END-DESC-STATS -->
 
 

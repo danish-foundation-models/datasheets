@@ -33,11 +33,9 @@ on the Danish Royal Library's [website](https://tekster.kb.dk/text?editorial=no&
 See also dataset [entry](https://sprogteknologi.dk/dataset/public-adl-text-sources) on sprogteknologi.dk and an [API](https://rawgit.com/Det-Kongelige-Bibliotek/access-digital-objects/master/form-demos/adl-form.html).
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 498
 - **Number of tokens (Llama 3)**: 58.49M
-- **Average document length (characters)**: 324932.24
+- **Average document length in tokens (min, max)**: 117.46K (53, 662.14K)
 <!-- END-DESC-STATS -->
 
 

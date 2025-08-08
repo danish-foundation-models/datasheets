@@ -37,11 +37,9 @@ Learn more about danske taler by reading their [about us](https://www.dansketale
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Conversation, Speeches, Spoken
 - **Number of samples**: 2.91K
 - **Number of tokens (Llama 3)**: 8.72M
-- **Average document length (characters)**: 9140.42
+- **Average document length in tokens (min, max)**: 3.00K (129, 53.40K)
 <!-- END-DESC-STATS -->
 
 

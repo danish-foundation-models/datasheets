@@ -32,11 +32,9 @@ The dataset contains thousands of reviews in the Danish language, which are supp
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: English, Danish, Swedish, Norwegian Bokmål, Norwegian Nynorsk
-- **Domains**: Books, Other
 - **Number of samples**: 213.93K
 - **Number of tokens (Llama 3)**: 53.96M
-- **Average document length (characters)**: 770.31
+- **Average document length in tokens (min, max)**: 252.22140730249103 (3, 1.11K)
 <!-- END-DESC-STATS -->
 
 

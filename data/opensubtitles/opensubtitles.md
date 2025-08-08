@@ -27,11 +27,9 @@ Danish subsection of [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles/corpus/v
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Conversation, Subtitles, Spoken
 - **Number of samples**: 29.82K
 - **Number of tokens (Llama 3)**: 271.60M
-- **Average document length (characters)**: 26298.02
+- **Average document length in tokens (min, max)**: 9.11K (45, 70.14K)
 <!-- END-DESC-STATS -->
 
 

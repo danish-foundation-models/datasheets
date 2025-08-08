@@ -30,11 +30,9 @@ This can be decisions specifically targeted at the environment such as water pla
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Legal, Other
 - **Number of samples**: 2.12K
 - **Number of tokens (Llama 3)**: 127.38M
-- **Average document length (characters)**: 228188.12
+- **Average document length in tokens (min, max)**: 60.08K (54, 1.44M)
 <!-- END-DESC-STATS -->
 
 

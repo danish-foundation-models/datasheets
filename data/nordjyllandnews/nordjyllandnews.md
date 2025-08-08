@@ -30,11 +30,9 @@ The data is derived from the Huggingface dataset [alexandrainst/nordjylland-news
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: News
 - **Number of samples**: 75.22K
 - **Number of tokens (Llama 3)**: 37.90M
-- **Average document length (characters)**: 1540.29
+- **Average document length in tokens (min, max)**: 503.9497440670079 (29, 12.26K)
 <!-- END-DESC-STATS -->
 
 

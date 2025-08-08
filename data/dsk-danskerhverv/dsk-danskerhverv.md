@@ -25,11 +25,9 @@ This data has been contributed by Dansk Erhverv through the [Dansk Sprogmodel Ko
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: News
 - **Number of samples**: 1.19K
 - **Number of tokens (Llama 3)**: 1.12M
-- **Average document length (characters)**: 2772.19
+- **Average document length in tokens (min, max)**: 937.143216080402 (123, 2.04K)
 <!-- END-DESC-STATS -->
 
 

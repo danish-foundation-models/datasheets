@@ -24,11 +24,9 @@ Documents are derived from the [Målfrid collection](https://www.nb.no/sprakbank
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Web
 - **Number of samples**: 33.34K
 - **Number of tokens (Llama 3)**: 29.26M
-- **Average document length (characters)**: 2538.43
+- **Average document length in tokens (min, max)**: 877.7404907607391 (12, 5.11K)
 <!-- END-DESC-STATS -->
 
 

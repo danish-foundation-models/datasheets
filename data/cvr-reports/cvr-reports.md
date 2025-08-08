@@ -64,11 +64,9 @@ Once filed, all annual reports are made publicly accessible through the Danish B
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish, English
-- **Domains**: Financial
 - **Number of samples**: 288.35K
 - **Number of tokens (Llama 3)**: 2.32B
-- **Average document length (characters)**: 32183.66
+- **Average document length in tokens (min, max)**: 8.05K (2, 1.83M)
 <!-- END-DESC-STATS -->
 
 

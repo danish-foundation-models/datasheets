@@ -30,11 +30,9 @@ Project Gutenberg is an online library of free eBooks. Project Gutenberg was the
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 66
 - **Number of tokens (Llama 3)**: 6.76M
-- **Average document length (characters)**: 290147.94
+- **Average document length in tokens (min, max)**: 102.47K (7.92K, 250.51K)
 <!-- END-DESC-STATS -->
 
 

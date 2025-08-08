@@ -29,11 +29,9 @@ Danish speeches from 1930-2022.
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Conversation
 - **Number of samples**: 129
 - **Number of tokens (Llama 3)**: 286.68K
-- **Average document length (characters)**: 6832.39
+- **Average document length in tokens (min, max)**: 2.22K (228, 3.95K)
 <!-- END-DESC-STATS -->
 
 

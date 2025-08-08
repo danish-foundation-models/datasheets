@@ -34,11 +34,9 @@ Martin Sundahl Laursen and Thiusius R. Savarimuthu from the University of Southe
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Medical, Encyclopedic
 - **Number of samples**: 24.00K
 - **Number of tokens (Llama 3)**: 27.07M
-- **Average document length (characters)**: 3329.05
+- **Average document length in tokens (min, max)**: 1.13K (4, 51.03K)
 <!-- END-DESC-STATS -->
 
 

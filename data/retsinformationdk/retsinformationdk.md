@@ -37,11 +37,9 @@ It serves as a central repository for Danish legislation, administrative regulat
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Legal
 - **Number of samples**: 100.52K
 - **Number of tokens (Llama 3)**: 818.25M
-- **Average document length (characters)**: 23265.03
+- **Average document length in tokens (min, max)**: 8.14K (34, 9.59M)
 <!-- END-DESC-STATS -->
 
 

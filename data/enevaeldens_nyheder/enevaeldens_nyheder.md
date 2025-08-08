@@ -31,11 +31,9 @@ The newspaper editions have been segmented into individual texts using a model d
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: News
 - **Number of samples**: 4.59M
 - **Number of tokens (Llama 3)**: 1.03B
-- **Average document length (characters)**: 629.07
+- **Average document length in tokens (min, max)**: 225.1811458085686 (3, 37.29K)
 <!-- END-DESC-STATS -->
 
 

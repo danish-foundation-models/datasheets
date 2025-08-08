@@ -31,11 +31,9 @@ The project is scheduled for completion in 2030 and will comprise 1,000 individu
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 632
 - **Number of tokens (Llama 3)**: 10.53M
-- **Average document length (characters)**: 46944.92
+- **Average document length in tokens (min, max)**: 16.65K (100, 453.72K)
 <!-- END-DESC-STATS -->
 
 

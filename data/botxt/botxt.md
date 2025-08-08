@@ -30,11 +30,9 @@ Fictional texts of various kinds written in Bornholmsk, the dialect spoken on th
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Dialect, Web
 - **Number of samples**: 106
 - **Number of tokens (Llama 3)**: 847.97K
-- **Average document length (characters)**: 18972.42
+- **Average document length in tokens (min, max)**: 8.00K (407, 83.79K)
 <!-- END-DESC-STATS -->
 
 

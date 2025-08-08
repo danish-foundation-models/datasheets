@@ -56,11 +56,9 @@ Domsdatabasen is continuously being developed. As digitization progresses and te
 
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Legal
 - **Number of samples**: 8.47K
 - **Number of tokens (Llama 3)**: 86.35M
-- **Average document length (characters)**: 30235.72
+- **Average document length in tokens (min, max)**: 10.20K (15, 1.01M)
 <!-- END-DESC-STATS -->
 
 

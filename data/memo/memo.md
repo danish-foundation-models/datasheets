@@ -28,11 +28,9 @@ Additional information about this dataset can be found on their [project page](h
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: Danish
-- **Domains**: Books
 - **Number of samples**: 858
 - **Number of tokens (Llama 3)**: 113.74M
-- **Average document length (characters)**: 375749.09
+- **Average document length in tokens (min, max)**: 132.57K (6.67K, 720.17K)
 <!-- END-DESC-STATS -->
 
 
