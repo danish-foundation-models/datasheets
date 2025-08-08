@@ -185,8 +185,9 @@ def update_dataset(
             f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
         )
         ds = load_dataset(
-            **load_kwargs, columns=["id", "text", "token_count", "source"] # type: ignore
-        )  
+            **load_kwargs,  # type: ignore
+            columns=["id", "text", "token_count", "source"],
+        )
         ds = cast(Dataset, ds)
         desc_stats = DescriptiveStatsOverview.from_dataset(ds)
         sheet.body = sheet.add_dataset_plots(ds, create_plot=True)
