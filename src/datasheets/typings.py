@@ -12,10 +12,12 @@ DOMAIN = [
     "News",
     "Other",
     "Readaloud",
+    "Scientific",
     "Social Media",
     "Speeches",
     "Spoken",
     "Subtitles",
+    "Technical",
     "Web",
 ]
 DOMAIN_TYPE = Literal[*DOMAIN]
@@ -28,7 +30,7 @@ LICENSE_NAMES_MAPPING = {
     "apache-2.0": "Apache 2.0",
 }
 
-LANGUAGES = ["da", "en", "se", "nb", "nn", "de", "fr", "nl", "it"]
+LANGUAGES = ["da", "en", "se", "nb", "nn", "de", "fr", "nl", "it", "code"]
 LANG_TYPE = Literal[*LANGUAGES]
 
 LANGUAGE_NAMES_MAPPING = {

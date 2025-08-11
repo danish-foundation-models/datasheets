@@ -103,8 +103,6 @@ configs:
   set: dfm
 - config_name: dbc-reviews
   set: dfm
-- config_name: scrape_hovedstaden
-  set: dfm
 - config_name: danish-pd
   set: dfm
 - config_name: cvr-reports
@@ -117,6 +115,64 @@ configs:
   set: dfm
 - config_name: enevaeldens_nyheder
   set: dfm
+- config_name: arxiv_abstracts_filtered
+  set: common-pile
+- config_name: arxiv_papers_filtered
+  set: common-pile
+- config_name: biodiversity_heritage_library_filtered
+  set: common-pile
+- config_name: caselaw_access_project_filtered
+  set: common-pile
+- config_name: cccc_filtered
+  set: common-pile
+- config_name: data_provenance_initiative_filtered
+  set: common-pile
+- config_name: doab_filtered
+  set: common-pile
+- config_name: github_archive_filtered
+  set: common-pile
+- config_name: library_of_congress_filtered
+  set: common-pile
+- config_name: libretexts_filtered
+  set: common-pile
+- config_name: news_filtered
+  set: common-pile
+- config_name: oercommons_filtered
+  set: common-pile
+- config_name: peS2o_filtered
+  set: common-pile
+- config_name: pre_1929_books_filtered
+  set: common-pile
+- config_name: pressbooks_filtered
+  set: common-pile
+- config_name: project_gutenberg_filtered
+  set: common-pile
+- config_name: public_domain_review_filtered
+  set: common-pile
+- config_name: pubmed_filtered
+  set: common-pile
+- config_name: python_enhancement_proposals_filtered
+  set: common-pile
+- config_name: regulations_filtered
+  set: common-pile
+- config_name: stackexchange_filtered
+  set: common-pile
+- config_name: stackv2_edu_filtered
+  set: common-pile
+- config_name: ubuntu_irc_filtered
+  set: common-pile
+- config_name: uk_hansard_filtered
+  set: common-pile
+- config_name: usgpo_filtered
+  set: common-pile
+- config_name: uspto_filtered
+  set: common-pile
+- config_name: wikimedia_filtered
+  set: common-pile
+- config_name: wikiteam_filtered
+  set: common-pile
+- config_name: youtube_filtered
+  set: common-pile
 annotations_creators:
 - no-annotation
 language_creators:
