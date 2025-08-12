@@ -1,4 +1,5 @@
 from pathlib import Path
+from textwrap import dedent
 from typing import Literal
 
 import pandas as pd
@@ -81,8 +82,8 @@ def create_overview_table(
 
     if add_total_row:
         total_row = {
-            "Source": "**Total**",
-            "Sources": "**Total**",
+            "Source": "<b>Total</b>",
+            "Sources": "<b>Total</b>",
             "Domain": "",
             "License": "",
             "Description": "",
@@ -171,7 +172,7 @@ def create_grouped_table(
 
     if add_total_row:
         table["Sources"] += [""]
-        table[group] += ["**Total**"]
+        table[group] += ["<b>Total</b>"]
         table["N. Tokens"] += [sum(table["N. Tokens"])]
 
     df = pd.DataFrame.from_dict(table)
@@ -198,14 +199,69 @@ def create_grouped_table_str(
     group: Literal["Domain", "Language", "License"] = "Domain",
 ) -> str:
     table = create_grouped_table(group=group, repo_path=repo_path)
-    readme_references = create_dataset_readme_references()
-    package = f"{table.to_markdown(index=False, maxcolwidths=[None, None, None])}\n\n{readme_references}\n\n"
-    return package
+
+    # Convert Markdown-style "[dataset]" to HTML <a> links
+    def linkify_sources(cell: str) -> str:
+        items = [item.strip() for item in cell.split(",")]
+        return ", ".join(
+            f'<a href="data/{name.strip("[]")}/{name.strip("[]")}.md">{name.strip("[]")}</a>'
+            for name in items if name
+        )
+
+    table["Sources"] = table["Sources"].apply(linkify_sources)
+
+    # Render as HTML table
+    html_table = table.to_html(
+        index=False,
+        escape=False,  # needed so <a> tags are not escaped
+        border=0,
+        justify="left"
+    )
+
+    # Optional CSS for MkDocs (won't affect GitHub)
+    mkdocs_style = dedent("""
+        <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 6px 10px;
+        }
+        th {
+            background-color: #f9f9f9;
+        }
+        </style>
+    """)
+
+    return mkdocs_style + "\n" + html_table
+
 
 
 def create_overview_table_str(repo_path: Path = repo_path) -> str:
-    main_table = create_overview_table(repo_path)
-    readme_references = create_dataset_readme_references()
-    license_references = create_license_references()
-    package = f"{main_table.to_markdown(index=False)}\n\n{readme_references}\n\n{license_references}\n\n"
-    return package
+    df = create_overview_table(repo_path, add_readme_references=False)
+
+    def linkify_dataset(name: str) -> str:
+        # Turns [dataset] into <a> links
+        clean_name = name.strip("[]")
+        if clean_name == "**Total**":
+            return clean_name
+        return f'<a href="data/{clean_name}/{clean_name}.md">{clean_name}</a>'
+
+    def linkify_license(row: tuple[str, str]) -> str:
+        source, name = row
+        clean_name = name.strip("[]")
+        clean_source = source.strip("[]")
+        # Special case: "other" licenses link to #license-information
+        if clean_source == "**Total**":
+            return clean_name
+        return f'<a href="data/{clean_source}/{clean_source}.md#license-information">{clean_name}</a>'
+
+    # Apply linkification
+    df["License"] = df[["Source", "License"]].apply(linkify_license, axis=1)
+    df["Source"] = df["Source"].apply(linkify_dataset)
+
+    # HTML table output
+    html_table = df.to_html(index=False, escape=False, border=0, justify="left")
+
+    return html_table
