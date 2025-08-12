@@ -20,17 +20,17 @@ A collection of crawled webpages that is managed by Salling Group. The dataset c
 <!-- END-SHORT DESCRIPTION -->
 
 The data have been crawled from 11 different domains:
-- [sallingfondene.dk](sallingfondene.dk)
-- [sallinggroup.com](sallinggroup.com)
-- [bilka.dk](bilka.dk)
-- [bilkatogo.dk](bilkatogo.dk)
-- [bilkamadudafhuset.dk](bilkamadudafhuset.dk)
-- [foetex.dk](foetex.dk)
-- [foetexudafhuset.dk](foetexudafhuset.dk)
-- [netto.dk](netto.dk)
-- [br.dk](br.dk)
-- [salling.dk](salling.dk)
-- [flowr.dk](flowr.dk)
+- [sallingfondene.dk](https://sallingfondene.dk)
+- [sallinggroup.com](https://sallinggroup.com)
+- [bilka.dk](https://bilka.dk)
+- [bilkatogo.dk](https://bilkatogo.dk)
+- [bilkamadudafhuset.dk](https://bilkamadudafhuset.dk)
+- [foetex.dk](https://foetex.dk)
+- [foetexudafhuset.dk](https://foetexudafhuset.dk)
+- [netto.dk](https://netto.dk)
+- [br.dk](https://br.dk)
+- [salling.dk](https://salling.dk)
+- [flowr.dk](https://flowr.dk)
 
 This data has been contributed by Salling Group through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). 
 
@@ -49,7 +49,7 @@ An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
 - `text`(`str`): The content of the document.
-- `source` (`str`): The source of the document (see [Source Data](#source-data)).
+- `source` (`str`): The source of the document.
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
