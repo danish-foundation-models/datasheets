@@ -25,6 +25,7 @@ from datasheets.tables import (
     create_overview_table_str,
     create_grouped_table_str,
 )
+from datasheets.plots.plots_dataset_size import create_dataset_size_plot
 
 main_sheet = DataSheet.load_from_path(repo_path / "README.md")
 _datasets = [
@@ -211,6 +212,8 @@ def update_dataset(
         domain_table = create_grouped_table_str(group="License")
         sheet.body = sheet.replace_tag(package=domain_table, tag="LICENSE TABLE")
         create_domain_distribution_plot()
+        create_dataset_size_plot()
+
 
     sheet.write_to_path()
 

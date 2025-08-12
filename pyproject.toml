@@ -22,6 +22,7 @@ dependencies = [
     "tqdm>=4.67.1",
     "polars>=1.30.0",
     "semhash>=0.3.0",
+    "markdown>=3.8.2",
 ]
 
 [dependency-groups]

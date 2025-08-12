@@ -3,7 +3,8 @@ from typing import Literal
 
 import pandas as pd
 
-from datasheets.datasheet import DataSheet, convert_to_human_readable
+from datasheets.datasheet import DataSheet
+from datasheets.utils import convert_to_human_readable
 from datasheets.paths import repo_path
 
 main_sheet = DataSheet.load_from_path(repo_path / "README.md")

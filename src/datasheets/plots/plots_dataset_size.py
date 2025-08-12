@@ -5,8 +5,8 @@ from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 
-from dynaword.datasheet import DataSheet
-from dynaword.paths import repo_path
+from datasheets.datasheet import DataSheet
+from datasheets.paths import repo_path
 
 # Configure logging
 logging.basicConfig(
@@ -100,9 +100,14 @@ def plot_dataset_size(df: pd.DataFrame) -> go.Figure:
         xaxis_title="Number of Tokens (log scale)",
         xaxis_type="log",
         yaxis_title="Dataset",
-        height=500,
+        height=1000,
         template="plotly_white",
         margin=dict(l=120),  # More space for dataset names
+        yaxis=dict(
+            tickmode="array",
+            tickvals=df["dataset_name"],
+            ticktext=df["dataset_name"]
+        )
     )
 
     return fig

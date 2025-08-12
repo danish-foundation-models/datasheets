@@ -507,7 +507,7 @@ The following plot pr. dataset histograms displaying document lengths.
 <summary>Per dataset histograms</summary>
 <!-- START-DATASET PLOTS -->
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dataset_size_plot.svg" width="800" style="margin-right: 10px;" />
 </p>
 <!-- END-DATASET PLOTS -->
 </details>
