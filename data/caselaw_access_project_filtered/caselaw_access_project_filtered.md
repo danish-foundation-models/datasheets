@@ -13,7 +13,6 @@ domains:
 - Legal
 ---
 
-
 # Dataset Card for Caselaw Access Project
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ This dataset contains 6.7 million cases from the Caselaw Access Project and Cour
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 6.72M
+- **Number of tokens (Llama 3)**: 17.36B
+- **Average document length in tokens (min, max)**: 2.58K (7, 769.94K)
 <!-- END-DESC-STATS -->
 
 

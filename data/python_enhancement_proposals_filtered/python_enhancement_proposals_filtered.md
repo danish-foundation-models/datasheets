@@ -10,10 +10,9 @@ task_categories:
 - fill-mask
 task_ids:
 - language-modeling
-domains: 
+domains:
 - Technical
 ---
-
 
 # Dataset Card for Python Enhancement Proposals (PEP)
 
@@ -29,11 +28,9 @@ Python Enhancement Proposals, or PEPs, are design documents that generally provi
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 655
+- **Number of tokens (Llama 3)**: 2.54M
+- **Average document length in tokens (min, max)**: 3.87K (49, 19.78K)
 <!-- END-DESC-STATS -->
 
 

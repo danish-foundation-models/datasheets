@@ -14,7 +14,6 @@ domains:
 - Web
 ---
 
-
 # Dataset Card for Wikimedia
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ We downloaded the official database dumps from March 2025 of the English-languag
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 16.27M
+- **Number of tokens (Llama 3)**: 14.08B
+- **Average document length in tokens (min, max)**: 865.3751033306361 (5, 890.39K)
 <!-- END-DESC-STATS -->
 
 

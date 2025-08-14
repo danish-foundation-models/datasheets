@@ -13,7 +13,6 @@ domains:
 - Books
 ---
 
-
 # Dataset Card for PressBooks
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ PressBooks is a searchable catalog of over 8,000 open access books. To collect o
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 54.43K
+- **Number of tokens (Llama 3)**: 125.65M
+- **Average document length in tokens (min, max)**: 2.31K (19, 425.98K)
 <!-- END-DESC-STATS -->
 
 

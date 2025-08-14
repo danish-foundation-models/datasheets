@@ -13,7 +13,6 @@ domains:
 - Books
 ---
 
-
 # Dataset Card for Library of Congress
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ The Library of Congress (LoC) curates a collection of public domain books called
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 128.69K
+- **Number of tokens (Llama 3)**: 8.06B
+- **Average document length in tokens (min, max)**: 62.66K (18, 4.35M)
 <!-- END-DESC-STATS -->
 
 

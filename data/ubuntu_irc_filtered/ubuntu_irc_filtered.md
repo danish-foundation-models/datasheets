@@ -14,7 +14,6 @@ domains:
 - Social Media
 ---
 
-
 # Dataset Card for Ubuntu IRC
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ Logs of all discussions on the Ubuntu-hosted Internet Relay Chat (IRC) since 200
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 216.20K
+- **Number of tokens (Llama 3)**: 1.76B
+- **Average document length in tokens (min, max)**: 8.14K (1, 1.37M)
 <!-- END-DESC-STATS -->
 
 

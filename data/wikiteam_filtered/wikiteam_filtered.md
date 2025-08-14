@@ -14,7 +14,6 @@ domains:
 - Web
 ---
 
-
 # Dataset Card for Wikiteam
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ There are many wikis on the internet that are not managed by the Wikimedia Found
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 10.23M
+- **Number of tokens (Llama 3)**: 2.94B
+- **Average document length in tokens (min, max)**: 287.8559942189961 (19, 432.48K)
 <!-- END-DESC-STATS -->
 
 

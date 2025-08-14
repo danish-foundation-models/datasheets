@@ -14,7 +14,6 @@ domains:
 - Web
 ---
 
-
 # Dataset Card for GitHub Archive
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ According to GitHubâ€™s terms of service, issues and pull request descriptionsâ€
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 23.35M
+- **Number of tokens (Llama 3)**: 10.21B
+- **Average document length in tokens (min, max)**: 437.26702271848893 (2, 657.71K)
 <!-- END-DESC-STATS -->
 
 

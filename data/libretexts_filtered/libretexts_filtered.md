@@ -13,7 +13,6 @@ domains:
 - Books
 ---
 
-
 # Dataset Card for LibreTexts
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ LibreTexts is an online platform that provides a catalog of over 3,000 open-acce
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 40.04K
+- **Number of tokens (Llama 3)**: 84.19M
+- **Average document length in tokens (min, max)**: 2.10K (21, 319.08K)
 <!-- END-DESC-STATS -->
 
 

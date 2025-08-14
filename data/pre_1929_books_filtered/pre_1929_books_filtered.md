@@ -13,7 +13,6 @@ domains:
 - Books
 ---
 
-
 # Dataset Card for Pre-1929 Books
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ Books published in the US before 1929 passed into the public domain on January 1
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 124.55K
+- **Number of tokens (Llama 3)**: 10.56B
+- **Average document length in tokens (min, max)**: 84.82K (19, 5.78M)
 <!-- END-DESC-STATS -->
 
 

@@ -13,7 +13,6 @@ domains:
 - Other
 ---
 
-
 # Dataset Card for Data Provenance Initiative
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ The Data Provenance Initiative is a digital library of supervised datasets that 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 3.51M
+- **Number of tokens (Llama 3)**: 817.36M
+- **Average document length in tokens (min, max)**: 232.97177537274933 (2, 275.30K)
 <!-- END-DESC-STATS -->
 
 

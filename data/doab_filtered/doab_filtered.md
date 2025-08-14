@@ -13,7 +13,6 @@ domains:
 - Books
 ---
 
-
 # Dataset Card for Directory of Open Access Books
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ The Directory of Open Access Books (DOAB) is an online index of over 94,000 peer
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 403.92K
+- **Number of tokens (Llama 3)**: 2.80B
+- **Average document length in tokens (min, max)**: 6.93K (5, 1.11M)
 <!-- END-DESC-STATS -->
 
 

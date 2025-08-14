@@ -14,7 +14,6 @@ domains:
 - Legal
 ---
 
-
 # Dataset Card for Regulations.Gov
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ Regulations.gov is an online platform operated by the U.S. General Services Admi
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 192.44K
+- **Number of tokens (Llama 3)**: 1.28B
+- **Average document length in tokens (min, max)**: 6.65K (19, 51.77M)
 <!-- END-DESC-STATS -->
 
 

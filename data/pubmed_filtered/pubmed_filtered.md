@@ -14,7 +14,6 @@ domains:
 - Scientific
 ---
 
-
 # Dataset Card for PubMed
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ PubMed Central is an open-access archive of biomedical and life sciences researc
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 3.79M
+- **Number of tokens (Llama 3)**: 35.32B
+- **Average document length in tokens (min, max)**: 9.33K (6, 1.13M)
 <!-- END-DESC-STATS -->
 
 

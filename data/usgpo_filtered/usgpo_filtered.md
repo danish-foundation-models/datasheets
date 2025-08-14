@@ -14,7 +14,6 @@ domains:
 - Legal
 ---
 
-
 # Dataset Card for USGPO
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ This dataset includes all plain-text documents made available through the USGPOâ
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 2.01M
+- **Number of tokens (Llama 3)**: 7.78B
+- **Average document length in tokens (min, max)**: 3.87K (18, 10.96M)
 <!-- END-DESC-STATS -->
 
 

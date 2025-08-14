@@ -1,0 +1,9 @@
+{
+  "number_of_samples": 295411,
+  "number_of_tokens": 6110615238,
+  "min_length_tokens": 3,
+  "max_length_tokens": 994988,
+  "number_of_characters": 19425252893,
+  "min_length_characters": 6,
+  "max_length_characters": 2478816
+}

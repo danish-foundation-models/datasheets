@@ -14,7 +14,6 @@ domains:
 - Other
 ---
 
-
 # Dataset Card for PeS2o
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ This dataset is a version of the peS2o dataset restricted to openly licensed art
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 6.11M
+- **Number of tokens (Llama 3)**: 39.51B
+- **Average document length in tokens (min, max)**: 6.47K (109, 663.21K)
 <!-- END-DESC-STATS -->
 
 

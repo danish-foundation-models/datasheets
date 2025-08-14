@@ -15,11 +15,10 @@ domains:
 - Other
 ---
 
-
 # Dataset Card for Biodiversity Heritage Library
 
 <!-- START-SHORT DESCRIPTION -->
-A set of 15 million public domain books and documents from the BHL collection.
+A set of ~15 million public domain books and documents from the BHL collection.
 <!-- END-SHORT DESCRIPTION -->
 
 The Biodiversity Heritage Library (BHL) is an open-access digital library for biodiversity literature and archives. This dataset contains over 15 million public domain books and documents from the BHL collection. These works were collected using the bulk data download interface provided by the BHL and were filtered based on their associated license metadata. We use the optical character recognition (OCR)-generated text distributed by BHL. Code for collecting, processing, and preparing this dataset is available in the common-pile GitHub repo.
@@ -30,11 +29,9 @@ The Biodiversity Heritage Library (BHL) is an open-access digital library for bi
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 14.61M
+- **Number of tokens (Llama 3)**: 8.62B
+- **Average document length in tokens (min, max)**: 589.7122386742171 (6, 16.89K)
 <!-- END-DESC-STATS -->
 
 

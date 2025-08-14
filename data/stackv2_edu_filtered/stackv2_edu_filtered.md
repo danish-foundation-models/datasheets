@@ -14,7 +14,6 @@ domains:
 - Other
 ---
 
-
 # Dataset Card for Stack V2 Edu
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ We filter the Stack V2 to only include code from openly licensed repositories, b
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 67.79M
+- **Number of tokens (Llama 3)**: 62.39B
+- **Average document length in tokens (min, max)**: 920.2978463866087 (1, 6.70M)
 <!-- END-DESC-STATS -->
 
 

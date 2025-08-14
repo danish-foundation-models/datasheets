@@ -13,7 +13,6 @@ domains:
 - Scientific
 ---
 
-
 # Dataset Card for ArXiv Papers
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ ArXiv is an online open-access repository of over 2.4 million scholarly papers c
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 295.41K
+- **Number of tokens (Llama 3)**: 6.11B
+- **Average document length in tokens (min, max)**: 20.69K (3, 994.99K)
 <!-- END-DESC-STATS -->
 
 

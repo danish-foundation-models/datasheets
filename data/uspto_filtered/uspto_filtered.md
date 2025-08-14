@@ -13,7 +13,6 @@ domains:
 - Legal
 ---
 
-
 # Dataset Card for USPTO
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ Patents follow a highly standardized format with distinct required sections for 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 16.39M
+- **Number of tokens (Llama 3)**: 142.39B
+- **Average document length in tokens (min, max)**: 8.69K (24, 10.10M)
 <!-- END-DESC-STATS -->
 
 

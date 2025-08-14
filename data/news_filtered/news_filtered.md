@@ -13,7 +13,6 @@ domains:
 - News
 ---
 
-
 # Dataset Card for News
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ We scrape the news sites that publish content under CC BY or CC BY-SA according 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 126.67K
+- **Number of tokens (Llama 3)**: 53.77M
+- **Average document length in tokens (min, max)**: 424.46852131077657 (20, 14.88K)
 <!-- END-DESC-STATS -->
 
 

@@ -14,7 +14,6 @@ domains:
 - Web
 ---
 
-
 # Dataset Card for Public Domain Review
 
 <!-- START-SHORT DESCRIPTION -->
@@ -27,11 +26,9 @@ The Public Domain Review is an online journal dedicated to exploration of works 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 1.41K
+- **Number of tokens (Llama 3)**: 1.51M
+- **Average document length in tokens (min, max)**: 1.07K (35, 10.80K)
 <!-- END-DESC-STATS -->
 
 

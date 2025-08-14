@@ -13,7 +13,6 @@ domains:
 - Scientific
 ---
 
-
 # Dataset Card for ArXiv Abstracts
 
 <!-- START-SHORT DESCRIPTION -->
@@ -28,11 +27,9 @@ Each paper uploaded to ArXiv includes structured metadata fields, including an a
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 2.50M
+- **Number of tokens (Llama 3)**: 524.45M
+- **Average document length in tokens (min, max)**: 209.42911292167878 (4, 1.31K)
 <!-- END-DESC-STATS -->
 
 

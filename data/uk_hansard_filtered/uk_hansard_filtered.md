@@ -14,7 +14,6 @@ domains:
 - Legal
 ---
 
-
 # Dataset Card for UK Hansard
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ This dataset incorporates records from multiple sources, including debates and w
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 47.91K
+- **Number of tokens (Llama 3)**: 2.01B
+- **Average document length in tokens (min, max)**: 42.00K (1, 439.78K)
 <!-- END-DESC-STATS -->
 
 

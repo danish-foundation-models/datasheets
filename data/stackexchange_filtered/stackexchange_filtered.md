@@ -14,7 +14,6 @@ domains:
 - Web
 ---
 
-
 # Dataset Card for Stack Exchange
 
 <!-- START-SHORT DESCRIPTION -->
@@ -38,11 +37,9 @@ Code for collecting, processing, and preparing this dataset is available in the 
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 30.99M
+- **Number of tokens (Llama 3)**: 21.83B
+- **Average document length in tokens (min, max)**: 704.5059687867861 (11, 2.69M)
 <!-- END-DESC-STATS -->
 
 

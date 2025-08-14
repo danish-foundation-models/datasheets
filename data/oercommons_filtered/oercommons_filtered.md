@@ -14,7 +14,6 @@ domains:
 - Scientific
 ---
 
-
 # Dataset Card for OERCommons
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ OERCommons is an online platform where educators share open-access instructional
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 5.24K
+- **Number of tokens (Llama 3)**: 10.82M
+- **Average document length in tokens (min, max)**: 2.06K (48, 293.85K)
 <!-- END-DESC-STATS -->
 
 

@@ -14,7 +14,6 @@ domains:
 - Spoken
 ---
 
-
 # Dataset Card for Creative Commons Youtube
 
 <!-- START-SHORT DESCRIPTION -->
@@ -29,11 +28,9 @@ To collect high-quality speech-based textual content and combat the rampant lice
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 988.25K
+- **Number of tokens (Llama 3)**: 4.07B
+- **Average document length in tokens (min, max)**: 4.12K (1, 193.44K)
 <!-- END-DESC-STATS -->
 
 

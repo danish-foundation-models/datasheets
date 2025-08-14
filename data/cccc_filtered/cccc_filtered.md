@@ -13,7 +13,6 @@ domains:
 - Web
 ---
 
-
 # Dataset Card for Creative Commons Common Crawl
 
 <!-- START-SHORT DESCRIPTION -->
@@ -30,11 +29,9 @@ We extract the main content of these documents and remove boilerplate using Resi
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Language**: dan, dansk, Danish
-- **Domains**: News
-- **Number of samples**: 105.11K
-- **Number of tokens (Llama 3)**: 65.44M
-- **Average document length (characters)**: 1866.20
+- **Number of samples**: 6.85M
+- **Number of tokens (Llama 3)**: 13.99B
+- **Average document length in tokens (min, max)**: 2.04K (3, 154.80K)
 <!-- END-DESC-STATS -->
 
 
