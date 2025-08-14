@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from datasets import Dataset
+import polars as pl
+from polars import LazyFrame
 
 logger = logging.getLogger(__name__)
 
@@ -88,6 +90,41 @@ class DescriptiveStatsOverview:
             number_of_characters=sum(dataset["sum_char_count"]),
             min_length_characters=min(dataset["min_char_count"]),
             max_length_characters=max(dataset["max_char_count"]),
+        )
+    
+    @classmethod
+    def from_dataframe(cls, df: LazyFrame) -> DescriptiveStatsOverview:
+        # Pass 1: counts for token_count
+        token_stats = (
+            df.select(
+                pl.count().alias("n_samples"),
+                pl.col("token_count").cast(pl.Int64).sum().alias("n_tokens"),
+                pl.col("token_count").cast(pl.Int64).min().alias("min_tok"),
+                pl.col("token_count").cast(pl.Int64).max().alias("max_tok"),
+            )
+            .collect(engine="streaming")
+            .row(0, named=True)
+        )
+
+        # Pass 2: counts for text length
+        char_stats = (
+            df.select(
+                pl.col("text").str.len_bytes().sum().alias("n_chars"),
+                pl.col("text").str.len_bytes().min().alias("min_chars"),
+                pl.col("text").str.len_bytes().max().alias("max_chars"),
+            )
+            .collect(engine="streaming")
+            .row(0, named=True)
+        )
+
+        return cls(
+            number_of_samples=token_stats["n_samples"],
+            number_of_tokens=token_stats["n_tokens"],
+            min_length_tokens=token_stats["min_tok"],
+            max_length_tokens=token_stats["max_tok"],
+            number_of_characters=char_stats["n_chars"],
+            min_length_characters=char_stats["min_chars"],
+            max_length_characters=char_stats["max_chars"],
         )
 
     def __add__(self, other: DescriptiveStatsOverview) -> DescriptiveStatsOverview:
