@@ -2,8 +2,8 @@
 pretty_name: LibreTexts
 language:
 - en
-license: other
-license_name: Various - CC-0, CC-BY-SA-4, GNU
+license: cc-by-sa-4.0
+license_name: CC-BY-SA 4.0
 task_categories:
 - text-generation
 - fill-mask

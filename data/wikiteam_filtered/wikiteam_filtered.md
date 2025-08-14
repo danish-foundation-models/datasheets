@@ -2,8 +2,8 @@
 pretty_name: Wikiteam
 language:
 - en
-license: other
-license_name: Various - CC-BY, CC-BY-SA, Public Domain
+license: cc-by-sa-4.0
+license_name: CC-BY-SA 4.0
 task_categories:
 - text-generation
 - fill-mask
