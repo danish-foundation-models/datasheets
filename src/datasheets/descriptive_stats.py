@@ -91,7 +91,7 @@ class DescriptiveStatsOverview:
             min_length_characters=min(dataset["min_char_count"]),
             max_length_characters=max(dataset["max_char_count"]),
         )
-    
+
     @classmethod
     def from_dataframe(cls, df: LazyFrame) -> DescriptiveStatsOverview:
         # Pass 1: counts for token_count

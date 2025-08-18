@@ -212,7 +212,12 @@ class DataSheet(BaseModel):
             tag=DEFAULT_SECTION_TAGS.desc_stats,
         )
 
-    def add_dataset_plots(self, dataset: Dataset | LazyFrame, create_plot: bool = True, desc_stats: DescriptiveStatsOverview | None = None) -> str:
+    def add_dataset_plots(
+        self,
+        dataset: Dataset | LazyFrame,
+        create_plot: bool = True,
+        desc_stats: DescriptiveStatsOverview | None = None,
+    ) -> str:
         if create_plot:
             if isinstance(dataset, Dataset):
                 create_descriptive_statistics_plots(

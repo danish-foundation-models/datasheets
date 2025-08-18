@@ -159,7 +159,9 @@ def add_dataset_to_readme(dataset_id: str, set_name: str):
     ]
 
     if dataset_id not in _datasets:
-        main_sheet.frontmatter["configs"].append({"config_name": dataset_id, "set": set_name})  # type: ignore
+        main_sheet.frontmatter["configs"].append(
+            {"config_name": dataset_id, "set": set_name}
+        )  # type: ignore
         main_sheet.write_to_path(repo_path / "README.md")
 
 

@@ -54,7 +54,7 @@ def create_descriptive_statistics_plots(
 
 
 def create_descriptive_statistics_plots_lazy(
-    lf: pl.LazyFrame,          # <- accept LazyFrame instead of Dataset
+    lf: pl.LazyFrame,  # <- accept LazyFrame instead of Dataset
     save_dir: Path,
     desc_stats: DescriptiveStatsOverview,
 ) -> tuple[Path, pn.ggplot]:
@@ -70,9 +70,7 @@ def create_descriptive_statistics_plots_lazy(
 
     # --- PASS 2: Bin and count in streaming mode ---
     binned = (
-        lf.select(
-            lengths=pl.col("token_count").cast(pl.Int64)
-        )
+        lf.select(lengths=pl.col("token_count").cast(pl.Int64))
         .with_columns(
             bin_idx=((pl.col("lengths") - min_len) / bin_width).floor().cast(pl.Int64)
         )
@@ -95,7 +93,7 @@ def create_descriptive_statistics_plots_lazy(
             title="Distribution of Document Lengths (All Sources Combined)",
         )
         + pn.theme_minimal()
-)
+    )
 
     # --- Save image ---
     img_path = save_dir / "images"
