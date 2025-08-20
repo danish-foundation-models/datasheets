@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Shuffle and split parquet files into smaller size-controlled files using streaming of chunks.
 This script reads parquet files, unifies their schemas, and distributes rows across output files.
