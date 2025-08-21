@@ -1,64 +1,178 @@
 ---
 license: other
 configs:
-- config_name: default
 - config_name: adl
+  set: dfm
 - config_name: botxt
+  set: dfm
 - config_name: dannet
+  set: dfm
 - config_name: depbank
+  set: dfm
 - config_name: ep
+  set: dfm
 - config_name: ft
+  set: dfm
 - config_name: gutenberg
+  set: dfm
 - config_name: hest
+  set: dfm
 - config_name: jvj
+  set: dfm
 - config_name: naat
+  set: dfm
 - config_name: relig
+  set: dfm
 - config_name: retsinformationdk
+  set: dfm
 - config_name: retspraksis
+  set: dfm
 - config_name: skat
+  set: dfm
 - config_name: spont
+  set: dfm
 - config_name: synne
+  set: dfm
 - config_name: tv2r
+  set: dfm
 - config_name: wiki
+  set: dfm
 - config_name: wikibooks
+  set: dfm
 - config_name: wikisource
+  set: dfm
 - config_name: dsk-alexandra
+  set: dfm
 - config_name: dsk-atp
+  set: dfm
 - config_name: dsk-cbrain
+  set: dfm
 - config_name: dsk-danskerhverv
+  set: dfm
 - config_name: dsk-dkmedier
+  set: dfm
 - config_name: dsk-hofor
+  set: dfm
 - config_name: dsk-ida
+  set: dfm
 - config_name: dsk-odense
+  set: dfm
 - config_name: dsk-plesner
+  set: dfm
 - config_name: dsk-salling
+  set: dfm
 - config_name: dsk-vejle
+  set: dfm
 - config_name: dsk-vitec
+  set: dfm
 - config_name: plandata
+  set: dfm
 - config_name: ai-aktindsigt
+  set: dfm
 - config_name: danske-taler
+  set: dfm
 - config_name: fm-udgivelser
+  set: dfm
 - config_name: eur-lex-sum-da
+  set: dfm
 - config_name: memo
+  set: dfm
 - config_name: miljoeportalen
+  set: dfm
 - config_name: nordjyllandnews
+  set: dfm
 - config_name: nota
+  set: dfm
 - config_name: opensubtitles
+  set: dfm
 - config_name: cellar
+  set: dfm
 - config_name: ncc_books
+  set: dfm
 - config_name: ncc_maalfrid
+  set: dfm
 - config_name: ncc_newspaper
+  set: dfm
 - config_name: ncc_parliament
+  set: dfm
 - config_name: dbc-abstracts
+  set: dfm
 - config_name: dbc-faktalink
+  set: dfm
 - config_name: dbc-forfatterweb
+  set: dfm
 - config_name: dbc-reviews
+  set: dfm
 - config_name: danish-pd
+  set: dfm
 - config_name: cvr-reports
+  set: dfm
 - config_name: health_hovedstaden
+  set: dfm
 - config_name: grundtvig
+  set: dfm
 - config_name: domsdatabasen
+  set: dfm
 - config_name: enevaeldens_nyheder
+  set: dfm
+- config_name: arxiv_abstracts_filtered
+  set: common-pile
+- config_name: arxiv_papers_filtered
+  set: common-pile
+- config_name: biodiversity_heritage_library_filtered
+  set: common-pile
+- config_name: caselaw_access_project_filtered
+  set: common-pile
+- config_name: cccc_filtered
+  set: common-pile
+- config_name: data_provenance_initiative_filtered
+  set: common-pile
+- config_name: doab_filtered
+  set: common-pile
+- config_name: github_archive_filtered
+  set: common-pile
+- config_name: library_of_congress_filtered
+  set: common-pile
+- config_name: libretexts_filtered
+  set: common-pile
+- config_name: news_filtered
+  set: common-pile
+- config_name: oercommons_filtered
+  set: common-pile
+- config_name: peS2o_filtered
+  set: common-pile
+- config_name: pre_1929_books_filtered
+  set: common-pile
+- config_name: pressbooks_filtered
+  set: common-pile
+- config_name: project_gutenberg_filtered
+  set: common-pile
+- config_name: public_domain_review_filtered
+  set: common-pile
+- config_name: pubmed_filtered
+  set: common-pile
+- config_name: python_enhancement_proposals_filtered
+  set: common-pile
+- config_name: regulations_filtered
+  set: common-pile
+- config_name: stackexchange_filtered
+  set: common-pile
+- config_name: stackv2_edu_filtered
+  set: common-pile
+- config_name: ubuntu_irc_filtered
+  set: common-pile
+- config_name: uk_hansard_filtered
+  set: common-pile
+- config_name: usgpo_filtered
+  set: common-pile
+- config_name: uspto_filtered
+  set: common-pile
+- config_name: wikimedia_filtered
+  set: common-pile
+- config_name: wikiteam_filtered
+  set: common-pile
+- config_name: youtube_filtered
+  set: common-pile
 annotations_creators:
 - no-annotation
 language_creators:
@@ -78,10 +192,6 @@ task_categories:
 task_ids:
 - language-modeling
 pretty_name: DFM Datasheets
-language_bcp47:
-- da
-- da-bornholm
-- da-synnejyl
 ---
 
 # DFM Datasheets
@@ -91,7 +201,7 @@ This repository contains the datasheets for DFM. This repostory documents.
 <!-- START README TABLE -->
 |             |                                                                                                                                          |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| **Version** | 0.0.15 ([Changelog](/CHANGELOG.md)) |
+| **Version** | 1.0.0 ([Changelog](/CHANGELOG.md)) |
 | **License** | Non publicly available                                                                                                                   |
 | **Models**  | Currently not model is publicly available that is trained on the data                                                                    |
 | **Contact** | If you have question about this project please create an issue [here](https://github.com/danish-foundation-models/dfm-datasheets/issues) |
@@ -115,9 +225,9 @@ This repository contains the datasheets for DFM. This repostory documents.
 ## Dataset Description
 
 <!-- START-DESC-STATS -->
-- **Number of samples**: 16.23M
-- **Number of tokens (Llama 3)**: 10.58B
-- **Average document length in tokens (min, max)**: 651.9848074000665 (2, 13.35M)
+- **Number of samples**: 230.07M
+- **Number of tokens (Llama 3)**: 430.24B
+- **Average document length in tokens (min, max)**: 1.87K (1, 51.77M)
 <!-- END-DESC-STATS -->
 
 ### Summary
@@ -148,22 +258,25 @@ This dynaword consist of data from various domains (e.g., legal, books, social m
 
 
 <!-- START-DOMAIN TABLE -->
-| Domain       | Sources                                                                                                                        | N. Tokens   |
-|:-------------|:-------------------------------------------------------------------------------------------------------------------------------|:------------|
-| Legal        | [retsinformationdk], [retspraksis], [skat], [fm-udgivelser], [eur-lex-sum-da], [miljoeportalen], [cellar], [domsdatabasen]     | 2.44B       |
-| Financial    | [cvr-reports]                                                                                                                  | 2.32B       |
-| Books        | [adl], [gutenberg], [jvj], [relig], [wikibooks], [memo], [ncc_books], [dbc-abstracts], [dbc-reviews], [danish-pd], [grundtvig] | 2.01B       |
-| News         | [tv2r], [dsk-danskerhverv], [dsk-dkmedier], [dsk-ida], [dsk-odense], [nordjyllandnews], [ncc_newspaper], [enevaeldens_nyheder] | 1.16B       |
-| Governmental | [plandata]                                                                                                                     | 1.03B       |
-| Conversation | [ep], [ft], [naat], [spont], [danske-taler], [opensubtitles]                                                                   | 497.09M     |
-| Social Media | [hest]                                                                                                                         | 389.32M     |
-| Other        | [dannet], [depbank], [synne], [dsk-cbrain], [dsk-hofor], [dsk-plesner], [dsk-vitec], [ncc_parliament]                          | 346.36M     |
-| Web          | [dsk-alexandra], [dsk-atp], [dsk-salling], [dsk-vejle], [ai-aktindsigt], [ncc_maalfrid]                                        | 209.72M     |
-| Encyclopedic | [wiki], [wikisource], [dbc-faktalink], [dbc-forfatterweb]                                                                      | 130.76M     |
-| Medical      | [health_hovedstaden]                                                                                                           | 27.07M      |
-| Readaloud    | [nota]                                                                                                                         | 7.30M       |
-| Dialect      | [botxt]                                                                                                                        | 847.97K     |
-| **Total**    |                                                                                                                                | 10.58B      |
+| Domain       | Sources                                                                                                                                                                                                                                                                                                                                                 | N. Tokens   |
+|:-------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
+| Legal        | [retsinformationdk], [retspraksis], [skat], [fm-udgivelser], [eur-lex-sum-da], [miljoeportalen], [cellar], [domsdatabasen], [caselaw_access_project_filtered], [uspto_filtered]                                                                                                                                                                         | 162.19B     |
+| Other        | [dannet], [depbank], [synne], [dsk-cbrain], [dsk-hofor], [dsk-plesner], [dsk-vitec], [ncc_parliament], [data_provenance_initiative_filtered], [public_domain_review_filtered], [stackv2_edu_filtered]                                                                                                                                                   | 63.56B      |
+| Scientific   | [arxiv_abstracts_filtered], [arxiv_papers_filtered], [peS2o_filtered]                                                                                                                                                                                                                                                                                   | 46.15B      |
+| Books        | [adl], [gutenberg], [jvj], [relig], [wikibooks], [memo], [ncc_books], [dbc-abstracts], [dbc-reviews], [danish-pd], [grundtvig], [biodiversity_heritage_library_filtered], [doab_filtered], [library_of_congress_filtered], [libretexts_filtered], [oercommons_filtered], [pre_1929_books_filtered], [pressbooks_filtered], [project_gutenberg_filtered] | 37.19B      |
+| Medical      | [health_hovedstaden], [pubmed_filtered]                                                                                                                                                                                                                                                                                                                 | 35.35B      |
+| Conversation | [ep], [ft], [naat], [spont], [danske-taler], [opensubtitles], [github_archive_filtered], [stackexchange_filtered], [ubuntu_irc_filtered]                                                                                                                                                                                                                | 34.30B      |
+| Encyclopedic | [wiki], [wikisource], [dbc-faktalink], [dbc-forfatterweb], [wikimedia_filtered], [wikiteam_filtered]                                                                                                                                                                                                                                                    | 17.21B      |
+| Web          | [dsk-alexandra], [dsk-atp], [dsk-salling], [dsk-vejle], [ai-aktindsigt], [ncc_maalfrid], [cccc_filtered]                                                                                                                                                                                                                                                | 14.20B      |
+| Governmental | [plandata], [regulations_filtered], [uk_hansard_filtered], [usgpo_filtered]                                                                                                                                                                                                                                                                             | 12.10B      |
+| Speeches     | [youtube_filtered]                                                                                                                                                                                                                                                                                                                                      | 4.07B       |
+| Financial    | [cvr-reports]                                                                                                                                                                                                                                                                                                                                           | 2.32B       |
+| News         | [tv2r], [dsk-danskerhverv], [dsk-dkmedier], [dsk-ida], [dsk-odense], [nordjyllandnews], [ncc_newspaper], [enevaeldens_nyheder], [news_filtered]                                                                                                                                                                                                         | 1.22B       |
+| Social Media | [hest]                                                                                                                                                                                                                                                                                                                                                  | 389.32M     |
+| Readaloud    | [nota]                                                                                                                                                                                                                                                                                                                                                  | 7.30M       |
+| Technical    | [python_enhancement_proposals_filtered]                                                                                                                                                                                                                                                                                                                 | 2.54M       |
+| Dialect      | [botxt]                                                                                                                                                                                                                                                                                                                                                 | 847.97K     |
+| **Total**    |                                                                                                                                                                                                                                                                                                                                                         | 430.24B     |
 
 [adl]: data/adl/adl.md
 [botxt]: data/botxt/botxt.md
@@ -222,6 +335,35 @@ This dynaword consist of data from various domains (e.g., legal, books, social m
 [grundtvig]: data/grundtvig/grundtvig.md
 [domsdatabasen]: data/domsdatabasen/domsdatabasen.md
 [enevaeldens_nyheder]: data/enevaeldens_nyheder/enevaeldens_nyheder.md
+[arxiv_abstracts_filtered]: data/arxiv_abstracts_filtered/arxiv_abstracts_filtered.md
+[arxiv_papers_filtered]: data/arxiv_papers_filtered/arxiv_papers_filtered.md
+[biodiversity_heritage_library_filtered]: data/biodiversity_heritage_library_filtered/biodiversity_heritage_library_filtered.md
+[caselaw_access_project_filtered]: data/caselaw_access_project_filtered/caselaw_access_project_filtered.md
+[cccc_filtered]: data/cccc_filtered/cccc_filtered.md
+[data_provenance_initiative_filtered]: data/data_provenance_initiative_filtered/data_provenance_initiative_filtered.md
+[doab_filtered]: data/doab_filtered/doab_filtered.md
+[github_archive_filtered]: data/github_archive_filtered/github_archive_filtered.md
+[library_of_congress_filtered]: data/library_of_congress_filtered/library_of_congress_filtered.md
+[libretexts_filtered]: data/libretexts_filtered/libretexts_filtered.md
+[news_filtered]: data/news_filtered/news_filtered.md
+[oercommons_filtered]: data/oercommons_filtered/oercommons_filtered.md
+[peS2o_filtered]: data/peS2o_filtered/peS2o_filtered.md
+[pre_1929_books_filtered]: data/pre_1929_books_filtered/pre_1929_books_filtered.md
+[pressbooks_filtered]: data/pressbooks_filtered/pressbooks_filtered.md
+[project_gutenberg_filtered]: data/project_gutenberg_filtered/project_gutenberg_filtered.md
+[public_domain_review_filtered]: data/public_domain_review_filtered/public_domain_review_filtered.md
+[pubmed_filtered]: data/pubmed_filtered/pubmed_filtered.md
+[python_enhancement_proposals_filtered]: data/python_enhancement_proposals_filtered/python_enhancement_proposals_filtered.md
+[regulations_filtered]: data/regulations_filtered/regulations_filtered.md
+[stackexchange_filtered]: data/stackexchange_filtered/stackexchange_filtered.md
+[stackv2_edu_filtered]: data/stackv2_edu_filtered/stackv2_edu_filtered.md
+[ubuntu_irc_filtered]: data/ubuntu_irc_filtered/ubuntu_irc_filtered.md
+[uk_hansard_filtered]: data/uk_hansard_filtered/uk_hansard_filtered.md
+[usgpo_filtered]: data/usgpo_filtered/usgpo_filtered.md
+[uspto_filtered]: data/uspto_filtered/uspto_filtered.md
+[wikimedia_filtered]: data/wikimedia_filtered/wikimedia_filtered.md
+[wikiteam_filtered]: data/wikiteam_filtered/wikiteam_filtered.md
+[youtube_filtered]: data/youtube_filtered/youtube_filtered.md
 <!-- END-DOMAIN TABLE -->
 
 </div>
@@ -243,17 +385,19 @@ The following gives an overview of the licensing in the Dynaword. To get the exa
 These license is applied to the constituent data, i.e., the text. The collection of datasets (metadata, quality control, etc.) is licensed under [CC-0](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en).
 
 <!-- START-LICENSE TABLE -->
-| License                                         | Sources                                                                                                                                                                                                                                                                                               | N. Tokens   |
-|:------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
-| CC-0                                            | [adl], [botxt], [ep], [ft], [hest], [naat], [relig], [retspraksis], [skat], [spont], [synne], [wiki], [wikibooks], [wikisource], [danske-taler], [miljoeportalen], [nordjyllandnews], [nota], [opensubtitles], [ncc_books], [ncc_newspaper], [health_hovedstaden], [grundtvig], [enevaeldens_nyheder] | 3.04B       |
-| Verbal agreement                                | [cvr-reports]                                                                                                                                                                                                                                                                                         | 2.32B       |
-| Written agreement (public models, private data) | [plandata], [dbc-abstracts], [dbc-faktalink], [dbc-forfatterweb], [dbc-reviews]                                                                                                                                                                                                                       | 1.78B       |
-| CC-BY-SA 4.0                                    | [depbank], [jvj], [tv2r], [fm-udgivelser], [eur-lex-sum-da], [memo], [cellar]                                                                                                                                                                                                                         | 1.37B       |
-| Other (No attribution required)                 | [retsinformationdk], [domsdatabasen]                                                                                                                                                                                                                                                                  | 904.61M     |
-| Public Domain                                   | [danish-pd]                                                                                                                                                                                                                                                                                           | 532.43M     |
-| Other (Attribution required)                    | [dannet], [gutenberg], [ai-aktindsigt], [ncc_maalfrid], [ncc_parliament]                                                                                                                                                                                                                              | 515.61M     |
-| DSK-1                                           | [dsk-alexandra], [dsk-atp], [dsk-cbrain], [dsk-danskerhverv], [dsk-dkmedier], [dsk-hofor], [dsk-ida], [dsk-odense], [dsk-plesner], [dsk-salling], [dsk-vejle], [dsk-vitec]                                                                                                                            | 113.35M     |
-| **Total**                                       |                                                                                                                                                                                                                                                                                                       | 10.58B      |
+| License                                         | Sources                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | N. Tokens   |
+|:------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
+| Public Domain                                   | [danish-pd], [python_enhancement_proposals_filtered], [regulations_filtered], [ubuntu_irc_filtered], [usgpo_filtered], [uspto_filtered]                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 153.74B     |
+| CC-BY-SA 4.0                                    | [depbank], [jvj], [tv2r], [fm-udgivelser], [eur-lex-sum-da], [memo], [cellar], [doab_filtered], [libretexts_filtered], [news_filtered], [oercommons_filtered], [peS2o_filtered], [pressbooks_filtered], [public_domain_review_filtered], [pubmed_filtered], [stackexchange_filtered], [wikimedia_filtered], [wikiteam_filtered], [youtube_filtered]                                                                                                                                                                                                                                      | 122.21B     |
+| CC-0                                            | [adl], [botxt], [ep], [ft], [hest], [naat], [relig], [retspraksis], [skat], [spont], [synne], [wiki], [wikibooks], [wikisource], [danske-taler], [miljoeportalen], [nordjyllandnews], [nota], [opensubtitles], [ncc_books], [ncc_newspaper], [health_hovedstaden], [grundtvig], [enevaeldens_nyheder], [arxiv_abstracts_filtered], [arxiv_papers_filtered], [biodiversity_heritage_library_filtered], [caselaw_access_project_filtered], [cccc_filtered], [data_provenance_initiative_filtered], [library_of_congress_filtered], [pre_1929_books_filtered], [project_gutenberg_filtered] | 74.05B      |
+| Various - MIT, BSD-3-Clause, Apache-2.0, etc.   | [github_archive_filtered], [stackv2_edu_filtered]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | 72.60B      |
+| Verbal agreement                                | [cvr-reports]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | 2.32B       |
+| Open Parliament License                         | [uk_hansard_filtered]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | 2.01B       |
+| Written agreement (public models, private data) | [plandata], [dbc-abstracts], [dbc-faktalink], [dbc-forfatterweb], [dbc-reviews]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | 1.78B       |
+| Other (No attribution required)                 | [retsinformationdk], [domsdatabasen]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | 904.61M     |
+| Other (Attribution required)                    | [dannet], [gutenberg], [ai-aktindsigt], [ncc_maalfrid], [ncc_parliament]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | 515.61M     |
+| DSK-1                                           | [dsk-alexandra], [dsk-atp], [dsk-cbrain], [dsk-danskerhverv], [dsk-dkmedier], [dsk-hofor], [dsk-ida], [dsk-odense], [dsk-plesner], [dsk-salling], [dsk-vejle], [dsk-vitec]                                                                                                                                                                                                                                                                                                                                                                                                               | 113.35M     |
+| **Total**                                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | 430.24B     |
 
 [adl]: data/adl/adl.md
 [botxt]: data/botxt/botxt.md
@@ -312,6 +456,35 @@ These license is applied to the constituent data, i.e., the text. The collection
 [grundtvig]: data/grundtvig/grundtvig.md
 [domsdatabasen]: data/domsdatabasen/domsdatabasen.md
 [enevaeldens_nyheder]: data/enevaeldens_nyheder/enevaeldens_nyheder.md
+[arxiv_abstracts_filtered]: data/arxiv_abstracts_filtered/arxiv_abstracts_filtered.md
+[arxiv_papers_filtered]: data/arxiv_papers_filtered/arxiv_papers_filtered.md
+[biodiversity_heritage_library_filtered]: data/biodiversity_heritage_library_filtered/biodiversity_heritage_library_filtered.md
+[caselaw_access_project_filtered]: data/caselaw_access_project_filtered/caselaw_access_project_filtered.md
+[cccc_filtered]: data/cccc_filtered/cccc_filtered.md
+[data_provenance_initiative_filtered]: data/data_provenance_initiative_filtered/data_provenance_initiative_filtered.md
+[doab_filtered]: data/doab_filtered/doab_filtered.md
+[github_archive_filtered]: data/github_archive_filtered/github_archive_filtered.md
+[library_of_congress_filtered]: data/library_of_congress_filtered/library_of_congress_filtered.md
+[libretexts_filtered]: data/libretexts_filtered/libretexts_filtered.md
+[news_filtered]: data/news_filtered/news_filtered.md
+[oercommons_filtered]: data/oercommons_filtered/oercommons_filtered.md
+[peS2o_filtered]: data/peS2o_filtered/peS2o_filtered.md
+[pre_1929_books_filtered]: data/pre_1929_books_filtered/pre_1929_books_filtered.md
+[pressbooks_filtered]: data/pressbooks_filtered/pressbooks_filtered.md
+[project_gutenberg_filtered]: data/project_gutenberg_filtered/project_gutenberg_filtered.md
+[public_domain_review_filtered]: data/public_domain_review_filtered/public_domain_review_filtered.md
+[pubmed_filtered]: data/pubmed_filtered/pubmed_filtered.md
+[python_enhancement_proposals_filtered]: data/python_enhancement_proposals_filtered/python_enhancement_proposals_filtered.md
+[regulations_filtered]: data/regulations_filtered/regulations_filtered.md
+[stackexchange_filtered]: data/stackexchange_filtered/stackexchange_filtered.md
+[stackv2_edu_filtered]: data/stackv2_edu_filtered/stackv2_edu_filtered.md
+[ubuntu_irc_filtered]: data/ubuntu_irc_filtered/ubuntu_irc_filtered.md
+[uk_hansard_filtered]: data/uk_hansard_filtered/uk_hansard_filtered.md
+[usgpo_filtered]: data/usgpo_filtered/usgpo_filtered.md
+[uspto_filtered]: data/uspto_filtered/uspto_filtered.md
+[wikimedia_filtered]: data/wikimedia_filtered/wikimedia_filtered.md
+[wikiteam_filtered]: data/wikiteam_filtered/wikiteam_filtered.md
+[youtube_filtered]: data/youtube_filtered/youtube_filtered.md
 <!-- END-LICENSE TABLE -->
 
 ### Source Data
@@ -324,66 +497,95 @@ Below follows a brief overview of the sources in the corpus along with their ind
 You can learn more about each dataset by pressing the link in the first column.
 
 <!-- START-MAIN TABLE -->
-| Source                | Description                                                                                                                                                                                             | Domain       | N. Tokens   | License                                           |
-|:----------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:--------------------------------------------------|
-| [cvr-reports]         | Annual reports from danish companies in the period 2010-2025                                                                                                                                            | Financial    | 2.32B       | [Verbal agreement]                                |
-| [cellar]              | The official digital repository for European Union legal documents and open data                                                                                                                        | Legal        | 1.15B       | [CC-BY-SA 4.0]                                    |
-| [enevaeldens_nyheder] | High quality OCR'd texts from Danish and Norwegian newspapers during the period of constitutional absolutism in Denmark (1660–1849)                                                                     | News         | 1.03B       | [CC-0]                                            |
-| [plandata]            | A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types             | Governmental | 1.03B       | [Written agreement (public models, private data)] |
-| [retsinformationdk]   | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                            | Legal        | 818.25M     | [Danish Copyright Law]                            |
-| [dbc-abstracts]       | dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                  | Books        | 694.42M     | [Written agreement (public models, private data)] |
-| [danish-pd]           | **PleIAs - Danish Public Domain** is a large collection aiming to aggregate all Danish monographies and periodicals in the public domain                                                                | Books        | 532.43M     | [Public Domain]                                   |
-| [ncc_books]           | Danish books extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from OCR                                                                               | Books        | 531.97M     | [CC-0]                                            |
-| [hest]                | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                | Social Media | 389.32M     | [CC-0]                                            |
-| [ncc_parliament]      | Collections from the Norwegian parliament in Danish. Extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from ocr                                       | Other        | 338.87M     | [NLOD 2.0]                                        |
-| [opensubtitles]       | Danish subsection of [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles/corpus/version/OpenSubtitles)                                                                                                   | Conversation | 271.60M     | [CC-0]                                            |
-| [ai-aktindsigt]       | Multiple web scrapes from municipality websites collected as a part of the [AI-aktindsigt](https://ai-aktindsigt.dk) project                                                                            | Web          | 139.23M     | [Apache 2.0]                                      |
-| [miljoeportalen]      | Data from [Danmarks Miljøportalen](https://www.miljoeportal.dk/om-danmarks-miljoeportal/) (Denmark's Environment Portal)                                                                                | Legal        | 127.38M     | [CC-0]                                            |
-| [skat]                | Skat is the Danish tax authority. This dataset contains content from its website skat.dk                                                                                                                | Legal        | 122.11M     | [CC-0]                                            |
-| [wiki]                | The Danish subsection of [wikipedia](https://en.wikipedia.org/wiki/Main_Page)                                                                                                                           | Encyclopedic | 122.00M     | [CC-0]                                            |
-| [ft]                  | Records from all meetings of The Danish parliament (Folketinget) in the parliament hall                                                                                                                 | Conversation | 114.09M     | [CC-0]                                            |
-| [memo]                | The MeMo corpus comprising almost all Danish novels from the period 1870-1899, known as the Modern Breakthrough                                                                                         | Books        | 113.74M     | [CC-BY-SA 4.0]                                    |
-| [ep]                  | The Danish subsection of [Europarl](https://aclanthology.org/2005.mtsummit-papers.11/)                                                                                                                  | Conversation | 100.84M     | [CC-0]                                            |
-| [domsdatabasen]       | [Domsdatabasen.dk](https://domsdatabasen.dk/) is a public database containing selected judgments from the Danish courts                                                                                 | Legal        | 86.35M      | [Danish Copyright Law]                            |
-| [dsk-dkmedier]        | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024                                                                                              | News         | 63.64M      | [DSK-1]                                           |
-| [adl]                 | Danish literature from 1700-2023 from the [Archive for Danish Literature](https://tekster.kb.dk/text?editorial=no&f%5Bsubcollection_ssi%5D%5B%5D=adl&match=one&search_field=Alt) (ADL)                  | Books        | 58.49M      | [CC-0]                                            |
-| [retspraksis]         | Case law or judical practice in Denmark derived from [Retspraksis](https://da.wikipedia.org/wiki/Retspraksis)                                                                                           | Legal        | 56.26M      | [CC-0]                                            |
-| [dbc-reviews]         | dbc-reviews consists of more than 214 thousand reviews of books and other materials collected and created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                | Books        | 53.96M      | [Written agreement (public models, private data)] |
-| [fm-udgivelser]       | The official publication series of the Danish Ministry of Finance containing economic analyses, budget proposals, and fiscal policy documents                                                           | Legal        | 50.34M      | [CC-BY-SA 4.0]                                    |
-| [nordjyllandnews]     | Articles from the Danish Newspaper [TV2 Nord](https://www.tv2nord.dk)                                                                                                                                   | News         | 37.90M      | [CC-0]                                            |
-| [eur-lex-sum-da]      | The Danish subsection of EUR-lex SUM consisting of EU legislation paired with professionally written summaries                                                                                          | Legal        | 31.37M      | [CC-BY-SA 4.0]                                    |
-| [ncc_maalfrid]        | Danish content from Norwegian institutions websites                                                                                                                                                     | Web          | 29.26M      | [NLOD 2.0]                                        |
-| [dsk-vejle]           | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area            | Web          | 27.99M      | [DSK-1]                                           |
-| [health_hovedstaden]  | Guidelines and informational documents for healthcare professionals from the Capital Region                                                                                                             | Medical      | 27.07M      | [CC-0]                                            |
-| [tv2r]                | Contemporary Danish newswire articles published between 2010 and 2019                                                                                                                                   | News         | 21.67M      | [CC-BY-SA 4.0]                                    |
-| [grundtvig]           | The complete collection of [Grundtvig](https://en.wikipedia.org/wiki/N._F._S._Grundtvig) (1783-1872) one of Denmark’s most influential figures                                                          | Books        | 10.53M      | [CC-0]                                            |
-| [dsk-salling]         | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages | Web          | 9.79M       | [DSK-1]                                           |
-| [danske-taler]        | Danish Speeches from [dansketaler.dk](https://www.dansketaler.dk)                                                                                                                                       | Conversation | 8.72M       | [CC-0]                                            |
-| [nota]                | The text only part of the [Nota lyd- og tekstdata](https://sprogteknologi.dk/dataset/nota-lyd-og-tekstdata) dataset                                                                                     | Readaloud    | 7.30M       | [CC-0]                                            |
-| [gutenberg]           | The Danish subsection from Project [Gutenberg](https://www.gutenberg.org)                                                                                                                               | Books        | 6.76M       | [Gutenberg]                                       |
-| [wikibooks]           | The Danish Subsection of [Wikibooks](https://www.wikibooks.org)                                                                                                                                         | Books        | 6.24M       | [CC-0]                                            |
-| [wikisource]          | The Danish subsection of [Wikisource](https://en.wikisource.org/wiki/Main_Page)                                                                                                                         | Encyclopedic | 5.34M       | [CC-0]                                            |
-| [dsk-cbrain]          | A collection of Marketing material, product guides, and datasheets produced by cBrain for their products                                                                                                | Other        | 4.19M       | [DSK-1]                                           |
-| [jvj]                 | The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikipedia.org/wiki/Johannes_V._Jensen)                                                                                         | Books        | 3.55M       | [CC-BY-SA 4.0]                                    |
-| [dsk-atp]             | A collection of crawled webpages that is managed by ATP                                                                                                                                                 | Web          | 2.86M       | [DSK-1]                                           |
-| [dbc-faktalink]       | dbc-faktalink consists of more than 5 hundred articles created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                                                                 | Encyclopedic | 1.99M       | [Written agreement (public models, private data)] |
-| [spont]               | Conversational samples collected as a part of research projects at Aarhus University                                                                                                                    | Conversation | 1.56M       | [CC-0]                                            |
-| [dannet]              | [DanNet](https://cst.ku.dk/projekter/dannet) is a Danish WordNet                                                                                                                                        | Other        | 1.48M       | [DanNet 1.0]                                      |
-| [dbc-forfatterweb]    | dbc-forfatterweb consists of more than 1 thousand articles created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                                                       | Encyclopedic | 1.42M       | [Written agreement (public models, private data)] |
-| [relig]               | Danish religious text from the 1700-2022                                                                                                                                                                | Books        | 1.24M       | [CC-0]                                            |
-| [dsk-odense]          | A set of newsletters stories, covering events in Odense Municipality. Have been published on their website                                                                                              | News         | 1.18M       | [DSK-1]                                           |
-| [dsk-danskerhverv]    | A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide                                                                                                | News         | 1.12M       | [DSK-1]                                           |
-| [ncc_newspaper]       | OCR'd Newspapers derived from [NCC](https://huggingface.co/datasets/NbAiLab/NCC)                                                                                                                        | News         | 1.05M       | [CC-0]                                            |
-| [dsk-plesner]         | A combination of crawled webpages from Plesners own website, and a series of internal documents outlining procedures                                                                                    | Other        | 896.33K     | [DSK-1]                                           |
-| [botxt]               | The Bornholmsk Ordbog Dictionary Project                                                                                                                                                                | Dialect      | 847.97K     | [CC-0]                                            |
-| [dsk-alexandra]       | A collection of crawled webpages that is managed by Alexandra Institutet                                                                                                                                | Web          | 584.35K     | [DSK-1]                                           |
-| [dsk-vitec]           | A collection of documents covering product descriptions, to newsletters, to internal documentation                                                                                                      | Other        | 537.07K     | [DSK-1]                                           |
-| [dsk-ida]             | A collection of newsletters, articles and other texts produced by IDA                                                                                                                                   | News         | 417.32K     | [DSK-1]                                           |
-| [naat]                | Danish speeches from 1930-2022                                                                                                                                                                          | Conversation | 286.68K     | [CC-0]                                            |
-| [depbank]             | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                  | Other        | 185.45K     | [CC-BY-SA 4.0]                                    |
-| [dsk-hofor]           | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                   | Other        | 143.49K     | [DSK-1]                                           |
-| [synne]               | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                 | Other        | 52.02K      | [CC-0]                                            |
-| **Total**             |                                                                                                                                                                                                         |              | 10.58B      |                                                   |
+| Source                                   | Description                                                                                                                                                                                                                        | Domain       | N. Tokens   | License                                           |
+|:-----------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:------------|:--------------------------------------------------|
+| [uspto_filtered]                         | In the United States, patent documents are released into the public domain as government works                                                                                                                                     | Legal        | 142.39B     | [Public Domain]                                   |
+| [stackv2_edu_filtered]                   | Stack V2 Edu is a dataset containing files in various programming and markup languages from openly licensed projects                                                                                                               | Other        | 62.39B      | [Various - MIT, BSD-3-Clause, Apache-2.0, etc.]   |
+| [peS2o_filtered]                         | A set of openly licensed scientific articles                                                                                                                                                                                       | Scientific   | 39.51B      | [CC-BY-SA 4.0]                                    |
+| [pubmed_filtered]                        | A set of permissively licensed papers collected from tthe PubMed Central                                                                                                                                                           | Medical      | 35.32B      | [CC-BY-SA 4.0]                                    |
+| [stackexchange_filtered]                 | StackExchange is a collection of Q&A communities spanning a wide variety of topics                                                                                                                                                 | Conversation | 21.83B      | [CC-BY-SA 4.0]                                    |
+| [caselaw_access_project_filtered]        | The Caselaw Access Project consists of nearly 40 million pages of U.S. federal and state court decisions and judges’ opinions from the last 365 years                                                                              | Legal        | 17.36B      | [CC-0]                                            |
+| [wikimedia_filtered]                     | Official Wikimedia wikis are released under a CC BY-SA license                                                                                                                                                                     | Encyclopedic | 14.08B      | [CC-BY-SA 4.0]                                    |
+| [cccc_filtered]                          | A dataset consisting of permissively licensed web pages processed from common crawl                                                                                                                                                | Web          | 13.99B      | [CC-0]                                            |
+| [pre_1929_books_filtered]                | A set of books published in the US pre-1929                                                                                                                                                                                        | Books        | 10.56B      | [CC-0]                                            |
+| [github_archive_filtered]                | A large set of issues and pull request descriptions along with their comments                                                                                                                                                      | Conversation | 10.21B      | [Various - MIT, BSD-3-Clause, Apache-2.0, etc.]   |
+| [biodiversity_heritage_library_filtered] | A set of ~15 million public domain books and documents from the BHL collection                                                                                                                                                     | Books        | 8.62B       | [CC-0]                                            |
+| [library_of_congress_filtered]           | A large set of public domain books from the "Selected Digitized Books" collection                                                                                                                                                  | Books        | 8.06B       | [CC-0]                                            |
+| [usgpo_filtered]                         | The United States Government Publishing Office (USGPO) is a federal agency responsible for disseminating official documents authored by the U.S. government                                                                        | Governmental | 7.78B       | [Public Domain]                                   |
+| [arxiv_papers_filtered]                  | Set of public domain papers, published on ArXiv                                                                                                                                                                                    | Scientific   | 6.11B       | [CC-0]                                            |
+| [project_gutenberg_filtered]             | All books from project gutenberg marked as english and public domain                                                                                                                                                               | Books        | 4.91B       | [CC-0]                                            |
+| [youtube_filtered]                       | YouTube is a large-scale video-sharing platform where users have the option of uploading content under a CC BY license                                                                                                             | Speeches     | 4.07B       | [CC-BY-SA 4.0]                                    |
+| [wikiteam_filtered]                      | There are many wikis on the internet that are not managed by the Wikimedia Foundation, but do use their MediaWiki software to power their wiki                                                                                     | Encyclopedic | 2.94B       | [CC-BY-SA 4.0]                                    |
+| [doab_filtered]                          | The Directory of Open Access Books (DOAB) is an online index of over 94,000 peer-reviewed books curated from trusted open-access publishers                                                                                        | Books        | 2.80B       | [CC-BY-SA 4.0]                                    |
+| [cvr-reports]                            | Annual reports from danish companies in the period 2010-2025                                                                                                                                                                       | Financial    | 2.32B       | [Verbal agreement]                                |
+| [uk_hansard_filtered]                    | Hansard represents the official record of parliamentary proceedings across the United Kingdom’s legislative bodies                                                                                                                 | Governmental | 2.01B       | [Open Parliament License]                         |
+| [ubuntu_irc_filtered]                    | Ubuntu-hosted Internet Relay Chat (IRC) is an online chat service                                                                                                                                                                  | Conversation | 1.76B       | [Public Domain]                                   |
+| [regulations_filtered]                   | This dataset includes all plain-text regulatory documents published by a variety of U.S. federal agencies on Regulations.Gov                                                                                                       | Governmental | 1.28B       | [Public Domain]                                   |
+| [cellar]                                 | The official digital repository for European Union legal documents and open data                                                                                                                                                   | Legal        | 1.15B       | [CC-BY-SA 4.0]                                    |
+| [enevaeldens_nyheder]                    | High quality OCR'd texts from Danish and Norwegian newspapers during the period of constitutional absolutism in Denmark (1660–1849)                                                                                                | News         | 1.03B       | [CC-0]                                            |
+| [plandata]                               | A comprehensive dataset consisting of municipal planning documents from across Denmark, including local development plans, municipal plans, planning strategies, and related document types                                        | Governmental | 1.03B       | [Written agreement (public models, private data)] |
+| [retsinformationdk]                      | [retsinformation.dk](https://www.retsinformation.dk) (legal-information.dk) the official legal information system of Denmark                                                                                                       | Legal        | 818.25M     | [Danish Copyright Law]                            |
+| [data_provenance_initiative_filtered]    | The Data Provenance Initiative is a digital library of supervised datasets that have been manually annotated with their source and license information                                                                             | Other        | 817.36M     | [CC-0]                                            |
+| [dbc-abstracts]                          | dbc-abstracts consists of more than 11.6 million abstracts of books and other materials collected and created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                                             | Books        | 694.42M     | [Written agreement (public models, private data)] |
+| [danish-pd]                              | **PleIAs - Danish Public Domain** is a large collection aiming to aggregate all Danish monographies and periodicals in the public domain                                                                                           | Books        | 532.43M     | [Public Domain]                                   |
+| [ncc_books]                              | Danish books extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from OCR                                                                                                          | Books        | 531.97M     | [CC-0]                                            |
+| [arxiv_abstracts_filtered]               | A set of public domain arxiv paper abstracts                                                                                                                                                                                       | Scientific   | 524.45M     | [CC-0]                                            |
+| [hest]                                   | Samples from the Danish debate forum www.heste-nettet.dk                                                                                                                                                                           | Social Media | 389.32M     | [CC-0]                                            |
+| [ncc_parliament]                         | Collections from the Norwegian parliament in Danish. Extracted from the [Norwegian Colossal Corpus](https://huggingface.co/datasets/NbAiLab/NCC) derived from ocr                                                                  | Other        | 338.87M     | [NLOD 2.0]                                        |
+| [opensubtitles]                          | Danish subsection of [OpenSubtitles](https://opus.nlpl.eu/OpenSubtitles/corpus/version/OpenSubtitles)                                                                                                                              | Conversation | 271.60M     | [CC-0]                                            |
+| [wiki]                                   | The Danish subsection of [wikipedia](https://en.wikipedia.org/wiki/Main_Page)                                                                                                                                                      | Encyclopedic | 173.33M     | [CC-0]                                            |
+| [ai-aktindsigt]                          | Multiple web scrapes from municipality websites collected as a part of the [AI-aktindsigt](https://ai-aktindsigt.dk) project                                                                                                       | Web          | 139.23M     | [Apache 2.0]                                      |
+| [miljoeportalen]                         | Data from [Danmarks Miljøportalen](https://www.miljoeportal.dk/om-danmarks-miljoeportal/) (Denmark's Environment Portal)                                                                                                           | Legal        | 127.38M     | [CC-0]                                            |
+| [pressbooks_filtered]                    | A set of openly licensed books                                                                                                                                                                                                     | Books        | 125.65M     | [CC-BY-SA 4.0]                                    |
+| [skat]                                   | Skat is the Danish tax authority. This dataset contains content from its website skat.dk                                                                                                                                           | Legal        | 122.11M     | [CC-0]                                            |
+| [ft]                                     | Records from all meetings of The Danish parliament (Folketinget) in the parliament hall                                                                                                                                            | Conversation | 114.09M     | [CC-0]                                            |
+| [memo]                                   | The MeMo corpus comprising almost all Danish novels from the period 1870-1899, known as the Modern Breakthrough                                                                                                                    | Books        | 113.74M     | [CC-BY-SA 4.0]                                    |
+| [ep]                                     | The Danish subsection of [Europarl](https://aclanthology.org/2005.mtsummit-papers.11/)                                                                                                                                             | Conversation | 100.84M     | [CC-0]                                            |
+| [domsdatabasen]                          | [Domsdatabasen.dk](https://domsdatabasen.dk/) is a public database containing selected judgments from the Danish courts                                                                                                            | Legal        | 86.35M      | [Danish Copyright Law]                            |
+| [libretexts_filtered]                    | A catalog of open-access text books                                                                                                                                                                                                | Books        | 84.19M      | [CC-BY-SA 4.0]                                    |
+| [dsk-dkmedier]                           | A collection of ~100K news articles from [DK Medier](https://dkmedier.dk), written in the period 2000-2024                                                                                                                         | News         | 63.64M      | [DSK-1]                                           |
+| [adl]                                    | Danish literature from 1700-2023 from the [Archive for Danish Literature](https://tekster.kb.dk/text?editorial=no&f%5Bsubcollection_ssi%5D%5B%5D=adl&match=one&search_field=Alt) (ADL)                                             | Books        | 58.49M      | [CC-0]                                            |
+| [retspraksis]                            | Case law or judical practice in Denmark derived from [Retspraksis](https://da.wikipedia.org/wiki/Retspraksis)                                                                                                                      | Legal        | 56.26M      | [CC-0]                                            |
+| [dbc-reviews]                            | dbc-reviews consists of more than 214 thousand reviews of books and other materials collected and created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                                           | Books        | 53.96M      | [Written agreement (public models, private data)] |
+| [news_filtered]                          | A set of news stories, scraped from opennewswire                                                                                                                                                                                   | News         | 53.77M      | [CC-BY-SA 4.0]                                    |
+| [fm-udgivelser]                          | The official publication series of the Danish Ministry of Finance containing economic analyses, budget proposals, and fiscal policy documents                                                                                      | Legal        | 50.34M      | [CC-BY-SA 4.0]                                    |
+| [nordjyllandnews]                        | Articles from the Danish Newspaper [TV2 Nord](https://www.tv2nord.dk)                                                                                                                                                              | News         | 37.90M      | [CC-0]                                            |
+| [eur-lex-sum-da]                         | The Danish subsection of EUR-lex SUM consisting of EU legislation paired with professionally written summaries                                                                                                                     | Legal        | 31.37M      | [CC-BY-SA 4.0]                                    |
+| [ncc_maalfrid]                           | Danish content from Norwegian institutions websites                                                                                                                                                                                | Web          | 29.26M      | [NLOD 2.0]                                        |
+| [dsk-vejle]                              | A collection of crawled webpages that is managed by Vejle Kommune. Contains various information, covering everything from tourists to garbage collection to historical knowledge of the area                                       | Web          | 27.99M      | [DSK-1]                                           |
+| [health_hovedstaden]                     | Guidelines and informational documents for healthcare professionals from the Capital Region                                                                                                                                        | Medical      | 27.07M      | [CC-0]                                            |
+| [tv2r]                                   | Contemporary Danish newswire articles published between 2010 and 2019                                                                                                                                                              | News         | 21.67M      | [CC-BY-SA 4.0]                                    |
+| [oercommons_filtered]                    | OERCommons is an online platform where educators share open-access instructional materials—such as textbooks, lesson plans, problem sets, course syllabi, and worksheets—with the goal of expanding access to affordable education | Books        | 10.82M      | [CC-BY-SA 4.0]                                    |
+| [grundtvig]                              | The complete collection of [Grundtvig](https://en.wikipedia.org/wiki/N._F._S._Grundtvig) (1783-1872) one of Denmark’s most influential figures                                                                                     | Books        | 10.53M      | [CC-0]                                            |
+| [dsk-salling]                            | A collection of crawled webpages that is managed by Salling Group. The dataset consists mainly of product pages from online stores such as bilka.dk, br.dk and such. The data consists of ~24K webpages                            | Web          | 9.79M       | [DSK-1]                                           |
+| [danske-taler]                           | Danish Speeches from [dansketaler.dk](https://www.dansketaler.dk)                                                                                                                                                                  | Conversation | 8.72M       | [CC-0]                                            |
+| [wikibooks]                              | The Danish Subsection of [Wikibooks](https://www.wikibooks.org)                                                                                                                                                                    | Books        | 7.63M       | [CC-0]                                            |
+| [nota]                                   | The text only part of the [Nota lyd- og tekstdata](https://sprogteknologi.dk/dataset/nota-lyd-og-tekstdata) dataset                                                                                                                | Readaloud    | 7.30M       | [CC-0]                                            |
+| [gutenberg]                              | The Danish subsection from Project [Gutenberg](https://www.gutenberg.org)                                                                                                                                                          | Books        | 6.76M       | [Gutenberg]                                       |
+| [wikisource]                             | The Danish subsection of [Wikisource](https://en.wikisource.org/wiki/Main_Page)                                                                                                                                                    | Encyclopedic | 6.28M       | [CC-0]                                            |
+| [dsk-cbrain]                             | A collection of Marketing material, product guides, and datasheets produced by cBrain for their products                                                                                                                           | Other        | 4.19M       | [DSK-1]                                           |
+| [jvj]                                    | The works of the Danish author and poet, [Johannes V. Jensen](https://da.wikipedia.org/wiki/Johannes_V._Jensen)                                                                                                                    | Books        | 3.55M       | [CC-BY-SA 4.0]                                    |
+| [dsk-atp]                                | A collection of crawled webpages that is managed by ATP                                                                                                                                                                            | Web          | 2.86M       | [DSK-1]                                           |
+| [python_enhancement_proposals_filtered]  | This set consists of almost all PEPs created                                                                                                                                                                                       | Technical    | 2.54M       | [Public Domain]                                   |
+| [dbc-faktalink]                          | dbc-faktalink consists of more than 5 hundred articles created by [DBC D1G1TAL](https://dbcdigital.dk/) (former Dansk Bibliotekscenter)                                                                                            | Encyclopedic | 1.99M       | [Written agreement (public models, private data)] |
+| [spont]                                  | Conversational samples collected as a part of research projects at Aarhus University                                                                                                                                               | Conversation | 1.56M       | [CC-0]                                            |
+| [public_domain_review_filtered]          | A set of articles describing works of art that is part of public domain                                                                                                                                                            | Other        | 1.51M       | [CC-BY-SA 4.0]                                    |
+| [dannet]                                 | [DanNet](https://cst.ku.dk/projekter/dannet) is a Danish WordNet                                                                                                                                                                   | Other        | 1.48M       | [DanNet 1.0]                                      |
+| [dbc-forfatterweb]                       | dbc-forfatterweb consists of more than 1 thousand articles created by DBC D1G1TAL (former Dansk Bibliotekscenter)                                                                                                                  | Encyclopedic | 1.42M       | [Written agreement (public models, private data)] |
+| [relig]                                  | Danish religious text from the 1700-2022                                                                                                                                                                                           | Books        | 1.24M       | [CC-0]                                            |
+| [dsk-odense]                             | A set of newsletters stories, covering events in Odense Municipality. Have been published on their website                                                                                                                         | News         | 1.18M       | [DSK-1]                                           |
+| [dsk-danskerhverv]                       | A set of newsletters written by Dansk Erhverv, primarily focusing on financials and companies world wide                                                                                                                           | News         | 1.12M       | [DSK-1]                                           |
+| [ncc_newspaper]                          | OCR'd Newspapers derived from [NCC](https://huggingface.co/datasets/NbAiLab/NCC)                                                                                                                                                   | News         | 1.05M       | [CC-0]                                            |
+| [dsk-plesner]                            | A combination of crawled webpages from Plesners own website, and a series of internal documents outlining procedures                                                                                                               | Other        | 896.33K     | [DSK-1]                                           |
+| [botxt]                                  | The Bornholmsk Ordbog Dictionary Project                                                                                                                                                                                           | Dialect      | 847.97K     | [CC-0]                                            |
+| [dsk-alexandra]                          | A collection of crawled webpages that is managed by Alexandra Institutet                                                                                                                                                           | Web          | 584.35K     | [DSK-1]                                           |
+| [dsk-vitec]                              | A collection of documents covering product descriptions, to newsletters, to internal documentation                                                                                                                                 | Other        | 537.07K     | [DSK-1]                                           |
+| [dsk-ida]                                | A collection of newsletters, articles and other texts produced by IDA                                                                                                                                                              | News         | 417.32K     | [DSK-1]                                           |
+| [naat]                                   | Danish speeches from 1930-2022                                                                                                                                                                                                     | Conversation | 286.68K     | [CC-0]                                            |
+| [depbank]                                | The Danish subsection of the [Universal Dependencies Treebank](https://github.com/UniversalDependencies/UD_Danish-DDT)                                                                                                             | Other        | 185.45K     | [CC-BY-SA 4.0]                                    |
+| [dsk-hofor]                              | A collection of articles, guides and newsletters written by HOFOR for their customers                                                                                                                                              | Other        | 143.49K     | [DSK-1]                                           |
+| [synne]                                  | Dataset collected from [synnejysk forening's website](https://www.synnejysk.dk), covering the Danish dialect sønderjysk                                                                                                            | Other        | 52.02K      | [CC-0]                                            |
+| **Total**                                |                                                                                                                                                                                                                                    |              | 430.24B     |                                                   |
 
 [adl]: data/adl/adl.md
 [botxt]: data/botxt/botxt.md
@@ -442,6 +644,35 @@ You can learn more about each dataset by pressing the link in the first column.
 [grundtvig]: data/grundtvig/grundtvig.md
 [domsdatabasen]: data/domsdatabasen/domsdatabasen.md
 [enevaeldens_nyheder]: data/enevaeldens_nyheder/enevaeldens_nyheder.md
+[arxiv_abstracts_filtered]: data/arxiv_abstracts_filtered/arxiv_abstracts_filtered.md
+[arxiv_papers_filtered]: data/arxiv_papers_filtered/arxiv_papers_filtered.md
+[biodiversity_heritage_library_filtered]: data/biodiversity_heritage_library_filtered/biodiversity_heritage_library_filtered.md
+[caselaw_access_project_filtered]: data/caselaw_access_project_filtered/caselaw_access_project_filtered.md
+[cccc_filtered]: data/cccc_filtered/cccc_filtered.md
+[data_provenance_initiative_filtered]: data/data_provenance_initiative_filtered/data_provenance_initiative_filtered.md
+[doab_filtered]: data/doab_filtered/doab_filtered.md
+[github_archive_filtered]: data/github_archive_filtered/github_archive_filtered.md
+[library_of_congress_filtered]: data/library_of_congress_filtered/library_of_congress_filtered.md
+[libretexts_filtered]: data/libretexts_filtered/libretexts_filtered.md
+[news_filtered]: data/news_filtered/news_filtered.md
+[oercommons_filtered]: data/oercommons_filtered/oercommons_filtered.md
+[peS2o_filtered]: data/peS2o_filtered/peS2o_filtered.md
+[pre_1929_books_filtered]: data/pre_1929_books_filtered/pre_1929_books_filtered.md
+[pressbooks_filtered]: data/pressbooks_filtered/pressbooks_filtered.md
+[project_gutenberg_filtered]: data/project_gutenberg_filtered/project_gutenberg_filtered.md
+[public_domain_review_filtered]: data/public_domain_review_filtered/public_domain_review_filtered.md
+[pubmed_filtered]: data/pubmed_filtered/pubmed_filtered.md
+[python_enhancement_proposals_filtered]: data/python_enhancement_proposals_filtered/python_enhancement_proposals_filtered.md
+[regulations_filtered]: data/regulations_filtered/regulations_filtered.md
+[stackexchange_filtered]: data/stackexchange_filtered/stackexchange_filtered.md
+[stackv2_edu_filtered]: data/stackv2_edu_filtered/stackv2_edu_filtered.md
+[ubuntu_irc_filtered]: data/ubuntu_irc_filtered/ubuntu_irc_filtered.md
+[uk_hansard_filtered]: data/uk_hansard_filtered/uk_hansard_filtered.md
+[usgpo_filtered]: data/usgpo_filtered/usgpo_filtered.md
+[uspto_filtered]: data/uspto_filtered/uspto_filtered.md
+[wikimedia_filtered]: data/wikimedia_filtered/wikimedia_filtered.md
+[wikiteam_filtered]: data/wikiteam_filtered/wikiteam_filtered.md
+[youtube_filtered]: data/youtube_filtered/youtube_filtered.md
 
 
 [CC-0]: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
@@ -472,6 +703,14 @@ You can learn more about each dataset by pressing the link in the first column.
 [Public Domain]: ./data/danish-pd/danish-pd.md#license-information
 [Verbal agreement]: ./data/cvr-reports/cvr-reports.md#license-information
 [Danish Copyright Law]: ./data/domsdatabasen/domsdatabasen.md#license-information
+[Various - MIT, BSD-3-Clause, Apache-2.0, etc.]: ./data/github_archive_filtered/github_archive_filtered.md#license-information
+[Public Domain]: ./data/python_enhancement_proposals_filtered/python_enhancement_proposals_filtered.md#license-information
+[Public Domain]: ./data/regulations_filtered/regulations_filtered.md#license-information
+[Various - MIT, BSD-3-Clause, Apache-2.0, etc.]: ./data/stackv2_edu_filtered/stackv2_edu_filtered.md#license-information
+[Public Domain]: ./data/ubuntu_irc_filtered/ubuntu_irc_filtered.md#license-information
+[Open Parliament License]: ./data/uk_hansard_filtered/uk_hansard_filtered.md#license-information
+[Public Domain]: ./data/usgpo_filtered/usgpo_filtered.md#license-information
+[Public Domain]: ./data/uspto_filtered/uspto_filtered.md#license-information
 <!-- END-MAIN TABLE -->
 </details>
 

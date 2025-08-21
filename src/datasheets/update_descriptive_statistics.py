@@ -11,11 +11,10 @@ import argparse
 import logging
 from pathlib import Path
 import re
-from typing import cast
 from packaging.version import Version, InvalidVersion
 
 import plotly.express as px
-from datasets import Dataset, load_dataset
+import polars as pl
 
 from datasheets.datasheet import DataSheet
 from datasheets.descriptive_stats import DescriptiveStatsOverview
@@ -185,13 +184,17 @@ def update_dataset(
         logger.info(
             f"Computing descriptive stats for: {dataset_name} from {latest_version_dataset_path}"
         )
-        ds = load_dataset(
-            **load_kwargs,  # type: ignore
-            columns=["id", "text", "token_count", "source"],
+        # ds = load_dataset(
+        #     **load_kwargs,  # type: ignore
+        #     columns=["id", "text", "token_count", "source"],
+        # )
+        # ds = cast(Dataset, ds)
+        # desc_stats = DescriptiveStatsOverview.from_dataset(ds)
+        df = pl.scan_parquet(latest_version_dataset_path / f"{dataset_name}.parquet")
+        desc_stats = DescriptiveStatsOverview.from_dataframe(df)
+        sheet.body = sheet.add_dataset_plots(
+            df, create_plot=True, desc_stats=desc_stats
         )
-        ds = cast(Dataset, ds)
-        desc_stats = DescriptiveStatsOverview.from_dataset(ds)
-        sheet.body = sheet.add_dataset_plots(ds, create_plot=True)
     else:
         # compute descriptive stats from existing files
         desc_paths = (repo_path / "data").glob("**/*descriptive_stats.json")
@@ -213,7 +216,6 @@ def update_dataset(
         sheet.body = sheet.replace_tag(package=domain_table, tag="LICENSE TABLE")
         create_domain_distribution_plot()
         create_dataset_size_plot()
-
 
     sheet.write_to_path()
 

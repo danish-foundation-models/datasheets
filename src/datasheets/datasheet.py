@@ -6,6 +6,7 @@ from pathlib import Path
 from textwrap import dedent
 from typing import Any, Self, cast
 
+from polars import LazyFrame
 import yaml
 from datasets import Dataset, load_dataset
 from pydantic import BaseModel, field_validator
@@ -13,6 +14,7 @@ from pydantic import BaseModel, field_validator
 from datasheets.descriptive_stats import DescriptiveStatsOverview
 from datasheets.plots.descriptive_statistics_plots import (
     create_descriptive_statistics_plots,
+    create_descriptive_statistics_plots_lazy,
 )
 from datasheets.typings import (
     DOMAIN_TYPE,
@@ -185,11 +187,26 @@ class DataSheet(BaseModel):
             tag=DEFAULT_SECTION_TAGS.desc_stats,
         )
 
-    def add_dataset_plots(self, dataset: Dataset, create_plot: bool = True) -> str:
+    def add_dataset_plots(
+        self,
+        dataset: Dataset | LazyFrame,
+        create_plot: bool = True,
+        desc_stats: DescriptiveStatsOverview | None = None,
+    ) -> str:
         if create_plot:
-            create_descriptive_statistics_plots(
-                dataset=dataset, save_dir=self.path.parent
-            )
+            if isinstance(dataset, Dataset):
+                create_descriptive_statistics_plots(
+                    dataset=dataset, save_dir=self.path.parent
+                )
+            else:
+                if not desc_stats:
+                    logger.warning(
+                        "Descriptive statistics are not provided, so we cannot use lazy frame for plotting."
+                    )
+                else:
+                    create_descriptive_statistics_plots_lazy(
+                        lf=dataset, save_dir=self.path.parent, desc_stats=desc_stats
+                    )
         return self.replace_tag(
             package=DATASET_PLOTS_template, tag=DEFAULT_SECTION_TAGS.dataset_plots
         )

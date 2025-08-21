@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v1.0.0] - 2025-08-18
+
+### Added
+
+- Added script to combine and shuffle datasets into one training set (`generate_train_set.py`). 
+- Added all Common-Pile datasets
+- Added a marker in README frontmatter to control which set a dataset belongs to.
+
+### Changed
+
+- Improved dataset loading, aggregation and plotting to accomodate much larger common-pile datasets. 
+
 ## [v0.0.15] - 2025-08-08
 
 ### Changed

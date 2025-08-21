@@ -30,9 +30,9 @@ You can read more about wikipedia on their [about](https://en.wikipedia.org/wiki
 
 
 <!-- START-DESC-STATS -->
-- **Number of samples**: 264.43K
-- **Number of tokens (Llama 3)**: 122.00M
-- **Average document length in tokens (min, max)**: 461.372631252529 (3, 83.12K)
+- **Number of samples**: 309.64K
+- **Number of tokens (Llama 3)**: 173.33M
+- **Average document length in tokens (min, max)**: 559.7903378428567 (8, 107.35K)
 <!-- END-DESC-STATS -->
 
 

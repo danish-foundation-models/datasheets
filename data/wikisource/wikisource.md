@@ -28,9 +28,9 @@ The Danish subsection of [Wikisource](https://en.wikisource.org/wiki/Main_Page).
 
 
 <!-- START-DESC-STATS -->
-- **Number of samples**: 2.42K
-- **Number of tokens (Llama 3)**: 5.34M
-- **Average document length in tokens (min, max)**: 2.21K (5, 218.36K)
+- **Number of samples**: 3.00K
+- **Number of tokens (Llama 3)**: 6.28M
+- **Average document length in tokens (min, max)**: 2.09K (17, 261.10K)
 <!-- END-DESC-STATS -->
 
 
