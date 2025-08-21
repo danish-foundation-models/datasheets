@@ -28,9 +28,9 @@ The Danish Subsection of [Wikibooks](https://www.wikibooks.org).
 
 
 <!-- START-DESC-STATS -->
-- **Number of samples**: 1.27K
-- **Number of tokens (Llama 3)**: 6.24M
-- **Average document length in tokens (min, max)**: 4.92K (4, 365.89K)
+- **Number of samples**: 1.73K
+- **Number of tokens (Llama 3)**: 7.63M
+- **Average document length in tokens (min, max)**: 4.40K (8, 368.88K)
 <!-- END-DESC-STATS -->
 
 

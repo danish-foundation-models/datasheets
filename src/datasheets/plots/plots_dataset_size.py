@@ -5,8 +5,8 @@ from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 
-from dynaword.datasheet import DataSheet
-from dynaword.paths import repo_path
+from datasheets.datasheet import DataSheet
+from datasheets.paths import repo_path
 
 # Configure logging
 logging.basicConfig(

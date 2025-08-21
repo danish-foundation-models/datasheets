@@ -15,9 +15,11 @@ LICENSE_NAMES_MAPPING = {
     "cc-by-sa-4.0": "CC-BY-SA 4.0",
     "apache-2.0": "Apache 2.0",
 }
+SET_OPTIONS = ["dfm", "common-pile", "common-corpus", "other"]
 
 TEMPLATE_PATH = Path("template/template.md")
 OUTPUT_DIR = Path("data")
+
 
 # --- Helper Functions ---
 
@@ -37,6 +39,12 @@ def get_user_input():
     data["dataset_id"] = questionary.text(
         "What is the ID of the dataset?",
         validate=lambda text: True if len(text) > 0 else "Please enter an ID.",
+    ).ask()
+
+    data["set"] = questionary.select(
+        "What set does this dataset belong to?",
+        choices=SET_OPTIONS,
+        default="dfm",
     ).ask()
 
     # --- Languages ---
@@ -141,7 +149,7 @@ def create_card_content(template_content, data):
     return f"---\n{updated_front_matter_str}---\n{body_content}"
 
 
-def add_dataset_to_readme(dataset_id: str):
+def add_dataset_to_readme(dataset_id: str, set_name: str):
     # Update main readme
     main_sheet = DataSheet.load_from_path(repo_path / "README.md")
     _datasets = [
@@ -151,7 +159,9 @@ def add_dataset_to_readme(dataset_id: str):
     ]
 
     if dataset_id not in _datasets:
-        main_sheet.frontmatter["configs"].append({"config_name": dataset_id})
+        main_sheet.frontmatter["configs"].append(
+            {"config_name": dataset_id, "set": set_name}
+        )  # type: ignore
         main_sheet.write_to_path(repo_path / "README.md")
 
 
@@ -181,7 +191,7 @@ def main():
     # Write the file
     output_path.write_text(final_content, encoding="utf-8")
 
-    add_dataset_to_readme(user_data["dataset_id"])
+    add_dataset_to_readme(user_data["dataset_id"], user_data["set"])
 
     print(f"\n✅ Successfully created dataset card at: {output_path}")
 
