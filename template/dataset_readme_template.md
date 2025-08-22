@@ -69,10 +69,17 @@ This dataset includes the following languages:
 - Norwegian Bokmål
 - Norwegian Nynorsk
 
+Below is a visualisation of the main languages in each of the datasets.
+
+<p align="center">
+<img src="./images/language_distribution.svg" width="1000" style="margin-right: 10px;" />
+</p>
+
+
 
 ### Domains
 
-This dynaword consist of data from various domains (e.g., legal, books, social media). The following table and figure give an overview of the relative distributions of these domains.
+This dataset consist of data from various domains (e.g., legal, books, social media). The following table and figure give an overview of the relative distributions of these domains.
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
 
@@ -98,7 +105,7 @@ This dynaword consist of data from various domains (e.g., legal, books, social m
 
 ### Licensing
 
-The following gives an overview of the licensing in the Dynaword. To get the exact license of the individual datasets check out the individual datasets by clicking the links in the table.
+The following gives an overview of the licensing in the DFMv1. To get the exact license of the individual datasets check out the individual datasets by clicking the links in the table.
 These license is applied to the constituent data, i.e., the text. The collection of datasets (metadata, quality control, etc.) is licensed under [CC-0](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en).
 
 <!-- START-LICENSE TABLE -->
@@ -132,7 +139,7 @@ Take down: We will comply to legitimate requests by removing the affected source
 
 <h3 style="display: flex; align-items: center;">
   <a href="https://www.foundationmodels.dk">
-    <img src="./docs/icon.png" width="30" style="margin-right: 10px;" />
+    <img src="_static/icon.png" width="30" style="margin-right: 10px;" />
   </a>
   A&nbsp;<a href=https://www.foundationmodels.dk>Danish Foundation Models</a>&nbsp;dataset
 </h3>

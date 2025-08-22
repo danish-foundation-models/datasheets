@@ -19,6 +19,7 @@ import polars as pl
 from datasheets.datasheet import DataSheet
 from datasheets.descriptive_stats import DescriptiveStatsOverview
 from datasheets.paths import repo_path
+from datasheets.plots.plots_dataset_attributes import create_domain_distribution_plot, create_language_distribution_plot
 from datasheets.tables import (
     create_overview_table,
     create_overview_table_str,
@@ -122,28 +123,6 @@ def find_latest_dataset_version(dataset_parent_path: Path) -> Path | None:
     return best_path
 
 
-def create_domain_distribution_plot(
-    save_dir: Path = repo_path,
-):
-    df = create_overview_table(
-        add_readable_tokens=False, add_total_row=False, add_readme_references=False
-    )
-    fig = px.sunburst(df, path=["Domain", "Source"], values="N. Tokens")
-
-    fig.update_traces(textinfo="label+percent entry")
-    fig.update_layout(title="Dataset Distribution by Domain and Source")
-
-    img_path = save_dir / "images"
-    img_path.mkdir(parents=False, exist_ok=True)
-    save_path = img_path / "domain_distribution.png"
-    fig.write_image(
-        save_path,
-        width=800,
-        height=800,
-        scale=2,
-    )
-
-
 def update_dataset(
     dataset_name: str,
     force: bool = False,
@@ -216,6 +195,7 @@ def update_dataset(
         sheet.body = sheet.replace_tag(package=domain_table, tag="LICENSE TABLE")
         create_domain_distribution_plot()
         create_dataset_size_plot()
+        create_language_distribution_plot()
 
     sheet.write_to_path()
 

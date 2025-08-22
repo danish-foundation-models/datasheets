@@ -205,7 +205,7 @@ class DataSheet(BaseModel):
                     )
                 else:
                     create_descriptive_statistics_plots_lazy(
-                        lf=dataset, save_dir=self.path.parent, desc_stats=desc_stats
+                        lf=dataset, save_dir=self.path.parent, desc_stats=desc_stats, dataset_name=self.pretty_name
                     )
         return self.replace_tag(
             package=DATASET_PLOTS_template, tag=DEFAULT_SECTION_TAGS.dataset_plots
