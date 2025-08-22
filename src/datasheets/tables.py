@@ -19,8 +19,8 @@ DEFAULT_LICENSE_REFERENCES = """[CC-0]: https://creativecommons.org/publicdomain
 [Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0
 """
 
-LANGID_TO_LANGUAGE = {
-    "en": "English", "da": "Danish"}
+LANGID_TO_LANGUAGE = {"en": "English", "da": "Danish"}
+
 
 def create_license_references() -> str:
     license_references = DEFAULT_LICENSE_REFERENCES

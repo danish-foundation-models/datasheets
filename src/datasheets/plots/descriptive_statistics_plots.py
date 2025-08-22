@@ -1,11 +1,9 @@
 import logging
 from pathlib import Path
-import re
 from typing import Literal, cast
 
 import numpy as np
 import pandas as pd
-import plotnine as pn
 import plotly.graph_objects as go
 from datasets import Dataset
 import polars as pl
@@ -56,7 +54,7 @@ def create_descriptive_statistics_plots(
     fig.update_xaxes(
         tickvals=x_vals,
         ticktext=[convert_to_human_readable(v) for v in x_vals],
-        title_text="Document Length (Tokens)"
+        title_text="Document Length (Tokens)",
     )
 
     # Compute bin counts
@@ -69,7 +67,7 @@ def create_descriptive_statistics_plots(
     fig.update_yaxes(
         tickvals=y_vals,
         ticktext=[convert_to_human_readable(v) for v in y_vals],
-        title_text="Number of Documents"
+        title_text="Number of Documents",
     )
 
     img_path = save_dir / "images"
@@ -130,9 +128,7 @@ def create_descriptive_statistics_plots_lazy(
     # --- Assign lengths to bins using pl.cut ---
     binned = (
         lf.select(pl.col("token_count").cast(pl.Int64).alias("lengths"))
-        .with_columns(
-            pl.col("lengths").cut(bin_edges).alias("bin")
-        )
+        .with_columns(pl.col("lengths").cut(bin_edges).alias("bin"))
         .group_by("bin")
         .agg(pl.count().alias("count"))
         .sort("bin")
@@ -143,12 +139,12 @@ def create_descriptive_statistics_plots_lazy(
     df = binned.to_pandas()
 
     # Parse bin edges from strings
-    df["bin_left"] = df["bin"].apply(
-        lambda x: parse_bin_interval(x, side="left")
-    ).astype(float)
-    df["bin_right"] = df["bin"].apply(
-        lambda x: parse_bin_interval(x, side="right")
-    ).astype(float)
+    df["bin_left"] = (
+        df["bin"].apply(lambda x: parse_bin_interval(x, side="left")).astype(float)
+    )
+    df["bin_right"] = (
+        df["bin"].apply(lambda x: parse_bin_interval(x, side="right")).astype(float)
+    )
 
     # Calculate actual bin widths for proper bar spacing
     df["bin_width"] = df["bin_right"] - df["bin_left"]
@@ -158,7 +154,11 @@ def create_descriptive_statistics_plots_lazy(
     inf_mask = np.isinf(df["bin_width"])
     if inf_mask.any():
         # Use the width of the previous bin for the infinite bin
-        prev_width = df.loc[~inf_mask, "bin_width"].iloc[-1] if len(df) > 1 else df["bin_left"].iloc[-1]
+        prev_width = (
+            df.loc[~inf_mask, "bin_width"].iloc[-1]
+            if len(df) > 1
+            else df["bin_left"].iloc[-1]
+        )
         df.loc[inf_mask, "bin_width"] = prev_width
         df.loc[inf_mask, "bin_right"] = df["bin_left"].iloc[-1] + prev_width
 
@@ -167,7 +167,7 @@ def create_descriptive_statistics_plots_lazy(
 
     # --- Build plotly chart ---
     fig = go.Figure()
-    
+
     fig.add_trace(
         go.Bar(
             x=df["bin_center"],
@@ -211,4 +211,3 @@ def create_descriptive_statistics_plots_lazy(
     fig.write_image(save_path_svg)
 
     return save_path, fig
-

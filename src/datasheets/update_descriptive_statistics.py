@@ -13,15 +13,16 @@ from pathlib import Path
 import re
 from packaging.version import Version, InvalidVersion
 
-import plotly.express as px
 import polars as pl
 
 from datasheets.datasheet import DataSheet
 from datasheets.descriptive_stats import DescriptiveStatsOverview
 from datasheets.paths import repo_path
-from datasheets.plots.plots_dataset_attributes import create_domain_distribution_plot, create_language_distribution_plot
+from datasheets.plots.plots_dataset_attributes import (
+    create_domain_distribution_plot,
+    create_language_distribution_plot,
+)
 from datasheets.tables import (
-    create_overview_table,
     create_overview_table_str,
     create_grouped_table_str,
 )

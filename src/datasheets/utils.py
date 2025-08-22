@@ -1,5 +1,3 @@
-
-
 def convert_to_human_readable(value: float) -> str:
     thresholds = [
         (1_000_000_000, "B"),

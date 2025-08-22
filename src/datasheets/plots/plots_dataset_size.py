@@ -110,7 +110,7 @@ def plot_dataset_size(df: pd.DataFrame) -> go.Figure:
             categoryorder="array",  # keep dataset order
             categoryarray=df["dataset_name"].tolist(),
             range=[-0.5, len(df["dataset_name"]) - 0.5],  # <-- fixes top/bottom padding
-        )
+        ),
     )
 
     return fig

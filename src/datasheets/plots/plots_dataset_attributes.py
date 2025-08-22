@@ -1,9 +1,6 @@
-
-
 import logging
 from pathlib import Path
 
-import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -17,8 +14,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-LANGID_TO_LANGUAGE = {
-    "en": "English", "da": "Danish"}
+LANGID_TO_LANGUAGE = {"en": "English", "da": "Danish"}
+
 
 def create_domain_distribution_plot(
     save_dir: Path = repo_path,
@@ -67,11 +64,19 @@ def create_language_distribution_plot(save_dir: Path = repo_path):
 
     # Define muted colors per language (extendable)
     base_colors = [
-        "#4C78A8", "#72B7B2", "#F58518", "#E45756",
-        "#54A24B", "#B279A2", "#FF9DA6", "#9D755D"
+        "#4C78A8",
+        "#72B7B2",
+        "#F58518",
+        "#E45756",
+        "#54A24B",
+        "#B279A2",
+        "#FF9DA6",
+        "#9D755D",
     ]
 
-    color_map = {lang: base_colors[i % len(base_colors)] for i, lang in enumerate(languages)}
+    color_map = {
+        lang: base_colors[i % len(base_colors)] for i, lang in enumerate(languages)
+    }
 
     # Add treemaps
     for i, lang in enumerate(languages):
@@ -97,7 +102,7 @@ def create_language_distribution_plot(save_dir: Path = repo_path):
         title="Dataset Distribution by Language and Source",
         height=800 * n_rows,
         width=800 * n_cols,
-        paper_bgcolor="#F7F7F7",   # light gray background
+        paper_bgcolor="#F7F7F7",  # light gray background
         plot_bgcolor="#676464",
         # uniformtext=dict(minsize=10, mode="hide"),
     )
