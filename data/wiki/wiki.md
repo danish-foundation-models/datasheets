@@ -30,9 +30,9 @@ You can read more about wikipedia on their [about](https://en.wikipedia.org/wiki
 
 
 <!-- START-DESC-STATS -->
-- **Number of samples**: 309.64K
-- **Number of tokens (Llama 3)**: 173.33M
-- **Average document length in tokens (min, max)**: 559.7903378428567 (8, 107.35K)
+- **Number of samples**: 308.42K
+- **Number of tokens (Llama 3)**: 172.43M
+- **Average document length in tokens (min, max)**: 559.0759571239593 (8, 106.84K)
 <!-- END-DESC-STATS -->
 
 
@@ -69,7 +69,7 @@ An entry in the dataset consists of the following fields:
 
 <!-- START-DATASET PLOTS -->
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dist_document_length.svg" width="600" style="margin-right: 10px;" />
 </p>
 <!-- END-DATASET PLOTS -->
 

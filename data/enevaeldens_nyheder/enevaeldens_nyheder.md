@@ -137,7 +137,7 @@ Below you see 10 examples of documents (truncated to 200 characters) filtered ou
 
 <!-- START-DATASET PLOTS -->
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dist_document_length.svg" width="600" style="margin-right: 10px;" />
 </p>
 <!-- END-DATASET PLOTS -->
 

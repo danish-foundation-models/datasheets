@@ -58,7 +58,7 @@ An entry in the dataset consists of the following fields:
 
 <!-- START-DATASET PLOTS -->
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dist_document_length.svg" width="600" style="margin-right: 10px;" />
 </p>
 <!-- END-DATASET PLOTS -->
 

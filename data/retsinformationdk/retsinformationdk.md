@@ -90,7 +90,7 @@ Stk. 2. Bestemmelsen i stk. 1 gælder ikke for værker, der fremtræder som selv
 
 <!-- START-DATASET PLOTS -->
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dist_document_length.svg" width="600" style="margin-right: 10px;" />
 </p>
 <!-- END-DATASET PLOTS -->
 
