@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+## [v1.0.1] - 2025-08-22
+
+### Added
+
+- Added a script for syncing datasheets with our docs site
+  - Created simplified main "README" template for syncing
+- Added a simplified language distribution plot. It only uses the "main" language.
+
+### Changed
+
+- Changed the document size distribution plots to use log bins instead of fixed width bins.
+- Changed the dataset sizes plot to make sure all datasets are represented on the y-axis.
+
 ## [v1.0.0] - 2025-08-18
 
 ### Added
