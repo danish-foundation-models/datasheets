@@ -20,14 +20,14 @@ A collection of crawled webpages that is managed by Vejle Kommune. Contains vari
 <!-- END-SHORT DESCRIPTION -->
 
 The data have been crawled from 8 different domains:
-- [kyst-kyststien.dk](kyst-kyststien.dk) 
-- [voresressourcer.dk](voresressourcer.dk) 
-- [vejlesfolkemoede.dk](vejlesfolkemoede.dk)
-- [vejle.dk](vejle.dk)
-- [vejlewiki.dk](vejlewiki.dk)
-- [vejlestadsarkiv.dk](vejlestadsarkiv.dk)
-- [vejlebrandvaesen.dk](vejlebrandvaesen.dk)
-- [nyrosborg.dk](nyrosborg.dk)
+- [kyst-kyststien.dk](https://kyst-kyststien.dk) 
+- [voresressourcer.dk](https://voresressourcer.dk) 
+- [vejlesfolkemoede.dk](https://vejlesfolkemoede.dk)
+- [vejle.dk](https://vejle.dk)
+- [vejlewiki.dk](https://vejlewiki.dk)
+- [vejlestadsarkiv.dk](https://vejlestadsarkiv.dk)
+- [vejlebrandvaesen.dk](https://vejlebrandvaesen.dk)
+- [nyrosborg.dk](https://nyrosborg.dk)
 
 This data has been contributed by Vejle Kommune through the [Dansk Sprogmodel Konsortium](https://alexandra.dk/dsk). 
 
@@ -46,7 +46,7 @@ An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
 - `text`(`str`): The content of the document.
-- `source` (`str`): The source of the document (see [Source Data](#source-data)).
+- `source` (`str`): The source of the document.
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
@@ -59,7 +59,7 @@ An entry in the dataset consists of the following fields:
 
 <!-- START-DATASET PLOTS -->
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dist_document_length.svg" width="600" style="margin-right: 10px;" />
 </p>
 <!-- END-DATASET PLOTS -->
 

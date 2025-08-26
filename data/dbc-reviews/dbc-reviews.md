@@ -1,8 +1,8 @@
 ---
 pretty_name: DBC D1G1TAL - Reviews
 language:
-- en
 - da
+- en
 - se
 - nb
 - nn
@@ -43,7 +43,7 @@ An entry in the dataset consists of the following fields:
 
 - `id` (`str`): An unique identifier for each document.
 - `text`(`str`): The content of the document.
-- `source` (`str`): The source of the document (see [Source Data](#source-data)).
+- `source` (`str`): The source of the document.
 - `added` (`str`): An date for when the document was added to this collection.
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
@@ -56,7 +56,7 @@ An entry in the dataset consists of the following fields:
 
 <!-- START-DATASET PLOTS -->
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dist_document_length.svg" width="600" style="margin-right: 10px;" />
 </p>
 <!-- END-DATASET PLOTS -->
 

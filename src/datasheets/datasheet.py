@@ -1,6 +1,4 @@
-import json
 import logging
-from datetime import datetime
 from enum import Enum
 from pathlib import Path
 from textwrap import dedent
@@ -22,6 +20,7 @@ from datasheets.typings import (
     LICENSE,
     LICENSE_NAMES_MAPPING,
 )
+from datasheets.utils import convert_to_human_readable
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +36,7 @@ class DEFAULT_SECTION_TAGS(Enum):
 
 DATASET_PLOTS_template = """
 <p align="center">
-<img src="./images/dist_document_length.png" width="600" style="margin-right: 10px;" />
+<img src="./images/dist_document_length.svg" width="600" style="margin-right: 10px;" />
 </p>
 """
 
@@ -55,32 +54,6 @@ An entry in the dataset consists of the following fields:
 - `created` (`str`): An date range for when the document was originally created.
 - `token_count` (`int`): The number of tokens in the sample computed using the Llama 8B tokenizer
 """
-
-
-def convert_to_human_readable(value: float) -> str:
-    thresholds = [
-        (1_000_000_000, "B"),
-        (1_000_000, "M"),
-        (1_000, "K"),
-    ]
-    for threshold, label in thresholds:
-        if value > threshold:
-            return f"{value / threshold:.2f}{label}"
-
-    return str(value)
-
-
-def create_sample_str(sample: dict[str, Any], max_str_len: int = 100):
-    for k in sample:
-        if isinstance(sample[k], str) and len(sample[k]) > max_str_len:
-            sample[k] = sample[k][:max_str_len] + "[...]"
-        if isinstance(sample[k], datetime):
-            sample[k] = str(sample[k])
-
-    json_sample = json.dumps(sample, indent=2, ensure_ascii=False)
-    sample_str = SAMPLE_template.format(sample=json_sample)
-
-    return sample_str
 
 
 class DataSheet(BaseModel):
@@ -230,7 +203,10 @@ class DataSheet(BaseModel):
                     )
                 else:
                     create_descriptive_statistics_plots_lazy(
-                        lf=dataset, save_dir=self.path.parent, desc_stats=desc_stats
+                        lf=dataset,
+                        save_dir=self.path.parent,
+                        desc_stats=desc_stats,
+                        dataset_name=self.pretty_name,
                     )
         return self.replace_tag(
             package=DATASET_PLOTS_template, tag=DEFAULT_SECTION_TAGS.dataset_plots

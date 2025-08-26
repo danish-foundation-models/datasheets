@@ -1,6 +1,6 @@
 [project]
 name = "datasheets"
-version = "1.0.0"
+version = "1.0.1"
 description = "Project code for the dfm datasheets."
 readme = "README.md"
 requires-python = ">=3.12,<3.13" # 3.13 have issues with spacy and pytorch
@@ -22,6 +22,7 @@ dependencies = [
     "tqdm>=4.67.1",
     "polars>=1.30.0",
     "semhash>=0.3.0",
+    "markdown>=3.8.2",
 ]
 
 [dependency-groups]

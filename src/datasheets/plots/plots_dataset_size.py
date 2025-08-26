@@ -100,9 +100,17 @@ def plot_dataset_size(df: pd.DataFrame) -> go.Figure:
         xaxis_title="Number of Tokens (log scale)",
         xaxis_type="log",
         yaxis_title="Dataset",
-        height=500,
+        height=1500,
         template="plotly_white",
         margin=dict(l=120),  # More space for dataset names
+        yaxis=dict(
+            tickmode="array",
+            tickvals=df["dataset_name"],
+            ticktext=df["pretty_name"],
+            categoryorder="array",  # keep dataset order
+            categoryarray=df["dataset_name"].tolist(),
+            range=[-0.5, len(df["dataset_name"]) - 0.5],  # <-- fixes top/bottom padding
+        ),
     )
 
     return fig

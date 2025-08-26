@@ -3,7 +3,8 @@ from typing import Literal
 
 import pandas as pd
 
-from datasheets.datasheet import DataSheet, convert_to_human_readable
+from datasheets.datasheet import DataSheet
+from datasheets.utils import convert_to_human_readable
 from datasheets.paths import repo_path
 
 main_sheet = DataSheet.load_from_path(repo_path / "README.md")
@@ -17,6 +18,8 @@ DEFAULT_LICENSE_REFERENCES = """[CC-0]: https://creativecommons.org/publicdomain
 [CC-BY-SA 4.0]: https://creativecommons.org/licenses/by-sa/4.0/deed.en
 [Apache 2.0]: https://www.apache.org/licenses/LICENSE-2.0
 """
+
+LANGID_TO_LANGUAGE = {"en": "English", "da": "Danish"}
 
 
 def create_license_references() -> str:
@@ -57,6 +60,7 @@ def create_overview_table(
         "Sources": [],
         "Description": [],
         "Domain": [],
+        "Language": [],
         "N. Tokens": [],
         "License": [],
     }
@@ -68,11 +72,13 @@ def create_overview_table(
         sheet = DataSheet.load_from_path(readme_path)
         desc_stats = sheet.get_descritive_stats()
         main_domain = sheet.domains[0] if sheet.domains else ""
+        main_language = sheet.language[0] if sheet.language else ""
 
         table["Source"] += [f"{dataset_path.name}"]
         table["Sources"] += [f"[{dataset_path.name}]"]
         table["License"] += [f"[{sheet.license_name}]"]
         table["Domain"] += [main_domain]
+        table["Language"] += [LANGID_TO_LANGUAGE.get(main_language, main_language)]
         table["Description"] += [sheet.short_description]
         table["N. Tokens"] += [desc_stats.number_of_tokens]
 
@@ -85,6 +91,7 @@ def create_overview_table(
             "Sources": "**Total**",
             "Domain": "",
             "License": "",
+            "Language": "",
             "Description": "",
             "N. Tokens": sum(table["N. Tokens"]),
         }
