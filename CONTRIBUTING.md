@@ -1,8 +1,19 @@
 ## Working with this repository locally
 
-This repo follows a similar structure to [Danish Dynaword](https://huggingface.co/datasets/danish-foundation-models/danish-dynaword).
-However it does not include the datasets themselves.
+This repo follows a similar structure to [Danish Dynaword](https://huggingface.co/datasets/danish-foundation-models/danish-dynaword). 
+However, it does not include the datasets themselves. 
 
+## Dataset location
+
+All DFM data resources are located on UCloud at `/danish-foundation-models (193701)/data/` 
+
+```
+datasets/                                                                                                                                                                    
+├── adl                                                                                                                                                                      │   └── original                                                                                                                                                             │       └── v1.0.0                                                                                                                                                           │           └── adl.parquet 
+├── ai-aktindsigt
+│   └── original                                                                                                                                                             │       └── v1.0.0                                                                                                                                                           │           └── ai-aktindsigt.parquet  
+| ...
+```
 
 ## Adding a new datasheet
 
@@ -35,16 +46,18 @@ make test
 
 ## Submitting a PR
 
-Creating a PR on Huggingface is a bit different from creating one on Github.
-
-1) Go to the community tab on huggingface press *new pull request* and choose *on your machine*. Specify the title of the your PR. Then you can simply:
-
+Creating a PR follows the standard proceduce:
 ```bash
-git fetch origin refs/pr/{PR NUMBER}:pr/{PR NUMBER}
-git checkout pr/{PR NUMBER}
-# make your changes here 
-# push to hub
-git push origin pr/{PR NUMBER}:refs/pr/{PR NUMBER}
+# fork if you do not have the right to edit directly
+git pull {repo url}
+
+# change to repo
+cd datasheets
+
+# make changes (git add, git commit)
+
+# push changes
+git push
 ```
 
 Before you make the PR do be sure to make sure that you have completed the following checklist. 
